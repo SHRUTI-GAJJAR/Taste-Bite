@@ -9,16 +9,19 @@ const fs = require('fs');
 require('dotenv').config();
 const bodyParser = require('body-parser');
 const itemsRouter = require('./routers/food_route'); // Importing the items router
+const CategoryRouter = require('./routers/categories_route')
 
 // Middleware for parsing incoming JSON
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve files from the 'uploads' directory
+// For Items
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-
-// Use the router for items-related requests
 app.use('/items', itemsRouter);
+
+//For category
+app.use('/Category', express.static(path.join(__dirname, 'Category')));
+app.use('/Categories', CategoryRouter);
 
 // Start the server
 const PORT = process.env.PORT || 5000;
