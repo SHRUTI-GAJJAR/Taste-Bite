@@ -67,5 +67,47 @@ router.get('/', async (req, resp) => {
     }
 });
 
+router.put('/:id', async (req, resp) => {
+    try {
+        const categoriesId = req.params.id;
+        const updateData = req.body;
+
+        const response = await categories.findByIdAndUpdate(categoriesId, updateData, {
+            new: true,
+            runValidators: true,
+        })
+
+        if (!response) {
+            return resp.status(404).json({ error: 'Items not found' });
+        }
+        console.log('data updated'.blue);
+        resp.status(200).json(response);
+
+    } catch (err) {
+        console.log(err);
+        resp.status(500).json({ error: 'Internal Server error' });
+    }
+})
+
+//Delete Data:
+router.delete('/:id', async (req, resp) => {
+    try {
+        const categoriesId = req.params.id;
+
+        const response = await categories.findByIdAndDelete(categoriesId);
+
+        if (!response) {
+            return resp.status(404).json({ error: 'Items not found' });
+        }
+        console.log('Data Deleted'.red);
+        resp.status(200).json({ message: 'Items Delete Successfully' });
+
+    } catch (err) {
+        console.log(err);
+        resp.status(500).json({ error: 'Internal server error' });
+    }
+})
+
+
 
 module.exports = router;
