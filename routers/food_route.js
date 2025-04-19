@@ -26,7 +26,7 @@ const upload = multer({ storage: storage });
 // Create a new item route
 router.post('/', upload.single('Thumbnail_img'), async (req, resp) => {
     try {
-        const { name, price, Isvage, categories } = req.body;
+        const { name, price, Isvage, categories,rating } = req.body;
 
         // Create the file path (relative to your public folder)
         const photoPath = req.file ? `uploads/${req.file.filename}` : null;
@@ -37,7 +37,8 @@ router.post('/', upload.single('Thumbnail_img'), async (req, resp) => {
             price,
             Isvage,
             categories,
-            Thumbnail_img: photoPath // Store the file path in the database
+            Thumbnail_img: photoPath, // Store the file path in the database
+            rating
         });
 
         // Save the new item to MongoDB
