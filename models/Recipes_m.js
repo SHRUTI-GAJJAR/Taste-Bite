@@ -28,6 +28,10 @@ const recipeModelSchema = new mongoose.Schema({
         min: 0,
         max: 5,
         default: 0
+    },
+    user: {
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'User'  // Reference to the User model
     }
 });
 
