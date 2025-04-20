@@ -3,7 +3,7 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const db = require('./db');
+const connectDB = require('./db');
 const path = require('path');
 const fs = require('fs');
 require('dotenv').config();
@@ -12,6 +12,10 @@ const bodyParser = require('body-parser');
 // Middleware for parsing incoming JSON
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Establish DB connection
+connectDB();  // Connect to MongoDB
+
 
 // For Items:
 const itemsRouter = require('./routers/food_route'); // Importing the items router
@@ -27,6 +31,11 @@ app.use('/categories', CategoryRouter);
 const recipeRouter = require('./routers/Recipes_route')
 app.use('/Recipe_pic', express.static(path.join(__dirname, 'Recipe_pic')));
 app.use('/recipe', recipeRouter);
+
+//user:
+app.use('/profile', express.static(path.join(__dirname, 'profile')));
+const authRoutes = require('./routers/auth');
+app.use('/auth', authRoutes);
 
 
 // Start the server
