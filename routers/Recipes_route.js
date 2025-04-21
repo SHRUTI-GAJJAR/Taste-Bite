@@ -18,7 +18,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-router.post('/', upload.single('thumbnailImage'), async (req, resp) => {
+router.post('/' ,upload.single('thumbnailImage'), async (req, resp) => {
   try {
       const { name, ingredients, recipe, date, time, rating, user } = req.body;
 
