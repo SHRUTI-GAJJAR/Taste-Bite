@@ -59,6 +59,49 @@ router.get('/', async (req, resp) => {
   }
 });
 
+// Get Recipes by User ID
+router.get('/user/:userId', async (req, resp) => {
+  try {
+    // Find recipes by user ID
+    const recipes = await Recipe.find({ user: req.params.userId });
+
+    // If no recipes found
+    if (recipes.length === 0) {
+      return resp.status(404).json({ message: 'No recipes found for this user' });
+    }
+
+    // Return the list of recipes
+    resp.status(200).json({ message: 'Recipes retrieved successfully', recipes });
+  } catch (err) {
+    console.error(err);
+    resp.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+// Get Recipes by Name
+router.get('/name/:name', async (req, resp) => {
+  try {
+    const nameQuery = req.params.name;
+    
+    // Use a regular expression to find recipes where the name contains the search term (case-insensitive)
+    const recipes = await Recipe.find({
+      name: { $regex: nameQuery, $options: 'i' }  // 'i' makes the search case-insensitive
+    });
+
+    // If no recipes found
+    if (recipes.length === 0) {
+      return resp.status(404).json({ message: 'No recipes found with this name' });
+    }
+
+    // Return the list of recipes
+    resp.status(200).json({ message: 'Recipes retrieved successfully', recipes });
+  } catch (err) {
+    console.error(err);
+    resp.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+
 // Update Recipe
 router.put('/:id', upload.single('thumbnailImage'), async (req, resp) => {
     try {
