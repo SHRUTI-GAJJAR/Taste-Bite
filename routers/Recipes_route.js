@@ -59,7 +59,61 @@ router.get('/', async (req, resp) => {
   }
 });
 
-
+// Update Recipe
+router.put('/:id', upload.single('thumbnailImage'), async (req, resp) => {
+    try {
+      const { name, ingredients, recipe, date, time, rating, user } = req.body;
+      
+      // Check if a new file was uploaded and update the photo path
+      let photoPath = req.file ? `Recipe_pic/${req.file.filename}` : null;
+  
+      // Find the recipe by ID and update it
+      const updatedRecipe = await Recipe.findByIdAndUpdate(
+        req.params.id,
+        {
+          name,
+          ingredients,
+          recipe,
+          thumbnailImage: photoPath || undefined,  // Only update photoPath if there's a new image
+          date,
+          time,
+          rating,
+          user: user || null, // Optional user field
+        },
+        { new: true } // Return the updated document
+      );
+  
+      // If the recipe is not found
+      if (!updatedRecipe) {
+        return resp.status(404).json({ error: 'Recipe not found' });
+      }
+  
+      // Return success response
+      resp.status(200).json({ message: 'Recipe updated successfully', recipe: updatedRecipe });
+    } catch (err) {
+      console.error(err);
+      resp.status(500).json({ error: 'Internal Server Error' });
+    }
+  });
+  
+  // Delete Recipe
+  router.delete('/:id', async (req, resp) => {
+    try {
+      // Find the recipe by ID and delete it
+      const deletedRecipe = await Recipe.findByIdAndDelete(req.params.id);
+  
+      // If the recipe is not found
+      if (!deletedRecipe) {
+        return resp.status(404).json({ error: 'Recipe not found' });
+      }
+  
+      // Return success response
+      resp.status(200).json({ message: 'Recipe deleted successfully' });
+    } catch (err) {
+      console.error(err);
+      resp.status(500).json({ error: 'Internal Server Error' });
+    }
+  });
 
 
 module.exports = router;
