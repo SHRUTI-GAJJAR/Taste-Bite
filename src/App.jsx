@@ -4,7 +4,7 @@ function App() {
 
   return (
     <div>
-      <p>Fronted</p>
+      <p className='text-2xl text-flask-500' >Fronted</p>
     </div>
   )
 }
