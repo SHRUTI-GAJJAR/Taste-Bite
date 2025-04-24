@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-    --color-flask-500: rgba(255, 115, 255, 0.5);
-  }
+  --color-flask-500: rgba(255, 115, 255, 0.5);
+}
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));

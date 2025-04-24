@@ -1,12 +1,13 @@
-import './App.css'
+import { useTheme } from "./context/ThemeContext";
+import Home from "./page/Home";
+import "./App.css";
 
 function App() {
+  const { theme, toggleTheme } = useTheme();
 
   return (
-    <div>
-      <p className='text-2xl text-flask-500' >Fronted</p>
-    </div>
-  )
+    <Home></Home>
+  );
 }
 
-export default App
+export default App;
