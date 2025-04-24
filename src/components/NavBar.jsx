@@ -9,6 +9,7 @@ const NavBar = () => {
         <NavLink to="/">
           <img src={testBiteLogo} alt="logoIcon" />
         </NavLink>
+        <p>uyuyuyu Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus quia odit beatae nobis itaque incidunt obcaecati pariatur quisquam voluptas quos sequi iure aspernatur, nam rem debitis inventore. Accusantium, itaque culpa.</p>
       </div>
     </nav>
   );
