@@ -7,7 +7,7 @@ export const useTheme = () => useContext(ThemeContext);
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
     try {
-      return localStorage.theme || "light";
+      return localStorage.theme || "dark";
     } catch {
       return "light";
     }
@@ -15,7 +15,7 @@ export const ThemeProvider = ({ children }) => {
 
   useEffect(() => {
     try {
-      document.documentElement.dataset.theme = theme;
+      document.documentElement.setAttribute("data-theme", theme);
       localStorage.theme = theme;
     } catch (err) {
       console.error("Theme update failed:", err);

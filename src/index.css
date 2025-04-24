@@ -1,7 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-    --color-mint-500: oklch(0.72 0.11 178);
+  --color-main: rgba(255, 255, 255);
+  --color-main-dark: rgba(255, 255, 255);
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+/* styles.css or your custom.css */
+
