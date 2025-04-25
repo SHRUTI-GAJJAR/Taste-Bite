@@ -7,7 +7,7 @@ const Home = () => {
   const { theme, toggleTheme } = useTheme()
 
   return (
-    <header className='w-full h-fit bg-main dark:bg-main-dark'>
+    <header className='w-full h-screen bg-main dark:bg-main-dark transition-colors'>
       <NavBar></NavBar>
       <p onClick={toggleTheme}> click </p>
     </header>
