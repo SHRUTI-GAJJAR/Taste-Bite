@@ -15,7 +15,14 @@
   --color-sub-black : #09090b;
   --color-hover-dark : #27272a;
   --color-hover-light : #f4f4f5;
+
+  --color-transperent-dark : #ff632f3b;
+  --color-transperent-border-dark : #ff400044;
+  --color-transperent-light : #f4f4f5;
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
+.bg{
+  color: #ff400044;
+}
