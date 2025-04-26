@@ -1,22 +1,19 @@
 import React from "react";
 import { NavLink } from "react-router";
-import pizza from "../assets/svg/pizza.svg";
 import { IoIosSearch } from "react-icons/io";
 import NavigationSubMenu from "./NavigationSubMenu";
-import { useTheme } from "../context/ThemeContext";
-
+import ThemeToggle from "./themeToggle";
+import MobileMenu from "./MobileMenu";
 const Navigations = () => {
-
-  const { theme, toggleTheme } = useTheme()
-
   return (
     <>
-      <ul>
-        <li className="cursor-pointer flex items-center justify-center rounded-full md:h-10 md:w-10 h-6 w-6 border-1 bg-transperent-dark border-theme-light">
+      <MobileMenu />
+      <ul className="hidden sm:flex">
+        <li className="flex cursor-pointer items-center justify-center rounded-full md:h-10 md:w-10 h-6 w-6 border-1 bg-transperent-dark border-theme-light">
           <IoIosSearch className="text-theme-light md:h-8 h-4 hover:md:h-5 hover:h-3.5 transition-all"></IoIosSearch>
         </li>
       </ul>
-      <ul className="flex text-sm md:gap-10 gap-2 items-center justify-between dark:text-font-dark text-black md:text-xl">
+      <ul className="hidden sm:flex text-[0.825rem] md:gap-10 gap-1.5 items-center justify-between dark:text-font-dark text-black md:text-xl">
         <li className="cursor-pointer dark:hover:text-white transition-colors">
           <NavLink
             className={({ isActive }) =>
@@ -56,15 +53,7 @@ const Navigations = () => {
           </NavLink>
         </li>
       </ul>
-      <ul className="flex items-center justify-center">
-        <li className="h-fit w-fit flex justify-center items-center">
-          <button onClick={toggleTheme} className={`relative cursor-pointer md:w-14 md:h-8 w-10 h-6 rounded-full bg-[linear-gradient(to_right,#dc2e0bcc,#d75d45cc)] dark:bg-transperent-dark`}>
-            <span>
-              <img src={pizza} className={`md:h-8 h-6 absolute top-0 transition-transform ${theme === "dark" ? "md:translate-x-6 translate-x-4" : "translate-x-0" }`} alt="pizzaIcon" />
-            </span>
-          </button>
-        </li>
-      </ul>
+      <ThemeToggle />
     </>
   );
 };
