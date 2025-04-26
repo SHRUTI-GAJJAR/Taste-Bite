@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router";
 import { IoIosSearch } from "react-icons/io";
 import NavigationSubMenu from "./NavigationSubMenu";
-import ThemeToggle from "./themeToggle";
+import ThemeToggle from "./ThemeToggle";
 import MobileMenu from "./MobileMenu";
 const Navigations = () => {
   return (
