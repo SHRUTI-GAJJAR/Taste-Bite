@@ -7,6 +7,7 @@ import { IoIosRemoveCircleOutline } from "react-icons/io";
 import { MdEdit } from "react-icons/md";
 import { useState } from "react";
 import { NavLink } from "react-router";
+import { MdFavoriteBorder } from "react-icons/md";
 
 const MobileMenu = () => {
   const [toggle, setToggle] = useState(false);
@@ -66,7 +67,7 @@ const MobileMenu = () => {
                 toggleSubMenu ? "max-h-40 pb-1.5 " : "max-h-0"
               }`}
             >
-              <ul className="m-w-[90%] ml-5 pl-2 flex flex-col bg-white border-gray-200 border-1 text-black rounded-md">
+              <ul className="m-w-[90%] ml-5 pl-1 flex flex-col bg-white border-gray-200 border-1 text-black rounded-md">
                 <NavLink to={"/AddProduct"}>
                 <li className="m-0.5 w-full h-8 flex items-center gap-2">
                   <span className="bg-green-200 border-1 border-green-400 flex items-center justify-center h-6 w-6 rounded-full">
@@ -89,6 +90,14 @@ const MobileMenu = () => {
                     <MdEdit />
                   </span>
                   <span>Edit Product</span>
+                </li>
+                </NavLink>
+                <NavLink to={"/"}>
+                <li className="m-0. w-full h-8 flex items-center gap-2">
+                  <span className="border-orange-400 border-1 bg-orange-200 flex items-center justify-center h-6 w-6 rounded-full">
+                    <MdFavoriteBorder />
+                  </span>
+                  <span>Favorite Recipes</span>
                 </li>
                 </NavLink>
               </ul>
