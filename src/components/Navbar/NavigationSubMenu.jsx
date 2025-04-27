@@ -11,7 +11,7 @@ const NavigationSubMenu = () => {
   const timeoutRef = useRef(null);
   const locationPath = useLocation();
 
-  const activePath = ["/AddProduct", "/DeleteProduct", "/UpdateProduct"];
+  const activePath = ["/AddProduct", "/DeleteProduct", "/UpdateProduct", "/FavoriteRecipes"];
   const isSubMenuActive = activePath.includes(locationPath.pathname);
 
   const handleMouseLeave = () => {
@@ -52,7 +52,7 @@ const NavigationSubMenu = () => {
                 <span className="flex items-center h-6 w-6 justify-center border-1 bg-green-200 border-green-400 rounded-full">
                   <IoAdd className="text-black" />
                 </span>
-                <span>Add Product</span>{" "}
+                <span>Add Product</span>
               </NavLink>
             </li>
             <li className="whitespace-nowrap overflow-hidden text-ellipsis md:mx-1 mx-0.5 rounded-sm md:px-2 px-1 py-0.5 md:min-w-40 min-w-25 hover:bg-hover-light dark:hover:bg-hover-dark transition">
@@ -63,7 +63,7 @@ const NavigationSubMenu = () => {
                 <span className="flex items-center h-6 w-6 justify-center border-1 bg-red-200 border-red-400 rounded-full">
                   <IoIosRemoveCircleOutline className="text-black" />
                 </span>
-                <span>Delete Product</span>{" "}
+                <span>Delete Product</span>
               </NavLink>
             </li>
             <li className="whitespace-nowrap overflow-hidden text-ellipsis md:mx-1 mx-0.5 rounded-sm md:px-2 px-1 py-0.5 md:min-w-40 min-w-25 hover:bg-hover-light dark:hover:bg-hover-dark transition">
@@ -74,7 +74,7 @@ const NavigationSubMenu = () => {
                 <span className="flex items-center h-6 w-6 justify-center border-1 bg-yellow-200 border-yellow-400 rounded-full">
                   <MdEdit className="text-black" />
                 </span>
-                <span>Update Product</span>{" "}
+                <span>Update Product</span>
               </NavLink>
             </li>
             <li className="whitespace-nowrap overflow-hidden text-ellipsis md:mx-1 mx-0.5 rounded-sm md:px-2 px-1 py-0.5 md:min-w-40 min-w-25 hover:bg-hover-light dark:hover:bg-hover-dark transition">
@@ -85,7 +85,7 @@ const NavigationSubMenu = () => {
                 <span className="flex items-center h-6 w-6 justify-center border-1 bg-orange-200 border-orange-400 rounded-full">
                   <MdFavoriteBorder className="text-black" />
                 </span>
-                <span>Favorite Recipes</span>{" "}
+                <span>Favorite Recipes</span>
               </NavLink>
             </li>
           </ul>

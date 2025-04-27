@@ -1,11 +1,12 @@
-import React from 'react'
-import NavBar from '../components/NavBar'
+import React from "react";
+import NavBar from "../components/Navbar/NavBar";
 
 const UpdateProduct = () => {
   return (
-<header className='w-full h-screen bg-main dark:bg-main-dark transition-colors'>
+    <header className="w-full h-screen bg-main dark:bg-main-dark transition-colors">
       <NavBar></NavBar>
-    </header>  )
-}
+    </header>
+  );
+};
 
-export default UpdateProduct
+export default UpdateProduct;

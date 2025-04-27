@@ -1,6 +1,6 @@
 import React from "react";
-import { useTheme } from "../context/ThemeContext";
-import pizza from "../assets/svg/pizza.svg";
+import { useTheme } from "../../context/ThemeContext";
+import pizza from "../../assets/svg/pizza.svg";
 
 const ThemeToggle = () => {
 

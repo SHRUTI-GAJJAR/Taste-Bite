@@ -1,5 +1,5 @@
 import React from "react";
-import menuIcon from "../assets/svg/scrollText.svg";
+import menuIcon from "../../assets/svg/scrollText.svg";
 import { MdArrowOutward } from "react-icons/md";
 import { FaChevronDown } from "react-icons/fa6";
 import { IoAdd } from "react-icons/io5";
