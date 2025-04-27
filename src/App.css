@@ -20,6 +20,24 @@
   --color-transperent-light: #f4f4f5;
   --color-transperent-button: rgba(128, 128, 128, 0.8);
   --color-transperent-button-hover: rgba(128, 128, 128, 0.4);
+
+  --color-bage-blur: rgba(255, 255, 255,);
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
