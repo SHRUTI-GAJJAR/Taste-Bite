@@ -40,7 +40,7 @@ const MobileMenu = () => {
             toggle ? "opacity-100 scale-y-100" : "opacity-0 scale-y-0"
           } origin-top absolute h-fit w-full bg-theme-light rounded-md top-[3rem]`}
         >
-          <ul className="w-full flex flex-col px-1.5 text-[1rem] text-white">
+          <ul className="w-full bg-theme-light flex flex-col px-1.5 text-[1rem] text-white">
             <li className="flex p-2 w-full cursor-pointer items-center justify-between">
               <span>
                 <NavLink to={"/"}>Home</NavLink>

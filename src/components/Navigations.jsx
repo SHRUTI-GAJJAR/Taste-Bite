@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router";
-import { IoIosSearch } from "react-icons/io";
 import NavigationSubMenu from "./NavigationSubMenu";
 import ThemeToggle from "./ThemeToggle";
 import MobileMenu from "./MobileMenu";
@@ -9,11 +8,7 @@ const Navigations = () => {
   return (
     <>
       <MobileMenu />
-      <ul className="hidden sm:flex">
-        <li className="flex cursor-pointer items-center justify-center rounded-full md:h-10 md:w-10 h-6 w-6 border-1 bg-transperent-dark border-theme-light">
-          <IoIosSearch className="text-theme-light md:h-8 h-4 hover:md:h-5 hover:h-3.5 transition-all"></IoIosSearch>
-        </li>
-      </ul>
+      <ul></ul>
       <ul className="hidden sm:flex text-[0.825rem] md:gap-10 gap-1.5 items-center justify-between dark:text-font-dark text-black md:text-xl">
         <li className="cursor-pointer dark:hover:text-white transition-colors">
           <NavLink
