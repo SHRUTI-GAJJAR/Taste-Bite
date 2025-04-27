@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router'
 import AddProduct from '../../page/AddProduct'
 import DeleteProduct from '../../page/DeleteProduct'
 import UpdateProduct from '../../page/UpdateProduct'
+import FavoriteRecipes from '../../page/FavoriteRecipes'
 
 const Routing = () => {
   return (
@@ -16,6 +17,7 @@ const Routing = () => {
         <Route path="/AddProduct" element={<AddProduct />} />
         <Route path="/UpdateProduct" element={<UpdateProduct />} />
         <Route path="/DeleteProduct" element={<DeleteProduct />} />
+        <Route path="/FavoriteRecipes" element={<FavoriteRecipes />} />
     </Routes>
   )
 }

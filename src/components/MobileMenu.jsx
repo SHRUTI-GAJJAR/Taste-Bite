@@ -69,36 +69,36 @@ const MobileMenu = () => {
             >
               <ul className="m-w-[90%] ml-5 pl-1 flex flex-col bg-white border-gray-200 border-1 text-black rounded-md">
                 <NavLink to={"/AddProduct"}>
-                <li className="m-0.5 w-full h-8 flex items-center gap-2">
-                  <span className="bg-green-200 border-1 border-green-400 flex items-center justify-center h-6 w-6 rounded-full">
-                    <IoAdd />
-                  </span>
-                  <span>Add Product</span>
-                </li>
+                  <li className="m-0.5 w-full h-8 flex items-center gap-2">
+                    <span className="bg-green-200 border-1 border-green-400 flex items-center justify-center h-6 w-6 rounded-full">
+                      <IoAdd />
+                    </span>
+                    <span>Add Product</span>
+                  </li>
                 </NavLink>
                 <NavLink to={"/DeleteProduct"}>
-                <li className="m-0.5 w-full h-8 flex items-center gap-2">
-                  <span className="bg-red-200 border-1 border-red-400 flex items-center justify-center h-6 w-6 rounded-full">
-                    <IoIosRemoveCircleOutline />
-                  </span>
-                  <span>Delete Product</span>
-                </li>
+                  <li className="m-0.5 w-full h-8 flex items-center gap-2">
+                    <span className="bg-red-200 border-1 border-red-400 flex items-center justify-center h-6 w-6 rounded-full">
+                      <IoIosRemoveCircleOutline />
+                    </span>
+                    <span>Delete Product</span>
+                  </li>
                 </NavLink>
                 <NavLink to={"/UpdateProduct"}>
-                <li className="m-0. w-full h-8 flex items-center gap-2">
-                  <span className="border-yellow-400 border-1 bg-yellow-200 flex items-center justify-center h-6 w-6 rounded-full">
-                    <MdEdit />
-                  </span>
-                  <span>Edit Product</span>
-                </li>
+                  <li className="m-0. w-full h-8 flex items-center gap-2">
+                    <span className="border-yellow-400 border-1 bg-yellow-200 flex items-center justify-center h-6 w-6 rounded-full">
+                      <MdEdit />
+                    </span>
+                    <span>Edit Product</span>
+                  </li>
                 </NavLink>
-                <NavLink to={"/"}>
-                <li className="m-0. w-full h-8 flex items-center gap-2">
-                  <span className="border-orange-400 border-1 bg-orange-200 flex items-center justify-center h-6 w-6 rounded-full">
-                    <MdFavoriteBorder />
-                  </span>
-                  <span>Favorite Recipes</span>
-                </li>
+                <NavLink to={"/FavoriteRecipes"}>
+                  <li className="m-0. w-full h-8 flex items-center gap-2">
+                    <span className="border-orange-400 border-1 bg-orange-200 flex items-center justify-center h-6 w-6 rounded-full">
+                      <MdFavoriteBorder />
+                    </span>
+                    <span>Favorite Recipes</span>
+                  </li>
                 </NavLink>
               </ul>
             </div>

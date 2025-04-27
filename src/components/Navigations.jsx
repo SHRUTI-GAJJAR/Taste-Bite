@@ -23,7 +23,6 @@ const Navigations = () => {
           </NavLink>
         </li>
         <NavigationSubMenu />
-
         <li className="cursor-pointer dark:hover:text-white transition-colors">
           <NavLink
             className={({ isActive }) =>
