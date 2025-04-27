@@ -8,18 +8,18 @@
   --color-main-dark: #1f1f1f;
   --color-font-light: rgba(0, 0, 0);
   --color-font-dark: rgb(153 161 175 / 78%);
-  --color-theme-light: #FF642F;
+  --color-theme-light: #ff642f;
   --color-theme-dark: rgb(153 161 175 / 78%);
   --color-border-light: #e4e4e7;
   --color-border-dark: rgb(39 39 42);
-  --color-sub-black : #09090b;
-  --color-hover-dark : #27272a;
-  --color-hover-light : #f4f4f5;
-
-  --color-transperent-dark : #ff632f3b;
-  --color-transperent-border-dark : #ff400044;
-  --color-transperent-light : #f4f4f5;
+  --color-sub-black: #09090b;
+  --color-hover-dark: #27272a;
+  --color-hover-light: #f4f4f5;
+  --color-transperent-dark: #ff632f3b;
+  --color-transperent-border-dark: #ff400044;
+  --color-transperent-light: #f4f4f5;
+  --color-transperent-button: rgba(128, 128, 128, 0.8);
+  --color-transperent-button-hover: rgba(128, 128, 128, 0.4);
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
-
