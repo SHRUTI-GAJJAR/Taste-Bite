@@ -54,7 +54,6 @@ const Carousel = () => {
           </span>
         </div>
       </section>
-      <p>ghfghhg</p>
     </>
   );
 };
