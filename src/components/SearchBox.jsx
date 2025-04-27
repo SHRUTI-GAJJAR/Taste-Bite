@@ -10,7 +10,7 @@ const SearchBox = () => {
   };
 
   return (
-    <div className="searchWrap gap-1.5 mt-1.5 w-[98%] md:w-[75%] h-[2.5rem] pl-2 rounded-md border-theme-light text-black border-1 flex items-center my-1 bg-transperent-dark">
+    <div className="searchWrap gap-1.5 mt-1.5 w-[97%] md:w-[75%] h-[2.5rem] pl-2 rounded-md border-theme-light text-black border-1 flex items-center my-1 bg-transperent-dark">
       <div className="serachIconWrap">
         <IoIosSearch size={"1.5em"} className="text-theme-light" />
       </div>
@@ -26,7 +26,7 @@ const SearchBox = () => {
       {serachText && (
         <div
           onClick={handelSearchText}
-          className="close justify-self-end w-[2rem] "
+          className="close justify-self-end w-[2.4rem] "
         >
           <IoCloseOutline size={"1.6em"} className="text-theme-light" />
         </div>
