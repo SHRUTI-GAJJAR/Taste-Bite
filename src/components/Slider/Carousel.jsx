@@ -26,7 +26,7 @@ const Carousel = () => {
             {sliderData.map((slide, index) => (
               <div
                 key={index}
-                className="h-full sm:h-full  min-w-full overflow-hidden  flex items-center justify-center"
+                className="h-full sm:h-full min-w-full overflow-hidden  flex items-center justify-center"
               >
                 <img
                   src={slide.url}
@@ -37,8 +37,9 @@ const Carousel = () => {
             ))}
           </div>
         </div>
-
-        <div className="absolute h-fit w-[95%] flex items-center justify-between">
+        <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent z-10 pointer-events-none" />
+        
+        <div className="absolute z-20 h-fit w-[95%] flex items-center justify-between">
           <span
             onClick={handlePrev}
             className="h-[3rem] w-[2rem] bg-transperent-button hover:bg-transperent-button-hover transition-colors cursor-pointer flex items-center justify-center rounded-md"
