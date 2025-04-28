@@ -13,8 +13,8 @@ const HomePageCategory = () => {
     <section className="md:max-w-[75vw] my-3 sm:my-5 w-[97vw] m-auto">
       <div className="titleWrap flex gap-2">
         <div className="title w-full">
-          <h2 className="title text-xl font-medium sm:text-2xl px-3 py-1 sm:px-4 sm:py-1.5 rounded-md sm:rounded-xl text-white bg-[linear-gradient(to_right,#e53935,#e35d5b)] md:font-semibold">
-            Explore Category
+          <h2 className="title text-xl sm:text-2xl px-3 py-1 sm:px-4 sm:py-1.5 rounded-md sm:rounded-xl text-white bg-[linear-gradient(to_right,#e53935,#e35d5b)] md:font-semibold">
+            Explore Categories
           </h2>
         </div>
         <div className="viweMode flex bg-[#f0f3f5] dark:bg-[#282931] w-fit rounded-md sm:rounded-xl">
