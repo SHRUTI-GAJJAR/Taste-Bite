@@ -1,5 +1,6 @@
 import NavBar from '../components/Navbar/NavBar'
 import Carousel from '../components/Slider/Carousel'
+import HomePageCategory from '../components/Famous-Category/HomePageCategory';
 import "../App.css";
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
     <header className='w-full h-screen bg-main dark:bg-main-dark transition-colors'>
       <NavBar></NavBar>
       <Carousel></Carousel>
+      <HomePageCategory></HomePageCategory>
     </header>
   )
 }
