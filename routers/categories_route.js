@@ -67,27 +67,35 @@ router.get('/', async (req, resp) => {
     }
 });
 
-router.put('/:id', async (req, resp) => {
+router.put('/:id', uploadCategory.single('Thumbnail_img'), async (req, res) => {
     try {
-        const categoriesId = req.params.id;
-        const updateData = req.body;
+        const { id } = req.params;
+        const { Category, CategoryDescription } = req.body;
 
-        const response = await categories.findByIdAndUpdate(categoriesId, updateData, {
-            new: true,
-            runValidators: true,
-        })
-
-        if (!response) {
-            return resp.status(404).json({ error: 'Items not found' });
+        // Find the existing category
+        const existingCategory = await categories.findById(id);
+        if (!existingCategory) {
+            return res.status(404).json({ error: 'Category not found' });
         }
-        console.log('data updated'.blue);
-        resp.status(200).json(response);
 
+        // If a new file is uploaded, update the Thumbnail_img path
+        if (req.file) {
+            existingCategory.Thumbnail_img = `Category/${req.file.filename}`;
+        }
+
+        // Update other fields if provided
+        if (Category) existingCategory.Category = Category;
+        if (CategoryDescription) existingCategory.CategoryDescription = CategoryDescription;
+
+        // Save the updated document
+        await existingCategory.save();
+
+        res.status(200).json({ message: 'Category updated successfully', category: existingCategory });
     } catch (err) {
-        console.log(err);
-        resp.status(500).json({ error: 'Internal Server error' });
+        console.error(err);
+        res.status(500).json({ error: 'Internal Server Error' });
     }
-})
+});
 
 //Delete Data:
 router.delete('/:id', async (req, resp) => {
