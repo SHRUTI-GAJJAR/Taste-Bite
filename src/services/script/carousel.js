@@ -1,6 +1,7 @@
 import slide1 from '../../assets/image/Slider-Images/slider1.jpg';
 import slide2 from '../../assets/image/Slider-Images/slider2.jpeg';
 import slide3 from '../../assets/image/Slider-Images/slider3.jpeg';
+import slide4 from '../../assets/image/Slider-Images/slider4.jpeg';
 
 const sliderData = [
   {
@@ -23,8 +24,14 @@ const sliderData = [
     categoriy: "Fast Food",
     mainText: "Savor the Comfort of Maggi!",
     subText: "Relish the warmth and flavor of Maggi noodles, served in a delicious soup. A perfect comfort food for any time of the day!"
-  }
-  
+  },
+  {
+    url: slide4,
+    emoji: ["🥗", "🍤", "🍢"], 
+    categoriy: "Starters",
+    mainText: "Kickstart Your Meal with Flavor!",
+    subText: "Delight in crispy starters like spring rolls, tempura, and skewers — the perfect beginning to a mouthwatering dining experience!"
+  }  
 ];
 
 export default sliderData;

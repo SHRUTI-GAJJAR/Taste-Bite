@@ -3,7 +3,6 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import sliderData from "../../services/script/carousel";
 import "../../App.css";
 
-// Slide image component
 const SlideImage = ({ url, index }) => (
   <div
     key={index}
@@ -17,7 +16,6 @@ const SlideImage = ({ url, index }) => (
   </div>
 );
 
-// Emoji and Category component
 const EmojiAndCategory = ({ emojis, category }) => (
   <div className="flex gap-1.5 text-[0.825rem] xl:text-sm md:text-[0.825rem] bg-bage-blur backdrop-blur-3xl w-fit text-white py-1 px-3 rounded-full">
     <div className="flex gap-1">
@@ -31,7 +29,6 @@ const EmojiAndCategory = ({ emojis, category }) => (
   </div>
 );
 
-// Arrow Button component
 const ArrowButton = ({ direction, onClick }) => {
   const Icon = direction === "left" ? IoIosArrowBack : IoIosArrowForward;
   return (
@@ -46,15 +43,21 @@ const ArrowButton = ({ direction, onClick }) => {
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [mainTextKey, setMainTextKey] = useState(`${Date.now()}-${Math.random()}`);
-  const [subTextKey, setSubTextKey] = useState(`${Date.now()}-${Math.random()}`);
+  const [mainTextKey, setMainTextKey] = useState(
+    `${Date.now()}-${Math.random()}`
+  );
+  const [subTextKey, setSubTextKey] = useState(
+    `${Date.now()}-${Math.random()}`
+  );
 
   const handleNext = () => {
     setCurrentIndex((prev) => (prev + 1) % sliderData.length);
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + sliderData.length) % sliderData.length);
+    setCurrentIndex(
+      (prev) => (prev - 1 + sliderData.length) % sliderData.length
+    );
   };
 
   useEffect(() => {
@@ -64,7 +67,6 @@ const Carousel = () => {
 
   return (
     <section className="relative overflow-hidden md:max-w-[75vw] w-[97vw] lg:h-[28rem] md:h-[21rem] rounded-2xl m-auto flex items-center justify-center">
-      {/* Slide Images */}
       <div className="sliderWrap bg-red-500 rounded-2xl overflow-hidden flex items-center justify-start">
         <div
           className="flex transition-transform duration-500 ease-in-out"
@@ -76,19 +78,14 @@ const Carousel = () => {
         </div>
       </div>
 
-      {/* Black to Transparent Background */}
       <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent z-10 pointer-events-none" />
 
-      {/* Text Content */}
       <div className="absolute w-[95%] flex flex-col h-[85%] sm:h-[91%] xl:h-[91%] justify-between bottom-5 left-5 z-30 text-white font-semibold">
-        
-        {/* Emoji and Category */}
         <EmojiAndCategory
           emojis={sliderData[currentIndex].emoji}
           category={sliderData[currentIndex].categoriy}
         />
 
-        {/* Main and Sub Text */}
         <div className="flex flex-col xl:gap-2 gap-0">
           <p
             key={mainTextKey}
@@ -106,7 +103,6 @@ const Carousel = () => {
         </div>
       </div>
 
-      {/* Navigation Arrows */}
       <div className="absolute z-40 h-fit w-[95%] xl:w-[99%] flex items-center justify-between">
         <ArrowButton direction="left" onClick={handlePrev} />
         <ArrowButton direction="right" onClick={handleNext} />
