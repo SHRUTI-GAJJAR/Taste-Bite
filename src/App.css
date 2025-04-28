@@ -1,11 +1,15 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+html,body {
+  height: 100%;
+}
+
 @theme {
   --color-white: #ffffff;
   --color-black: #000000;
   --color-main-light: rgba(255, 255, 255);
-  --color-main-dark: #1f1f1f;
+  --color-main-dark: #121212;
   --color-font-light: rgba(0, 0, 0);
   --color-font-dark: rgb(153 161 175 / 78%);
   --color-theme-light: #ff642f;

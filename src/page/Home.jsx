@@ -6,7 +6,7 @@ import "../App.css";
 const Home = () => {
 
   return (
-    <header className='w-full h-screen bg-main dark:bg-main-dark transition-colors'>
+    <header className='w-full h-fit bg-main dark:bg-main-dark transition-colors'>
       <NavBar></NavBar>
       <Carousel></Carousel>
       <HomePageCategory></HomePageCategory>
