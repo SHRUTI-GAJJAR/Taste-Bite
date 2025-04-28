@@ -80,7 +80,7 @@ const Carousel = () => {
       <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent z-10 pointer-events-none" />
 
       {/* Text Content */}
-      <div className="absolute w-fit flex flex-col h-[88%] xl:h-[91%] justify-between bottom-5 left-5 z-30 text-white font-semibold">
+      <div className="absolute w-[95%] flex flex-col h-[85%] sm:h-[91%] xl:h-[91%] justify-between bottom-5 left-5 z-30 text-white font-semibold">
         
         {/* Emoji and Category */}
         <EmojiAndCategory
@@ -89,17 +89,17 @@ const Carousel = () => {
         />
 
         {/* Main and Sub Text */}
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col xl:gap-2 gap-0">
           <p
             key={mainTextKey}
-            className="opacity-0 w-[90%] text-[1.5rem] sm:text-3xl md:text-[2.5rem] xl:text-5xl animate-fadeIn"
+            className="opacity-0 w-[90%] text-[1.2rem] sm:text-3xl md:text-[2.5rem] xl:text-5xl animate-fadeIn"
           >
             {sliderData[currentIndex].mainText}
           </p>
 
           <p
             key={subTextKey}
-            className="opacity-0 text-[0.825rem] lg:text-sm text-gray-300 animate-fadeIn w-[50%] sm:w-[65%] md:w-[80%] lg:w-[95%] truncate hover:overflow-visible hover:whitespace-normal hover:text-clip transition-all duration-300"
+            className="opacity-0 text-[0.825rem] lg:text-sm text-gray-300 animate-fadeIn w-[95%] truncate hover:overflow-visible hover:whitespace-normal hover:text-clip transition-all duration-300"
           >
             {sliderData[currentIndex].subText}
           </p>
