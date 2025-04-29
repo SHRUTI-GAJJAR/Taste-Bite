@@ -1,146 +1,49 @@
-import React, { useEffect, useState } from "react";
-import list from "../../../src/assets/svg/listMode.svg";
-import grid from "../../../src/assets/svg/gridMode.svg";
+import React, { useEffect } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import img from "../../assets/image/img.jpg";
 import { useApi } from "../../context/apiContext";
+import { useViewMode } from "../../context/viweModeContext";
+import ViweMode from "./ViweMode";
 
 const HomePageCategory = () => {
-  const [viewMode, setViewMode] = useState("list");
   const { category, fetchCategories } = useApi();
+  const { viewMode } = useViewMode();
 
   useEffect(() => {
     fetchCategories();
   }, []);
 
-  const handleModeStyle = (mode) => {
-    setViewMode(mode);
-  };
-
   return (
-    <section className="w-[97vw] md:max-w-[75vw] m-auto my-3 sm:my-6">
+    <section className="m-auto my-3 w-[97vw] sm:my-6 md:max-w-[75vw]">
       <div className="flex gap-2">
         <div className="w-full">
-          <h2 className="text-xl sm:text-2xl px-3 py-1 sm:px-4 sm:py-1.5 rounded-md sm:rounded-xl text-white bg-[linear-gradient(to_right,#e53935,#e35d5b)] md:font-semibold">
+          <h2 className="rounded-md bg-[linear-gradient(to_right,#e53935,#e35d5b)] px-3 py-1 text-xl font-semibold text-white sm:rounded-xl sm:px-4 sm:py-1.5 sm:text-2xl md:font-semibold">
             Explore Categories
           </h2>
         </div>
-
-        <div className="flex bg-[#f0f3f5] dark:bg-[#282931] w-fit rounded-md sm:rounded-xl">
-          <span
-            onClick={() => handleModeStyle("list")}
-            className={`cursor-pointer transition border rounded-md sm:rounded-xl h-9 sm:h-11 w-9 sm:w-11 flex items-center justify-center ${
-              viewMode === "list"
-                ? "border-theme-light bg-transperent-dark"
-                : "border-transparent bg-transparent"
-            }`}
-          >
-            <img src={list} className="h-5 sm:h-7" alt="List View" />
-          </span>
-
-          <span
-            onClick={() => handleModeStyle("grid")}
-            className={`cursor-pointer transition border rounded-md sm:rounded-xl h-9 sm:h-11 w-9 sm:w-11 flex items-center justify-center ${
-              viewMode === "grid"
-                ? "border-theme-light bg-transperent-dark"
-                : "border-transparent bg-transparent"
-            }`}
-          >
-            <img src={grid} className="h-5 sm:h-7" alt="Grid View" />
-          </span>
-        </div>
+        <ViweMode></ViweMode>
       </div>
-            {console.log(category)}
       <div className="displayCategory my-2">
-        <ul className="w-full flex flex-wrap justify-between">
-          <li className="flex md:rounded-xl rounded-md bg-[#f0f3f5] dark:bg-[#1e1e1e] lg:w-[49.5%]  w-full p-1 items-center justify-between my-1.5 border-theme-light dark:border-[#2d2d2d] border-1 h-fit">
-            <div className="imgAndText lg:w-[70%] w-[75%] xl:w-[70%] 2xl:w-[80%] flex items-center gap-2">
+        <ul className="flex w-full flex-wrap justify-between">
+          <li className="my-1.5 flex w-full items-center justify-between rounded-md border border-theme-light bg-[#f0f3f5] p-1 dark:border-[#2d2d2d] dark:bg-[#1e1e1e] md:rounded-xl lg:w-[49.5%]">
+            <div className="imgAndText flex w-[75%] items-center gap-2 xl:w-[70%] 2xl:w-[80%] lg:w-[70%]">
               <img
                 src={img}
-                className="md:rounded-xl rounded-md h-15 object-cover"
+                className="h-15 rounded-md object-cover md:rounded-xl"
                 alt="Categoriesimg"
               />
-              <div className="subText md:w-full w-[90%]">
-                <p className="md:text-xl font-semibold mt-1 mb-1.5 text-[1.1rem] dark:text-white">
+              <div className="subText w-[90%] md:w-full">
+                <p className="mt-1 mb-1.5 text-[1.1rem] font-semibold dark:text-white md:text-xl">
                   Creamy Tomato Soup
                 </p>
-                <p className="text-[0.825rem] text-gray-600 dark:text-gray-400 w-[90%] truncate hover:overflow-visible hover:whitespace-normal hover:text-clip ">
+                <p className="w-[90%] truncate text-[0.825rem] text-gray-600 hover:overflow-visible hover:whitespace-normal hover:text-clip dark:text-gray-400">
                   Cool down with a variety of chilled juices, smoothies, and
                   iced drinks. Perfect for hot days and a refreshing boost!
                 </p>
               </div>
             </div>
-            <div className="cursor-pointer h-[3rem] min-w-[3.5rem] flex items-center justify-center">
-              <span className="redirectIcon hover:scale-110 transition h-8 w-8 rounded-md md:rounded-xl flex items-center justify-center bg-[linear-gradient(to_right,#e53935,#e35d5b)]">
-                <IoIosArrowForward className="text-white" />
-              </span>
-            </div>
-          </li>
-          <li className="flex md:rounded-xl rounded-md bg-[#f0f3f5] dark:bg-[#1e1e1e] lg:w-[49.5%]  w-full p-1 items-center justify-between my-1.5 border-theme-light dark:border-[#2d2d2d] border-1 h-fit">
-            <div className="imgAndText lg:w-[70%] w-[75%] xl:w-[70%] 2xl:w-[80%] flex items-center gap-2">
-              <img
-                src={img}
-                className="md:rounded-xl rounded-md h-15 object-cover"
-                alt="Categoriesimg"
-              />
-              <div className="subText md:w-full w-[90%]">
-                <p className="md:text-xl font-semibold mt-1 mb-1.5 text-[1.1rem] dark:text-white">
-                  Creamy Tomato Soup
-                </p>
-                <p className="text-[0.825rem] text-gray-600 dark:text-gray-400 w-[90%] truncate hover:overflow-visible hover:whitespace-normal hover:text-clip ">
-                  Cool down with a variety of chilled juices, smoothies, and
-                  iced drinks. Perfect for hot days and a refreshing boost!
-                </p>
-              </div>
-            </div>
-            <div className="cursor-pointer h-[3rem] min-w-[3.5rem] flex items-center justify-center">
-              <span className="redirectIcon hover:scale-110 transition h-8 w-8 rounded-md md:rounded-xl flex items-center justify-center bg-[linear-gradient(to_right,#e53935,#e35d5b)]">
-                <IoIosArrowForward className="text-white" />
-              </span>
-            </div>
-          </li>
-          <li className="flex md:rounded-xl rounded-md bg-[#f0f3f5] dark:bg-[#1e1e1e] lg:w-[49.5%]  w-full p-1 items-center justify-between my-1.5 border-theme-light dark:border-[#2d2d2d] border-1 h-fit">
-            <div className="imgAndText lg:w-[70%] w-[75%] xl:w-[70%] 2xl:w-[80%] flex items-center gap-2">
-              <img
-                src={img}
-                className="md:rounded-xl rounded-md h-15 object-cover"
-                alt="Categoriesimg"
-              />
-              <div className="subText md:w-full w-[90%]">
-                <p className="md:text-xl font-semibold mt-1 mb-1.5 text-[1.1rem] dark:text-white">
-                  Creamy Tomato Soup
-                </p>
-                <p className="text-[0.825rem] text-gray-600 dark:text-gray-400 w-[90%] truncate hover:overflow-visible hover:whitespace-normal hover:text-clip ">
-                  Cool down with a variety of chilled juices, smoothies, and
-                  iced drinks. Perfect for hot days and a refreshing boost!
-                </p>
-              </div>
-            </div>
-            <div className="cursor-pointer h-[3rem] min-w-[3.5rem] flex items-center justify-center">
-              <span className="redirectIcon hover:scale-110 transition h-8 w-8 rounded-md md:rounded-xl flex items-center justify-center bg-[linear-gradient(to_right,#e53935,#e35d5b)]">
-                <IoIosArrowForward className="text-white" />
-              </span>
-            </div>
-          </li>
-          <li className="flex md:rounded-xl rounded-md bg-[#f0f3f5] dark:bg-[#1e1e1e] lg:w-[49.5%]  w-full p-1 items-center justify-between my-1.5 border-theme-light dark:border-[#2d2d2d] border-1 h-fit">
-            <div className="imgAndText lg:w-[70%] w-[75%] xl:w-[70%] 2xl:w-[80%] flex items-center gap-2">
-              <img
-                src={img}
-                className="md:rounded-xl rounded-md h-15 object-cover"
-                alt="Categoriesimg"
-              />
-              <div className="subText md:w-full w-[90%]">
-                <p className="md:text-xl font-semibold mt-1 mb-1.5 text-[1.1rem] dark:text-white">
-                  Creamy Tomato Soup
-                </p>
-                <p className="text-[0.825rem] text-gray-600 dark:text-gray-400 w-[90%] truncate hover:overflow-visible hover:whitespace-normal hover:text-clip ">
-                  Cool down with a variety of chilled juices, smoothies, and
-                  iced drinks. Perfect for hot days and a refreshing boost!
-                </p>
-              </div>
-            </div>
-            <div className="cursor-pointer h-[3rem] min-w-[3.5rem] flex items-center justify-center">
-              <span className="redirectIcon hover:scale-110 transition h-8 w-8 rounded-md md:rounded-xl flex items-center justify-center bg-[linear-gradient(to_right,#e53935,#e35d5b)]">
+            <div className="flex h-[3rem] min-w-[3.5rem] cursor-pointer items-center justify-center">
+              <span className="redirectIcon flex h-8 w-8 items-center justify-center rounded-md bg-[linear-gradient(to_right,#e53935,#e35d5b)] transition hover:scale-110 md:rounded-xl">
                 <IoIosArrowForward className="text-white" />
               </span>
             </div>

@@ -19,7 +19,7 @@ const SearchBox = () => {
           type="text"
           value={serachText}
           onChange={(event) => setSearchText(event.target.value)}
-          className="w-full text-[1rem] sm:text-xl text-theme-light outline-0"
+          className="w-full text-[1rem] sm:text-xl placeholder-gray-500 text-theme-light outline-0"
           placeholder="Search Recipe"
         />
       </div>
