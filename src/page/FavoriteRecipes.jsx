@@ -1,12 +1,20 @@
-import React from "react";
-import NavBar from '../components/Navbar/NavBar'
+import NavBar from "../components/Navbar/NavBar";
+import "../App.css";
+import SearchBox from "../components/Navbar/SearchBox";
 
-const FavoriteRecipes = () => {
+const Home = () => {
   return (
-    <header className="w-full h-screen bg-main dark:bg-main-dark transition-colors">
-      <NavBar></NavBar>
-    </header>
+    <div className="w-full relative h-full bg-main dark:bg-main-dark transition-colors">
+      <header>
+        <NavBar />
+        <SearchBox />
+      </header>
+
+      <main>
+        
+      </main>
+    </div>
   );
 };
 
-export default FavoriteRecipes;
+export default Home;

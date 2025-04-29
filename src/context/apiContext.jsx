@@ -10,8 +10,8 @@ export const ApiProvider = ({ children }) => {
 
   const fetchCategories = async () => {
     try {
-      const res = await axiosInstance.get("category-list");
-      setCategory(res.data.data);
+      const res = await axiosInstance.get("/categories");
+      setCategory(res.data);
       console.log(res.data);
       
     } catch (error) {

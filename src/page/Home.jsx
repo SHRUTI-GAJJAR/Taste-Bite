@@ -1,17 +1,21 @@
-import NavBar from '../components/Navbar/NavBar'
-import Carousel from '../components/Slider/Carousel'
-import HomePageCategory from '../components/Famous-Category/HomePageCategory';
+import NavBar from "../components/Navbar/NavBar";
+import Carousel from "../components/Slider/Carousel";
+import HomePageCategory from "../components/Famous-Category/HomePageCategory";
 import "../App.css";
+import SearchBox from "../components/Navbar/SearchBox";
 
 const Home = () => {
-
   return (
-    <header className='w-full h-fit bg-main dark:bg-main-dark transition-colors'>
-      <NavBar></NavBar>
-      <Carousel></Carousel>
-      <HomePageCategory></HomePageCategory>
-    </header>
-  )
-}
+    <div className="w-full h-full bg-main dark:bg-main-dark transition-colors">
+        <NavBar />
+        <SearchBox />
 
-export default Home
+      <main>
+        <Carousel />
+        <HomePageCategory />
+      </main>
+    </div>
+  );
+};
+
+export default Home;

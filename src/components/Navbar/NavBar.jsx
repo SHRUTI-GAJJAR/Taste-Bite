@@ -2,12 +2,11 @@ import React from "react";
 import testBiteLogo from "../../assets/svg/testBiteLogo.svg";
 import { NavLink } from "react-router";
 import Navigations from "./Navigations";
-import SearchBox from "./SearchBox";
 
 const NavBar = () => {
 
   return (
-    <nav className="w-full h-fit flex flex-col py-2 justify-center items-center">
+    <nav className="w-full sticky top-0 bg-white dark:bg-main-dark z-50 h-fit flex flex-col pt-2 justify-center items-center">
       <div className="logoWrap cursor-pointer mb-4">
         <NavLink to="/">
           <img className="h-10 md:h-20" src={testBiteLogo} alt="logoIcon" />
@@ -18,8 +17,7 @@ const NavBar = () => {
           <Navigations></Navigations>
         </ul>
       </div>
-      <i className="line h-1.5 w-full border-0.1 border-b border-dashed border-theme-light"></i>
-      <SearchBox />
+      <i className="line h-1.5 w-full border-b-3 border-dashed border-theme-light"></i>
     </nav>
   );
 };
