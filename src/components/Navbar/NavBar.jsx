@@ -6,7 +6,7 @@ import Navigations from "./Navigations";
 const NavBar = () => {
 
   return (
-    <nav className="w-full sticky top-0 bg-white dark:bg-main-dark z-50 h-fit flex flex-col pt-2 justify-center items-center">
+    <nav className="w-full bg-white sticky top-0 dark:bg-main-dark z-50 h-fit flex flex-col pt-2 justify-center items-center">
       <div className="logoWrap cursor-pointer mb-4">
         <NavLink to="/">
           <img className="h-10 md:h-20" src={testBiteLogo} alt="logoIcon" />
