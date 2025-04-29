@@ -13,13 +13,13 @@ export const ApiProvider = ({ children }) => {
     try {
       const res = await axiosInstance.get("/categories");
       setCategory(res.data);
-      setLoading(false);
+      setLoading(true);
       console.log(res.data);
     } catch (error) {
       console.error("Failed to fetch categories", error);
       setCategory([]);
     } finally {
-      setLoading(false);
+      setLoading(true);
     }
   };
   

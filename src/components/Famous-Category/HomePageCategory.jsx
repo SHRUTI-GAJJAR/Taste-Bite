@@ -5,7 +5,7 @@ import { useApi } from "../../context/apiContext";
 import { useViewMode } from "../../context/viweModeContext";
 import ViweMode from "./ViweMode";
 import NotFound from "../../assets/image/NOTFOUND!.png";
-import "../../App.css"
+import "../../App.css";
 
 const HomePageCategory = () => {
   const { category, fetchCategories, Loading } = useApi();
@@ -32,9 +32,20 @@ const HomePageCategory = () => {
           } w-full flex-wrap justify-between`}
         >
           {Loading ? (
-            <div className="bg-gray-100 flex flex-wrap justify-center gap-4 p-6">
-              
-            </div>
+            <ul className="flex h-fit w-full flex-col gap-3.5">
+              {
+                [...Array(8)].map((_, index) => {
+
+              return (<li key={index} className="w-full gap-2 h-16 px-2.5 rounded-md items-center flex bg-[#f0f3f5]">
+                <div className="imgLoading animate-blink h-11 rounded-md w-11 bg-[#d8dee2]"></div>
+                <div className="w-full textLoadng flex flex-col gap-2">
+                  <p className="w-[80%] rounded-full animate-blink h-3 bg-[#d8dee2]"></p>
+                  <p className="w-[80%] rounded-full animate-blink h-3 bg-[#d8dee2]"></p>
+                </div>
+              </li>)
+                })
+              }
+            </ul>
           ) : category.length === 0 ? (
             <div className="text-center text-lg py-10 text-gray-400">
               No categories available
