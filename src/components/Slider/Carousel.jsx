@@ -65,6 +65,14 @@ const Carousel = () => {
     setSubTextKey(`${Date.now()}-${Math.random()}`);
   }, [currentIndex]);
 
+  useEffect(() =>{
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % sliderData.length);
+    }, 4000);
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <section className="relative overflow-hidden md:max-w-[75vw] w-[97vw] lg:h-[28rem] md:h-[21rem] rounded-2xl m-auto flex items-center justify-center">
       <div className="sliderWrap bg-red-500 rounded-2xl overflow-hidden flex items-center justify-start">
