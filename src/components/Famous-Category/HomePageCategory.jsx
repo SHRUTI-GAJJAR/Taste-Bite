@@ -61,7 +61,76 @@ const HomePageCategory = () => {
                 alt="Categoriesimg"
               />
               <div className="subText md:w-full w-[90%]">
-                <p className="md:text-xl text-[1.1rem] dark:text-white">
+                <p className="md:text-xl font-semibold mt-1 mb-1.5 text-[1.1rem] dark:text-white">
+                  Creamy Tomato Soup
+                </p>
+                <p className="text-[0.825rem] text-gray-600 dark:text-gray-400 w-[90%] truncate hover:overflow-visible hover:whitespace-normal hover:text-clip ">
+                  Cool down with a variety of chilled juices, smoothies, and
+                  iced drinks. Perfect for hot days and a refreshing boost!
+                </p>
+              </div>
+            </div>
+            <div className="cursor-pointer h-[3rem] min-w-[3.5rem] flex items-center justify-center">
+              <span className="redirectIcon hover:scale-110 transition h-8 w-8 rounded-md md:rounded-xl flex items-center justify-center bg-[linear-gradient(to_right,#e53935,#e35d5b)]">
+                <IoIosArrowForward className="text-white" />
+              </span>
+            </div>
+          </li>
+          <li className="flex md:rounded-xl rounded-md bg-[#f0f3f5] dark:bg-[#1e1e1e] lg:w-[49.5%]  w-full p-1 items-center justify-between my-1.5 border-theme-light dark:border-[#2d2d2d] border-1 h-fit">
+            <div className="imgAndText lg:w-[70%] w-[75%] xl:w-[70%] 2xl:w-[80%] flex items-center gap-2">
+              <img
+                src={img}
+                className="md:rounded-xl rounded-md h-15 object-cover"
+                alt="Categoriesimg"
+              />
+              <div className="subText md:w-full w-[90%]">
+                <p className="md:text-xl font-semibold mt-1 mb-1.5 text-[1.1rem] dark:text-white">
+                  Creamy Tomato Soup
+                </p>
+                <p className="text-[0.825rem] text-gray-600 dark:text-gray-400 w-[90%] truncate hover:overflow-visible hover:whitespace-normal hover:text-clip ">
+                  Cool down with a variety of chilled juices, smoothies, and
+                  iced drinks. Perfect for hot days and a refreshing boost!
+                </p>
+              </div>
+            </div>
+            <div className="cursor-pointer h-[3rem] min-w-[3.5rem] flex items-center justify-center">
+              <span className="redirectIcon hover:scale-110 transition h-8 w-8 rounded-md md:rounded-xl flex items-center justify-center bg-[linear-gradient(to_right,#e53935,#e35d5b)]">
+                <IoIosArrowForward className="text-white" />
+              </span>
+            </div>
+          </li>
+          <li className="flex md:rounded-xl rounded-md bg-[#f0f3f5] dark:bg-[#1e1e1e] lg:w-[49.5%]  w-full p-1 items-center justify-between my-1.5 border-theme-light dark:border-[#2d2d2d] border-1 h-fit">
+            <div className="imgAndText lg:w-[70%] w-[75%] xl:w-[70%] 2xl:w-[80%] flex items-center gap-2">
+              <img
+                src={img}
+                className="md:rounded-xl rounded-md h-15 object-cover"
+                alt="Categoriesimg"
+              />
+              <div className="subText md:w-full w-[90%]">
+                <p className="md:text-xl font-semibold mt-1 mb-1.5 text-[1.1rem] dark:text-white">
+                  Creamy Tomato Soup
+                </p>
+                <p className="text-[0.825rem] text-gray-600 dark:text-gray-400 w-[90%] truncate hover:overflow-visible hover:whitespace-normal hover:text-clip ">
+                  Cool down with a variety of chilled juices, smoothies, and
+                  iced drinks. Perfect for hot days and a refreshing boost!
+                </p>
+              </div>
+            </div>
+            <div className="cursor-pointer h-[3rem] min-w-[3.5rem] flex items-center justify-center">
+              <span className="redirectIcon hover:scale-110 transition h-8 w-8 rounded-md md:rounded-xl flex items-center justify-center bg-[linear-gradient(to_right,#e53935,#e35d5b)]">
+                <IoIosArrowForward className="text-white" />
+              </span>
+            </div>
+          </li>
+          <li className="flex md:rounded-xl rounded-md bg-[#f0f3f5] dark:bg-[#1e1e1e] lg:w-[49.5%]  w-full p-1 items-center justify-between my-1.5 border-theme-light dark:border-[#2d2d2d] border-1 h-fit">
+            <div className="imgAndText lg:w-[70%] w-[75%] xl:w-[70%] 2xl:w-[80%] flex items-center gap-2">
+              <img
+                src={img}
+                className="md:rounded-xl rounded-md h-15 object-cover"
+                alt="Categoriesimg"
+              />
+              <div className="subText md:w-full w-[90%]">
+                <p className="md:text-xl font-semibold mt-1 mb-1.5 text-[1.1rem] dark:text-white">
                   Creamy Tomato Soup
                 </p>
                 <p className="text-[0.825rem] text-gray-600 dark:text-gray-400 w-[90%] truncate hover:overflow-visible hover:whitespace-normal hover:text-clip ">
