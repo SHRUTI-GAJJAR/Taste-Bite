@@ -22,7 +22,7 @@ export const ApiProvider = ({ children }) => {
       setLoading(false);
     }
   };
-
+  
   useEffect(() => {
     fetchCategories();
   }, []);
