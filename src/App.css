@@ -1,7 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-html,body {
+html,
+body {
   height: 100%;
   margin: 0;
 }
@@ -26,7 +27,7 @@ html,body {
   --color-transperent-button: rgba(128, 128, 128, 0.8);
   --color-transperent-button-hover: rgba(128, 128, 128, 0.4);
 
-  --color-bage-blur: rgba(255, 255, 255,);
+  --color-bage-blur: rgba(255, 255, 255);
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
@@ -50,12 +51,22 @@ html,body {
   color: #e2e0e0;
 }
 
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
-.animate-blink {
-  animation: blink 2s infinite;
+.animate-shimmer {
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite linear;
 }
-

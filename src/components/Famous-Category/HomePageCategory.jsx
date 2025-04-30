@@ -32,15 +32,15 @@ const HomePageCategory = () => {
           } w-full flex-wrap justify-between`}
         >
           {Loading ? (
-            <ul className="flex h-fit w-full flex-col gap-3.5">
+            <ul className="flex h-fit w-full lg:flex-row lg:flex-wrap flex-col gap-3.5">
               {
                 [...Array(8)].map((_, index) => {
 
-              return (<li key={index} className="w-full gap-2 h-16 px-2.5 rounded-md items-center flex bg-[#f0f3f5]">
-                <div className="imgLoading animate-blink h-11 rounded-md w-11 bg-[#d8dee2]"></div>
+              return (<li key={index} className="w-full lg:w-[49%] gap-2 h-16 px-2.5 rounded-md items-center dark:bg-[#1a1a1a] flex bg-[#f0f3f5]">
+                <div className="imgLoading animate-shimmer dark:bg-[#2a2e32] h-11 rounded-md w-11 bg-[#d8dee2]"></div>
                 <div className="w-full textLoadng flex flex-col gap-2">
-                  <p className="w-[80%] rounded-full animate-blink h-3 bg-[#d8dee2]"></p>
-                  <p className="w-[80%] rounded-full animate-blink h-3 bg-[#d8dee2]"></p>
+                  <p className="w-[40%] rounded-full animate-shimmer dark:bg-[#3a3f44] h-3 bg-[#d8dee2]"></p>
+                  <p className="w-[100%] rounded-full animate-shimmer dark:bg-[#3a3f44] h-3 bg-[#d8dee2]"></p>
                 </div>
               </li>)
                 })
