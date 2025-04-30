@@ -49,7 +49,7 @@ const GridCategory = () => {
                   {Item.CategoryDescription}
                 </p>
               </div>
-              <button className="shadow-md redirectButton h-8 w-[100%] cursor-pointer rounded-md flex items-center justify-center bg-[linear-gradient(to_right,#e53935,#e35d5b)]">
+              <button className="shadow-md redirectButton h-8 w-[100%] cursor-pointer rounded-md flex items-center justify-center bg-[#ff5a5f]">
                 <p className="text-white font-semibold">Explore More</p>
                 <IoIosArrowForward className="text-xl text-white" />
               </button>
