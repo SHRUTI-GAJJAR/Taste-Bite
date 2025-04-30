@@ -4,12 +4,9 @@ import SearchBox from "../components/Navbar/SearchBox";
 
 const Home = () => {
   return (
-    <div className="w-full relative h-full bg-main dark:bg-main-dark transition-colors">
-      <header>
+    <div className="w-full relative h-full bg-white dark:bg-main-dark transition-colors">
         <NavBar />
         <SearchBox />
-      </header>
-
       <main>
         
       </main>

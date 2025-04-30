@@ -1,25 +1,25 @@
-import React from 'react'
-import Home from '../../page/Home'
-import Recipe from '../../page/Recipe'
-import Categories from '../../page/Categories'
-import { Route, Routes } from 'react-router'
-import AddProduct from '../../page/AddProduct'
-import DeleteProduct from '../../page/DeleteProduct'
-import UpdateProduct from '../../page/UpdateProduct'
-import FavoriteRecipes from '../../page/FavoriteRecipes'
+import React from "react";
+import Home from "../../page/Home";
+import Recipe from "../../page/Recipe";
+import Categories from "../../page/Categories";
+import { Route, Routes } from "react-router";
+import AddProduct from "../../page/AddProduct";
+import DeleteProduct from "../../page/DeleteProduct";
+import UpdateProduct from "../../page/UpdateProduct";
+import FavoriteRecipes from "../../page/FavoriteRecipes";
 
 const Routing = () => {
   return (
     <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Recipe" element={<Recipe />} />
-        <Route path="/Categories" element={<Categories />} />
-        <Route path="/AddProduct" element={<AddProduct />} />
-        <Route path="/UpdateProduct" element={<UpdateProduct />} />
-        <Route path="/DeleteProduct" element={<DeleteProduct />} />
-        <Route path="/FavoriteRecipes" element={<FavoriteRecipes />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/Recipe" element={<Recipe />} />
+      <Route path="/Categories" element={<Categories />} />
+      <Route path="/AddProduct" element={<AddProduct />} />
+      <Route path="/UpdateProduct" element={<UpdateProduct />} />
+      <Route path="/DeleteProduct" element={<DeleteProduct />} />
+      <Route path="/FavoriteRecipes" element={<FavoriteRecipes />} />
     </Routes>
-  )
-}
+  );
+};
 
-export default Routing
+export default Routing;
