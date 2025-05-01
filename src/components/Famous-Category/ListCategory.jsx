@@ -49,7 +49,7 @@ const ListCategory = () => {
                 </div>
               </div>
               <div className="flex h-[3rem] min-w-[3.5rem] cursor-pointer items-center justify-center">
-                <span className="redirectIcon flex h-8 w-8 items-center justify-center rounded-md bg-[#ff5a5f] transition hover:scale-110 md:rounded-xl">
+                <span className="redirectIcon flex h-8 w-8 items-center justify-center rounded-md bg-[linear-gradient(to_right,#e53935,#e35d5b)] transition hover:scale-110 md:rounded-xl">
                   <IoIosArrowForward className="text-white" />
                 </span>
               </div>

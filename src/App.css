@@ -26,7 +26,7 @@ body {
   --color-transperent-light: #f4f4f5;
   --color-transperent-button: rgba(128, 128, 128, 0.8);
   --color-transperent-button-hover: rgba(128, 128, 128, 0.4);
-  --color-bage-blur: rgba(255, 255, 255,0);
+  --color-bage-blur: rgba(255, 255, 255, 0);
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
@@ -68,4 +68,24 @@ body {
   );
   background-size: 200% 100%;
   animation: shimmer 1.6s infinite linear;
+}
+
+
+.recipesSlider::-webkit-scrollbar {
+  width: 8px; 
+}
+
+.recipesSlider::-webkit-scrollbar-track {
+  background: #f0f3f5; 
+  border-radius: 4px; 
+  width: 8px; 
+}
+
+.recipesSlider::-webkit-scrollbar-thumb {
+  background: linear-gradient(to right,#e53935,#e35d5b); 
+  border-radius: 4px; 
+}
+
+.recipesSlider::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
 }

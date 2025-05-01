@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@lordicon/react": "^1.10.1",
     "@radix-ui/react-select": "^2.2.2",
     "@react-icons/all-files": "^4.1.0",
     "@svgr/webpack": "^8.1.0",
