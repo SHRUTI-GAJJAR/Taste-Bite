@@ -43,12 +43,12 @@ const NewRecipes = () => {
           </h2>
         </div>
         <div className="recipesSlider h-auto overflow-x-auto pb-[1rem] my-2">
-          <ul className="cardWrapper flex gap-2.5 h-auto w-full flex-nowrap whitespace-nowrap">
+          <ul className="cardWrapper flex gap-2.5 xl:gap-3 h-auto w-full flex-nowrap whitespace-nowrap">
             {[...Array(8)].map((_, index) => {
               return (
                 <li
                   key={index}
-                  className="recipeCard inline-block min-w-[48.5%] h-auto overflow-hidden 2xl:min-w-[24.36%] xl:min-w-[32.65%] lg:min-w-[32.4%] md:min-w-[49%] xxs:min-w-[32.2%]"
+                  className="recipeCard inline-block min-w-[48.5%] h-auto overflow-hidden 2xl:min-w-[24.2%] xl:min-w-[32.5%] lg:min-w-[32.4%] md:min-w-[49%] xxs:min-w-[32.2%]"
                 >
                   <article className="p-2 rounded-md border w-full border-theme-light md:rounded-2xl">
                     <figure className="relative rounded-md overflow-hidden w-full h-[8rem] md:rounded-xl 2xl:h-[14rem] md:h-[12rem]">
