@@ -27,6 +27,8 @@ body {
   --color-transperent-button: rgba(128, 128, 128, 0.8);
   --color-transperent-button-hover: rgba(128, 128, 128, 0.4);
   --color-bage-blur: rgba(255, 255, 255, 0);
+
+  --breakpoint-xxs: 600px;
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));

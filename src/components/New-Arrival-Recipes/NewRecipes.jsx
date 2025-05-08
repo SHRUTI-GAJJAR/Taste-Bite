@@ -48,19 +48,19 @@ const NewRecipes = () => {
               return (
                 <li
                   key={index}
-                  className="recipeCard inline-block min-w-[48.5%] h-auto overflow-hidden"
+                  className="recipeCard inline-block min-w-[48.5%] h-auto overflow-hidden 2xl:min-w-[24.36%] xl:min-w-[32.65%] lg:min-w-[32.4%] md:min-w-[49%] xxs:min-w-[32.2%]"
                 >
-                  <article className="p-2 rounded-md border w-full border-theme-light">
-                    <figure className="relative rounded-md overflow-hidden w-full h-[8rem]">
+                  <article className="p-2 rounded-md border w-full border-theme-light md:rounded-2xl">
+                    <figure className="relative rounded-md overflow-hidden w-full h-[8rem] md:rounded-xl 2xl:h-[14rem] md:h-[12rem]">
                       <div className="acatios w-full h-fit top-2 z-10 px-2 absolute flex items-center justify-between">
                         <div className="veg w-fit flex items-center justify-center">
-                          <span className="inline-block bg-white w-fit rounded-md">
-                            <img src={vage} alt="vegIcon" className="h-5 w-5" />
+                          <span>
+                            <img src={vage} alt="vegIcon" className="h-6 w-6" />
                           </span>
                         </div>
                         <div
                             onClick={() => handelBookmark(index)}
-                          className="saveRecipe bg-black min-h-8 min-w-8 rounded-full flex items-center justify-center"
+                          className="saveRecipe bg-black min-h-9 min-w-9 rounded-full flex items-center justify-center"
                           >
                           <span className="p-1 flex items-center justify-center">
                             <lord-icon
@@ -83,27 +83,27 @@ const NewRecipes = () => {
                     </figure>
                     <div className="recipeInformations py-1 flex flex-col gap-1 w-full h-fit">
                       <div className="recipeNameAndRating flex items-center justify-between">
-                        <h3 className="recipeName font-semibold text-[1.1rem]">
+                        <h3 className="recipeName font-semibold text-[1.1rem] 2xl:text-[1.5rem] md:text-xl xl:text-[1.35rem] ">
                           Tomato Sup
                         </h3>
-                        <div className="rating bg-green-500 w-fit flex items-center justify-center rounded-sm px-[0.3rem] py-[0.08rem] gap-0.5">
-                          <span className="ratingNumber text-sm text-white">
+                        <div className="rating bg-green-500 w-fit flex items-center justify-center rounded-sm px-[0.3rem] py-[0.08rem] gap-0.5 xl:rounded-md">
+                          <span className="ratingNumber text-sm xl:text-[0.925rem] 2xl:text-[1rem] text-white">
                             4.5
                           </span>
                           <span className="ratingIcon">
-                            <TiStarFullOutline className="text-white text-sm" />
+                            <TiStarFullOutline className="text-white text-sm xl:text-[0.925rem] 2xl:text-[1rem]" />
                           </span>
                         </div>
                       </div>
-                      <div className="category rounded-full flex w-fit items-center gap-1 py-0.5 px-2 bg-gray-700">
+                      <div className="category rounded-full flex w-fit items-center gap-1 py-0.5 px-2 bg-gray-700 2xl:px-3 ">
                         <span className="catagoryIcon">
                           <img
                             src={vegetarian}
-                            className="h-4"
+                            className="h-4.5"
                             alt="vegetarianIcon"
                           />
                         </span>
-                        <p className="categoryName text-white text-sm">
+                        <p className="categoryName text-white text-sm 2xl:text-[1rem] xl:text-[0.925rem]">
                           <span>Vegetarian</span>
                         </p>
                       </div>
@@ -111,23 +111,23 @@ const NewRecipes = () => {
                       <div className="shareAndCookTime flex items-center justify-between my-1">
                         <div className="ShareIcon cursor-pointer flex w-fit border-1 border-theme-light rounded-full px-1.5 items-center justify-center gap-1 bg-transperent-dark">
                           <span className="icon">
-                            <MdShare className="text-theme-light" />
+                            <MdShare className="text-theme-light 2xl:text-[1.1rem]" />
                           </span>
-                          <span className="shareText text-theme-light">
+                          <span className="shareText xl:text-[1.01rem] 2xl:text-[1.1rem] text-theme-light">
                             Share
                           </span>
                         </div>
                         <div className="cookTime flex justify-center items-center gap-0.5">
-                          <span className="timerIcon">
-                            <PiCookingPotBold className="text-gray-500 text-[1rem]" />
+                          <span className="timerIcon pt-0.5">
+                            <PiCookingPotBold className="text-gray-500 text-[1rem] 2xl:text-[1.1rem]" />
                           </span>
-                          <span className="time font-semibold text-gray-500">
+                          <span className="time font-semibold text-gray-500 2xl:text-[1.1rem] xl:text-[1.01rem]">
                             2Min
                           </span>
                         </div>
                       </div>
                     </div>
-                    <div className="viweFullRecipeButton flex items-center cursor-pointer justify-center rounded-md py-1 bg-[linear-gradient(to_right,#e53935,#e35d5b)]">
+                    <div className="viweFullRecipeButton shadow-md flex items-center cursor-pointer justify-center rounded-md py-1 bg-[linear-gradient(to_right,#e53935,#e35d5b)] md:rounded-xl md:text-[1.2rem] 2xl:mt-1">
                       <button className="text-white font-semibold">
                         View Full Recipe
                       </button>
