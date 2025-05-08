@@ -11,7 +11,12 @@ const NavigationSubMenu = () => {
   const timeoutRef = useRef(null);
   const locationPath = useLocation();
 
-  const activePath = ["/AddProduct", "/DeleteProduct", "/UpdateProduct", "/FavoriteRecipes"];
+  const activePath = [
+    "/AddProduct",
+    "/DeleteProduct",
+    "/UpdateProduct",
+    "/FavoriteRecipes",
+  ];
   const isSubMenuActive = activePath.includes(locationPath.pathname);
 
   const handleMouseLeave = () => {
@@ -36,8 +41,8 @@ const NavigationSubMenu = () => {
         <li
           className={`${
             isSubMenuActive
-              ? "bg-transperent-dark transition-all border-1 px-2.5 py-0.5 rounded dark:text-white border-transperent-border-dark"
-              : "bg-transparent border-1 px-2.5 py-0.5 rounded border-transparent transition-all"
+              ? "bg-transperent-dark transition-all border-1 md:px-2.5 md:py-0.5 px-2 py-0.5 text-[1rem] rounded dark:text-white border-transperent-border-dark"
+              : "bg-transparent border-1 md:px-2.5 md:py-0.5 px-2 py-0.5 text-[1rem] rounded border-transparent transition-all"
           }
           }cursor-pointer flex items-center justify-center pt gap-0.5 hover:text-gray-800 dark:hover:text-white transition-colors`}
         >

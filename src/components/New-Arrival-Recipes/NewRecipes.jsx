@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import img from "../../assets/image/img.jpg";
 import vage from "../../assets/svg/vage.svg";
+import nonVage from "../../assets/svg/nonVage.svg";
 import { TiStarFullOutline } from "react-icons/ti";
 import { MdShare } from "react-icons/md";
 import { PiCookingPotBold } from "react-icons/pi";
@@ -20,15 +21,15 @@ const NewRecipes = () => {
   const handelBookmark = (index) => {
     setIsBookmarked((prev) => {
       const updated = { ...prev, [index]: !prev[index] };
-      const icon = bookmarkRefs.current[index]
+      const icon = bookmarkRefs.current[index];
 
-      if(icon) {
+      if (icon) {
         icon.setAttribute(
           "state",
           updated[index] ? "morph-marked-bookmark" : "morph-unmarked-bookmark"
-        )
+        );
       }
-      return updated
+      return updated;
     });
   };
 
@@ -42,15 +43,15 @@ const NewRecipes = () => {
             New Recipes
           </h2>
         </div>
-        <div className="recipesSlider h-auto overflow-x-auto pb-[1rem] my-2">
+        <div className="recipesSlider h-auto overflow-x-auto pb-[1rem] my-2 scroll-smooth snap-x snap-mandatory">
           <ul className="cardWrapper flex gap-2.5 xl:gap-3 h-auto w-full flex-nowrap whitespace-nowrap">
             {[...Array(8)].map((_, index) => {
               return (
                 <li
                   key={index}
-                  className="recipeCard inline-block min-w-[48.5%] h-auto overflow-hidden 2xl:min-w-[24.2%] xl:min-w-[32.5%] lg:min-w-[32.4%] md:min-w-[49%] xxs:min-w-[32.2%]"
+                  className="recipeCard snap-start group cursor-pointer inline-block min-w-[48.5%] h-auto overflow-hidden 2xl:min-w-[24.2%] xl:min-w-[32.5%] lg:min-w-[32.4%] md:min-w-[49%] xxs:min-w-[32.2%]"
                 >
-                  <article className="p-2 rounded-md border w-full border-theme-light md:rounded-2xl">
+                  <article className="p-2 rounded-md border w-full border-theme-light md:rounded-2xl dark:border-2 dark:border-[#2d2d2d]">
                     <figure className="relative rounded-md overflow-hidden w-full h-[8rem] md:rounded-xl 2xl:h-[14rem] md:h-[12rem]">
                       <div className="acatios w-full h-fit top-2 z-10 px-2 absolute flex items-center justify-between">
                         <div className="veg w-fit flex items-center justify-center">
@@ -58,12 +59,10 @@ const NewRecipes = () => {
                             <img src={vage} alt="vegIcon" className="h-6 w-6" />
                           </span>
                         </div>
-                        <div
-                            onClick={() => handelBookmark(index)}
-                          className="saveRecipe bg-black min-h-9 min-w-9 rounded-full flex items-center justify-center"
-                          >
+                        <div className="saveRecipe bg-black min-h-9 min-w-9 rounded-full flex items-center justify-center">
                           <span className="p-1 flex items-center justify-center">
                             <lord-icon
+                              onClick={() => handelBookmark(index)}
                               ref={(elm) => (bookmarkRefs.current[index] = elm)}
                               src="https://cdn.lordicon.com/oiiqgosg.json"
                               trigger="click"
@@ -76,14 +75,14 @@ const NewRecipes = () => {
                       </div>
                       <img
                         src={img}
-                        className="object-cover cursor-pointer hover:scale-105 transition h-full w-full object-center"
+                        className="object-cover cursor-pointer group-hover:scale-105 transition h-full w-full object-center"
                         alt="recipeImage"
                       />
                       <div className="linearGrident absolute bottom-0 left-0 w-full h-[30%] bg-gradient-to-t from-black to-transparent"></div>
                     </figure>
                     <div className="recipeInformations py-1 flex flex-col gap-1 w-full h-fit">
                       <div className="recipeNameAndRating flex items-center justify-between">
-                        <h3 className="recipeName font-semibold text-[1.1rem] 2xl:text-[1.5rem] md:text-xl xl:text-[1.35rem] ">
+                        <h3 className="recipeName font-semibold text-[1.1rem] 2xl:text-[1.5rem] md:text-xl xl:text-[1.35rem] dark:text-white">
                           Tomato Sup
                         </h3>
                         <div className="rating bg-green-500 w-fit flex items-center justify-center rounded-sm px-[0.3rem] py-[0.08rem] gap-0.5 xl:rounded-md">
@@ -107,7 +106,7 @@ const NewRecipes = () => {
                           <span>Vegetarian</span>
                         </p>
                       </div>
-                      <div className="line border-gray-400 h-1 w-full border-b-1 my-1 border-dashed"></div>
+                      <div className="line border-gray-400 dark:border-[#2d2d2d] dark:border-b-[0.125rem] h-1 w-full border-b-1 my-1 border-dashed"></div>
                       <div className="shareAndCookTime flex items-center justify-between my-1">
                         <div className="ShareIcon cursor-pointer flex w-fit border-1 border-theme-light rounded-full px-1.5 items-center justify-center gap-1 bg-transperent-dark">
                           <span className="icon">
@@ -119,9 +118,9 @@ const NewRecipes = () => {
                         </div>
                         <div className="cookTime flex justify-center items-center gap-0.5">
                           <span className="timerIcon pt-0.5">
-                            <PiCookingPotBold className="text-gray-500 text-[1rem] 2xl:text-[1.1rem]" />
+                            <PiCookingPotBold className="text-gray-500 dark:text-gray-400 text-[1rem] 2xl:text-[1.1rem]" />
                           </span>
-                          <span className="time font-semibold text-gray-500 2xl:text-[1.1rem] xl:text-[1.01rem]">
+                          <span className="time font-semibold text-gray-500 2xl:text-[1.1rem] xl:text-[1.01rem] dark:text-gray-400">
                             2Min
                           </span>
                         </div>

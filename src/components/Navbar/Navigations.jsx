@@ -9,13 +9,13 @@ const Navigations = () => {
     <>
       <MobileMenu />
       <ul></ul>
-      <ul className="hidden sm:flex text-[0.825rem] md:gap-10 gap-1.5 items-center justify-between dark:text-font-dark text-black md:text-xl">
+      <ul className="hidden sm:flex text-[0.825rem] md:gap-10 gap-3 items-center justify-between dark:text-font-dark text-black md:text-xl">
         <li className="cursor-pointer dark:hover:text-white transition-colors">
           <NavLink
             className={({ isActive }) =>
               isActive
-                ? "bg-transperent-dark transition-all border-1 md:px-2.5 md:py-0.5 px-1 py-0.25 rounded dark:text-white border-transperent-border-dark"
-                : "bg-transparent border-1 md:px-2.5 md:py-0.5 px-1 py-0.25 rounded border-transparent transition-all"
+                ? "bg-transperent-dark transition-all border-1 md:px-2.5 md:py-0.5 px-2 py-0.5 text-[1rem] rounded dark:text-white border-transperent-border-dark"
+                : "bg-transparent border-1 md:px-2.5 md:py-0.5 px-2 py-0.5 text-[1rem] rounded border-transparent transition-all"
             }
             to={"/"}
           >
@@ -27,8 +27,8 @@ const Navigations = () => {
           <NavLink
             className={({ isActive }) =>
               isActive
-                ? "bg-transperent-dark transition-all border-1 md:px-2.5 md:py-0.5 px-1 py-0.25 rounded dark:text-white border-transperent-border-dark"
-                : "bg-transparent border-1 md:px-2.5 md:py-0.5 px-1 py-0.25 rounded border-transparent transition-all"
+                ? "bg-transperent-dark transition-all border-1 md:px-2.5 md:py-0.5 px-2 py-0.5 text-[1rem] rounded dark:text-white border-transperent-border-dark"
+                : "bg-transparent border-1 md:px-2.5 md:py-0.5 px-2 py-0.5 text-[1rem] rounded border-transparent transition-all"
             }
             to={"/Recipe"}
           >
@@ -39,8 +39,8 @@ const Navigations = () => {
           <NavLink
             className={({ isActive }) =>
               isActive
-                ? "bg-transperent-dark transition-all border-1 md:px-2.5 md:py-0.5 px-1 py-0.25 rounded dark:text-white border-transperent-border-dark"
-                : "bg-transparent border-1 md:px-2.5 md:py-0.5 px-1 py-0.25 rounded border-transparent transition-all"
+                ? "bg-transperent-dark transition-all border-1 md:px-2.5 md:py-0.5 px-2 py-0.5 text-[1rem] rounded dark:text-white border-transperent-border-dark"
+                : "bg-transparent border-1 md:px-2.5 md:py-0.5 px-2 py-0.5 text-[1rem] rounded border-transparent transition-all"
             }
             to={"/Categories"}
           >

@@ -13,7 +13,7 @@ const NavBar = () => {
         </NavLink>
       </div>
       <div className="navigation-wrap flex w-full px-2">
-        <ul className="relative dark:text-font-dark text-black h-fit w-full flex justify-between text-2xl mb-1">
+        <ul className="relative dark:text-font-dark text-black h-fit w-full flex justify-between md:text-2xl mb-1 text-2xl">
           <Navigations></Navigations>
         </ul>
       </div>
