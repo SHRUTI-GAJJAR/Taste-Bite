@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import img from "../../assets/image/img.jpg";
 import vage from "../../assets/svg/vage.svg";
 import { TiStarFullOutline } from "react-icons/ti";
@@ -18,11 +18,21 @@ const NewRecipes = () => {
   }, []);
 
   const handelBookmark = (index) => {
-    setIsBookmarked((prev) => ({
-      ...prev,
-      [index]: !prev[index],
-    }));
+    setIsBookmarked((prev) => {
+      const updated = { ...prev, [index]: !prev[index] };
+      const icon = bookmarkRefs.current[index]
+
+      if(icon) {
+        icon.setAttribute(
+          "state",
+          updated[index] ? "morph-marked-bookmark" : "morph-unmarked-bookmark"
+        )
+      }
+      return updated
+    });
   };
+
+  const bookmarkRefs = useRef([]);
 
   return (
     <>
@@ -36,7 +46,10 @@ const NewRecipes = () => {
           <ul className="cardWrapper flex gap-2.5 h-auto w-full flex-nowrap whitespace-nowrap">
             {[...Array(8)].map((_, index) => {
               return (
-                <li key={index} className="recipeCard inline-block min-w-[48.5%] h-auto overflow-hidden">
+                <li
+                  key={index}
+                  className="recipeCard inline-block min-w-[48.5%] h-auto overflow-hidden"
+                >
                   <article className="p-2 rounded-md border w-full border-theme-light">
                     <figure className="relative rounded-md overflow-hidden w-full h-[8rem]">
                       <div className="acatios w-full h-fit top-2 z-10 px-2 absolute flex items-center justify-between">
@@ -46,14 +59,15 @@ const NewRecipes = () => {
                           </span>
                         </div>
                         <div
-                          onClick={() => handelBookmark(index)}
+                            onClick={() => handelBookmark(index)}
                           className="saveRecipe bg-black min-h-8 min-w-8 rounded-full flex items-center justify-center"
-                        >
+                          >
                           <span className="p-1 flex items-center justify-center">
                             <lord-icon
+                              ref={(elm) => (bookmarkRefs.current[index] = elm)}
                               src="https://cdn.lordicon.com/oiiqgosg.json"
                               trigger="click"
-                              state={isBookMarked[index] ? "morph-marked-bookmark" : "morph-unmarked-bookmark"}
+                              state="morph-marked-bookmark"
                               colors="primary:#ffffff"
                               style={{ width: "18px", height: "18px" }}
                             ></lord-icon>
@@ -69,9 +83,13 @@ const NewRecipes = () => {
                     </figure>
                     <div className="recipeInformations py-1 flex flex-col gap-1 w-full h-fit">
                       <div className="recipeNameAndRating flex items-center justify-between">
-                        <h3 className="recipeName font-semibold text-[1.1rem]">Tomato Sup</h3>
+                        <h3 className="recipeName font-semibold text-[1.1rem]">
+                          Tomato Sup
+                        </h3>
                         <div className="rating bg-green-500 w-fit flex items-center justify-center rounded-sm px-[0.3rem] py-[0.08rem] gap-0.5">
-                          <span className="ratingNumber text-sm text-white">4.5</span>
+                          <span className="ratingNumber text-sm text-white">
+                            4.5
+                          </span>
                           <span className="ratingIcon">
                             <TiStarFullOutline className="text-white text-sm" />
                           </span>
@@ -79,7 +97,11 @@ const NewRecipes = () => {
                       </div>
                       <div className="category rounded-full flex w-fit items-center gap-1 py-0.5 px-2 bg-gray-700">
                         <span className="catagoryIcon">
-                          <img src={vegetarian} className="h-4" alt="vegetarianIcon" />
+                          <img
+                            src={vegetarian}
+                            className="h-4"
+                            alt="vegetarianIcon"
+                          />
                         </span>
                         <p className="categoryName text-white text-sm">
                           <span>Vegetarian</span>
@@ -91,18 +113,24 @@ const NewRecipes = () => {
                           <span className="icon">
                             <MdShare className="text-theme-light" />
                           </span>
-                          <span className="shareText text-theme-light">Share</span>
+                          <span className="shareText text-theme-light">
+                            Share
+                          </span>
                         </div>
-                        <div className="cookTime flex items-center gap-1">
+                        <div className="cookTime flex justify-center items-center gap-0.5">
                           <span className="timerIcon">
                             <PiCookingPotBold className="text-gray-500 text-[1rem]" />
                           </span>
-                          <span className="time font-semibold text-gray-500">2Min</span>
+                          <span className="time font-semibold text-gray-500">
+                            2Min
+                          </span>
                         </div>
                       </div>
                     </div>
                     <div className="viweFullRecipeButton flex items-center cursor-pointer justify-center rounded-md py-1 bg-[linear-gradient(to_right,#e53935,#e35d5b)]">
-                      <button className="text-white font-semibold">View Full Recipe</button>
+                      <button className="text-white font-semibold">
+                        View Full Recipe
+                      </button>
                     </div>
                   </article>
                 </li>
