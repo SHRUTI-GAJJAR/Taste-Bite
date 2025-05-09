@@ -8,12 +8,12 @@ import { ViewModeProvider } from "./context/viweModeContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <ApiProvider>
-      <ThemeProvider>
+    <ThemeProvider>
+      <ApiProvider>
         <ViewModeProvider>
           <App />
         </ViewModeProvider>
-      </ThemeProvider>
-    </ApiProvider>
+      </ApiProvider>
+    </ThemeProvider>
   </BrowserRouter>
 );
