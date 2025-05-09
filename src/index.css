@@ -1,11 +1,2 @@
 @import "tailwindcss";
 
-@theme {
-  --color-main-light: rgba(255, 255, 255);
-  --color-main-dark: #1f1f1f;
-  --color-font-light: rgba(0, 0, 0);
-  --color-font-dark: rgb(153 161 175 / 78%);
-}
-
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
-

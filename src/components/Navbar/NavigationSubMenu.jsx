@@ -39,7 +39,7 @@ const NavigationSubMenu = () => {
         onMouseLeave={handleMouseLeave}
       >
         <li
-          className={`${
+          className={`cursor-pointer ${
             isSubMenuActive
               ? "bg-transperent-dark transition-all border-1 md:px-2.5 md:py-0.5 px-2 py-0.5 text-[1rem] rounded dark:text-white border-transperent-border-dark"
               : "bg-transparent border-1 md:px-2.5 md:py-0.5 px-2 py-0.5 text-[1rem] rounded border-transparent transition-all"

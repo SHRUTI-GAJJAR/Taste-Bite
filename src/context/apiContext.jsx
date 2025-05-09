@@ -8,6 +8,8 @@ export const useApi = () => useContext(apiContext);
 export const ApiProvider = ({ children }) => {
   const [category, setCategory] = useState([]);
   const [Loading, setLoading] = useState(true);
+  const [recipeSliderData, setRecipeData] = useState([]);
+  const [sliderDataLoading, setSliderDataLoading] = useState(true);
 
   const fetchCategories = async () => {
     try {
@@ -20,13 +22,25 @@ export const ApiProvider = ({ children }) => {
       setLoading(false);
     }
   };
-  
+
+  const fetchRecipeSliderData = async () => {
+    try {
+      const res = await axiosInstance.get("/items")
+      setRecipeData(res.data)
+    } catch (error) {
+      console.error("Failed to fetch slider data ", error);
+    } finally {
+      setSliderDataLoading(false)
+    }
+  };
+
   useEffect(() => {
     fetchCategories();
+    fetchRecipeSliderData()
   }, []);
 
   return (
-    <apiContext.Provider value={{ category, fetchCategories, Loading }}>
+    <apiContext.Provider value={{ category, fetchCategories, Loading, recipeSliderData, fetchRecipeSliderData, sliderDataLoading}}>
       {children}
     </apiContext.Provider>
   );
