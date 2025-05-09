@@ -67,7 +67,7 @@ const NewRecipes = () => {
                   key={index}
                   className="recipeCard snap-start group cursor-pointer inline-block min-w-[48.5%] h-auto overflow-hidden 2xl:min-w-[24.2%] xl:min-w-[32.5%] lg:min-w-[32.4%] md:min-w-[49%] xxs:min-w-[32.2%]"
                 >
-                  <article className="p-2 rounded-md border w-full border-theme-light md:rounded-2xl dark:border-2 dark:border-[#2d2d2d]">
+                  <article className="p-2 rounded-md border w-full border-theme-light md:rounded-2xl dark:border-2 dark:bg-[#1e1e1e] dark:border-[#2d2d2d]">
                     <figure className="relative rounded-md overflow-hidden w-full h-[8rem] md:rounded-xl 2xl:h-[14rem] md:h-[12rem]">
                       <div className="acatios w-full h-fit top-2 z-10 px-2 absolute flex items-center justify-between">
                         <div className="veg w-fit flex items-center justify-center">
