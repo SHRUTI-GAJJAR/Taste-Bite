@@ -7,7 +7,7 @@ export const useTheme = () => useContext(ThemeContext);
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
     try {
-      return localStorage.theme || "dark";
+      return localStorage.theme || "light";
     } catch {
       return "light";
     }
