@@ -12,6 +12,8 @@ import {
 import { useApi } from "../../context/apiContext";
 import NotFound from "../../assets/image/NOTFOUND!.png";
 
+import "../../App.css"
+
 const NewRecipes = () => {
   const [isBookMarked, setIsBookmarked] = useState(() => {
     const allBookmarks = {};
