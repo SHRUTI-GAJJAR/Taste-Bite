@@ -4,7 +4,7 @@ import "../../App.css";
 import { IoIosArrowForward } from "react-icons/io";
 import NotFound from "../../assets/image/NOTFOUND!.png";
 import SimmerLoading from "./SimmerLoading";
-import "../../App.css";
+import "../../App.css"
 
 const GridCategory = () => {
   const { category, fetchCategories, Loading } = useApi();
@@ -29,7 +29,7 @@ const GridCategory = () => {
           return (
             <li
               key={index}
-              className="h-fit p-2 border border-theme-light xl:w-[24%] lg:w-[32.2%] md:w-[31.8%] w-[48%] rounded-md items-center justify-center flex flex-col bg-[#f0f3f5] dark:bg-[#1e1] dark:border-[#2d2d2d] dark:border-2"
+              className="h-fit p-2 border border-theme-light xl:w-[24%] lg:w-[32.2%] md:w-[31.8%] w-[48%] rounded-md items-center justify-center flex flex-col bg-[#f0f3f5] dark:bg-[#1e1e1e] dark:border-[#2d2d2d] dark:border-2"
             >
               <div className="imgWrap xl:h-22 xl:w-22 h-18 w-18">
                 <img
