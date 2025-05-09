@@ -83,6 +83,12 @@ body {
   width: 8px; 
 }
 
+[data-theme="dark"] .recipesSlider::-webkit-scrollbar-track {
+  background:#1e1e1e; 
+  border-radius: 4px; 
+  width: 8px; 
+}
+
 .recipesSlider::-webkit-scrollbar-thumb {
   background: linear-gradient(to right,#e53935,#e35d5b); 
   border-radius: 4px; 

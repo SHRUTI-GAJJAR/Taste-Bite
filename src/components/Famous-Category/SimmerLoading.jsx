@@ -7,7 +7,7 @@ const SimmerLoading = () => {
   return (
     <>
       {viewMode === "list"
-        ? [...Array(8)].map((_, index) => {
+        ? [...Array(8)].map((_, index) => { 
             return (
               <li
                 key={index}
@@ -28,9 +28,9 @@ const SimmerLoading = () => {
                 className="w-[48%] md:w-[31.8%] xl:w-[23.8%] flex-col p-2 gap-2 h-fit px-2.5 rounded-md items-center dark:bg-[#1a1a1a] flex bg-[#f0f3f5]"
               >
                 <div className="animate-shimmer h-18 w-18 rounded-md dark:bg-[#2a2e32] bg-[#d8dee2]"></div>
-                <div className="animate-shimmer h-4 w-[60%] rounded-full dark:bg-[#2a2e32] bg-[#d8dee2]"></div>
-                <div className="animate-shimmer h-3 w-full rounded-full dark:bg-[#2a2e32] bg-[#d8dee2]"></div>
-                <div className="animate-shimmer h-8.5 w-full rounded-md dark:bg-[#2a2e32] bg-[#d8dee2]"></div>
+                <div className="animate-shimmer h-4 w-[60%] rounded-full dark:bg-[#3a3f44] bg-[#d8dee2]"></div>
+                <div className="animate-shimmer h-3 w-full rounded-full dark:bg-[#3a3f44] bg-[#d8dee2]"></div>
+                <div className="animate-shimmer h-8.5 w-full rounded-md dark:bg-[#3a3f44] bg-[#d8dee2]"></div>
               </li>
             );
           })}

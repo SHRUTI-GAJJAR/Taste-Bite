@@ -25,22 +25,32 @@ export const ApiProvider = ({ children }) => {
 
   const fetchRecipeSliderData = async () => {
     try {
-      const res = await axiosInstance.get("/items")
-      setRecipeData(res.data)
+      const res = await axiosInstance.get("/items");
+      setRecipeData(res.data);
     } catch (error) {
       console.error("Failed to fetch slider data ", error);
+      setRecipeData([]);
     } finally {
-      setSliderDataLoading(false)
+      setSliderDataLoading(false);
     }
   };
 
   useEffect(() => {
     fetchCategories();
-    fetchRecipeSliderData()
+    fetchRecipeSliderData();
   }, []);
 
   return (
-    <apiContext.Provider value={{ category, fetchCategories, Loading, recipeSliderData, fetchRecipeSliderData, sliderDataLoading}}>
+    <apiContext.Provider
+      value={{
+        category,
+        fetchCategories,
+        Loading,
+        recipeSliderData,
+        fetchRecipeSliderData,
+        sliderDataLoading,
+      }}
+    >
       {children}
     </apiContext.Provider>
   );
