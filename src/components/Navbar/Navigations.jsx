@@ -3,6 +3,7 @@ import { NavLink } from "react-router";
 import NavigationSubMenu from "./NavigationSubMenu";
 import ThemeToggle from "./ThemeToggle";
 import MobileMenu from "./MobileMenu";
+import "../../App.css"
 
 const Navigations = () => {
   return (

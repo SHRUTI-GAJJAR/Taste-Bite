@@ -4,6 +4,8 @@ import "../../App.css";
 import { IoIosArrowForward } from "react-icons/io";
 import NotFound from "../../assets/image/NOTFOUND!.png";
 import SimmerLoading from "./SimmerLoading";
+import "../../App.css"
+
 
 const ListCategory = () => {
   const { category, fetchCategories, Loading } = useApi();

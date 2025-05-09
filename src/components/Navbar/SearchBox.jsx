@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { IoIosSearch } from "react-icons/io";
 import { IoCloseOutline } from "react-icons/io5";
+import "../../App.css"
+
 
 const SearchBox = () => {
   const [serachText, setSearchText] = useState("");

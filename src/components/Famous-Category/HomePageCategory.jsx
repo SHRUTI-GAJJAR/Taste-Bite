@@ -3,6 +3,7 @@ import { useViewMode } from "../../context/viweModeContext";
 import ViweMode from "./ViweMode";
 import ListCategory from "./ListCategory";
 import GridCategory from "./GridCategory";
+import "../../App.css"
 
 const HomePageCategory = () => {
   const { viewMode } = useViewMode();

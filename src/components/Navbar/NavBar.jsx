@@ -2,6 +2,7 @@ import React from "react";
 import testBiteLogo from "../../assets/svg/testBiteLogo.svg";
 import { NavLink } from "react-router";
 import Navigations from "./Navigations";
+import "../../App.css"
 
 const NavBar = () => {
 
