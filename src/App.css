@@ -88,7 +88,4 @@ body {
   border-radius: 4px; 
 }
 
-[data-theme="dark"] .recipesSlider::-webkit-scrollbar-track {
-  background: #1e1e1e;
-}
 
