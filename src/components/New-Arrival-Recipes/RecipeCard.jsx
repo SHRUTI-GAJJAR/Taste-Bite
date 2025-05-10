@@ -1,3 +1,4 @@
+// ✅ File: RecipeCard.jsx
 import { MdShare } from "react-icons/md";
 import { CgTimelapse } from "react-icons/cg";
 import vage from "../../assets/svg/vage.svg";
@@ -5,34 +6,27 @@ import nonVage from "../../assets/svg/nonVage.svg";
 import ImageWithFallback from "./ImageWithFallback";
 import RatingBadge from "./RatingBadge";
 import CategoryTag from "./CategoryTag";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
-const RecipeCard = ({ item, index }) => {
-  useEffect(() => {
-    import("https://cdn.lordicon.com/lordicon.js");
-  }, []);
-
+const RecipeCard = ({
+  item,
+  index,
+  handelLocalStorageBookMark,
+  isBookmarked,
+}) => {
   const bookmarkRefs = useRef([]);
 
-  const [isBookMarked, setIsBookmarked] = useState(() => {
-    const allBookmarks = {};
-    for (let i = 0; i < 8; i++) allBookmarks[i] = false;
-    return allBookmarks;
-  });
-
-  const handelBookmark = (index, id) => {
-    setIsBookmarked((prev) => {
-      const updated = { ...prev, [index]: !prev[index] };
+  useEffect(() => {
+    import("https://cdn.lordicon.com/lordicon.js").then(() => {
       const icon = bookmarkRefs.current[index];
       if (icon) {
         icon.setAttribute(
           "state",
-          updated[index] ? "morph-marked-bookmark" : "morph-unmarked-bookmark"
+          isBookmarked ? "morph-unmarked-bookmark" : "morph-marked-bookmark"
         );
       }
-      return updated;
     });
-  };
+  }, [isBookmarked]);
 
   return (
     <li className="recipeCard snap-start group cursor-pointer inline-block min-w-[48.5%] h-auto overflow-hidden 2xl:min-w-[24.2%] xl:min-w-[32.5%] lg:min-w-[32.4%] md:min-w-[49%] xxs:min-w-[32.2%]">
@@ -51,11 +45,15 @@ const RecipeCard = ({ item, index }) => {
             <div className="saveRecipe bg-black min-h-9 min-w-9 rounded-full flex items-center justify-center">
               <span className="p-1 flex items-center justify-center">
                 <lord-icon
-                  onClick={() => handelBookmark(index, item._id)}
+                  onClick={() => handelLocalStorageBookMark(item._id)}
                   ref={(elm) => (bookmarkRefs.current[index] = elm)}
                   src="https://cdn.lordicon.com/oiiqgosg.json"
-                  trigger="click"
-                  state="morph-marked-bookmark"
+                  trigger="morph"
+                  state={
+                    isBookmarked
+                      ? "morph-marked-bookmark"
+                      : "morph-unmarked-bookmark"
+                  }
                   colors="primary:#ffffff"
                   style={{ width: "18px", height: "18px" }}
                 ></lord-icon>
@@ -91,7 +89,7 @@ const RecipeCard = ({ item, index }) => {
                 <CgTimelapse className="text-gray-500 dark:text-gray-400 text-[1rem] 2xl:text-[1.1rem]" />
               </span>
               <span className="time font-semibold text-gray-500 2xl:text-[1.1rem] xl:text-[1.01rem] dark:text-gray-400">
-                2Min
+                {item.cookingTime}
               </span>
             </div>
           </div>
