@@ -48,11 +48,10 @@ const NewRecipes = () => {
           {sliderDataLoading ? (
             <RecipeSimmerLoading />
           ) : (
-            uniqueCategoryRecipes.map((item, index) => (
+            uniqueCategoryRecipes.map((item, index) => ( 
               <RecipeCard
                 key={index}
                 item={item}
-                index={index}
                 isBookmarked={bookMarkedItem[item._id] || false}
                 handelLocalStorageBookMark={handelLocalStorageBookMark}
               />

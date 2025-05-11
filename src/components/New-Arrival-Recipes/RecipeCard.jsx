@@ -7,26 +7,14 @@ import ImageWithFallback from "./ImageWithFallback";
 import RatingBadge from "./RatingBadge";
 import CategoryTag from "./CategoryTag";
 import { useEffect, useRef } from "react";
+import "../../App.css";
 
 const RecipeCard = ({
   item,
-  index,
   handelLocalStorageBookMark,
   isBookmarked,
 }) => {
-  const bookmarkRefs = useRef([]);
 
-  useEffect(() => {
-    import("https://cdn.lordicon.com/lordicon.js").then(() => {
-      const icon = bookmarkRefs.current[index];
-      if (icon) {
-        icon.setAttribute(
-          "state",
-          isBookmarked ? "morph-unmarked-bookmark" : "morph-marked-bookmark"
-        );
-      }
-    });
-  }, [isBookmarked]);
 
   return (
     <li className="recipeCard snap-start group cursor-pointer inline-block min-w-[48.5%] h-auto overflow-hidden 2xl:min-w-[24.2%] xl:min-w-[32.5%] lg:min-w-[32.4%] md:min-w-[49%] xxs:min-w-[32.2%]">
@@ -43,20 +31,39 @@ const RecipeCard = ({
               </span>
             </div>
             <div className="saveRecipe bg-black min-h-9 min-w-9 rounded-full flex items-center justify-center">
-              <span className="p-1 flex items-center justify-center">
-                <lord-icon
-                  onClick={() => handelLocalStorageBookMark(item._id)}
-                  ref={(elm) => (bookmarkRefs.current[index] = elm)}
-                  src="https://cdn.lordicon.com/oiiqgosg.json"
-                  trigger="morph"
-                  state={
-                    isBookmarked
-                      ? "morph-marked-bookmark"
-                      : "morph-unmarked-bookmark"
-                  }
-                  colors="primary:#ffffff"
-                  style={{ width: "18px", height: "18px" }}
-                ></lord-icon>
+              <span
+                onClick={() => handelLocalStorageBookMark(item._id)}
+                className={`bookmark-icon p-1 flex items-center justify-center transition-transform duration-300 ${
+                  isBookmarked ? "bookmarked" : ""
+                }`}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="20"
+                  width="20"
+                  viewBox="0 0 24 24"
+                  strokeWidth="2"
+                >
+                  <defs>
+                    <linearGradient
+                      id="bookmark-gradient"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="0%"
+                    >
+                      <stop offset="0%" style={{ stopColor: "#e53935" }} />
+                      <stop offset="100%" style={{ stopColor: "#e35d5b" }} />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"
+                    fill={isBookmarked ? "url(#bookmark-gradient)" : "none"}
+                    stroke={
+                      isBookmarked ? "url(#bookmark-gradient)" : "#ffffff"
+                    }
+                  />
+                </svg>
               </span>
             </div>
           </div>
