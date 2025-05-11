@@ -97,7 +97,7 @@ const MobileMenu = () => {
                     <span className="border-orange-400 border-1 bg-orange-200 flex items-center justify-center h-6 w-6 rounded-full">
                       <MdFavoriteBorder />
                     </span>
-                    <span>Favorite Recipes</span>
+                    <span>Bookmarked Recipes</span>
                   </li>
                 </NavLink>
               </ul>

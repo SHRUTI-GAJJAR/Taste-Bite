@@ -12,8 +12,8 @@ const SearchBox = () => {
   };
 
   return (
-    <div className="searchWrap h-fit w-full flex justify-center items-center">
-      <div className="gap-1.5 mt-1.5 w-[97%] md:w-[75%] h-[2rem] md:h-[2.5rem] pl-2 rounded-md border-theme-light text-black border-1 flex items-center my-1 bg-transperent-dark">
+    <div className="searchWrap h-fit mt-3 mb-1 sm:mt-6 w-full flex justify-center items-center">
+      <div className="gap-1.5 mt-1.5 w-[99%] md:w-[75.5%] h-[2rem] rounded-md md:h-[2.5rem] pl-2 md:rounded-xl border-theme-light text-black border-1 flex items-center my-1 bg-transperent-dark">
         <div className="serachIconWrap">
           <IoIosSearch size={"1.5em"} className="text-theme-light" />
         </div>
@@ -22,14 +22,14 @@ const SearchBox = () => {
             type="text"
             value={serachText}
             onChange={(event) => setSearchText(event.target.value)}
-            className="w-full text-[1rem] sm:text-xl placeholder-gray-500 text-theme-light outline-0"
+            className="w-full text-[1rem] sm:text-xl placeholder-gray-800 text-theme-light outline-0"
             placeholder="Search Recipe"
           />
         </div>
         {serachText && (
           <div
             onClick={handelSearchText}
-            className="close justify-self-end w-[2.4rem] "
+            className="close justify-self-end w-[2.4rem] cursor-pointer"
           >
             <IoCloseOutline size={"1.6em"} className="text-theme-light" />
           </div>
