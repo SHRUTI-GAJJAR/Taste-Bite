@@ -1,9 +1,7 @@
 import HeaderTitle from "../Utils/HeaderTitle";
 import chillyFlex from "../../assets/svg/chillyFlex.svg";
-import frenchFry from "../../assets/svg/frenchFry.svg";
 import eptycartAfiv from "../../assets/image/eptycart.avif";
 import { NavLink } from "react-router";
-// import ViweMode from "../Utils/ViweMode"
 
 const EmptyCart = () => {
   return (
@@ -30,17 +28,7 @@ const EmptyCart = () => {
               >
                 <div className="textWrap w-[95%] h-full flex items-center justify-center">
                   <p className="text-3xl md:text-4xl 2xl:text-6xl lg:text-5xl text-center lg:ml-2 lg:text-start leading-tight tracking-wide text-[#1f2937] dark:text-gray-200 font-bold">
-                    NO RECIPE SAVED YET.{" "}
-                    <span className="inline-flex items-center whitespace-nowrap w-fit h-fit">
-                      F
-                      <img
-                        src={frenchFry}
-                        alt="frenchFry"
-                        className="h-6 md:h-8 lg:h-10 2xl:h-12 mx-1"
-                      />
-                      ND
-                    </span>{" "}
-                    SOMETHING TASTY TO TRY
+                    NO RECIPE SAVED YET. FIND SOMETHING TASTY TO TRY.
                   </p>
                 </div>
               </div>

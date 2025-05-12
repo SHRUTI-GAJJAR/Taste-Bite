@@ -5,15 +5,18 @@ import "./index.css";
 import App from "./App.jsx";
 import { ApiProvider } from "./context/apiContext.jsx";
 import { ViewModeProvider } from "./context/viweModeContext.jsx";
+import { FoodCategoryProvider } from "./context/FoodCategoryContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <ThemeProvider>
-      <ApiProvider>
-        <ViewModeProvider>
-          <App />
-        </ViewModeProvider>
-      </ApiProvider>
+      <FoodCategoryProvider>
+        <ApiProvider>
+          <ViewModeProvider>
+            <App />
+          </ViewModeProvider>
+        </ApiProvider>
+      </FoodCategoryProvider>
     </ThemeProvider>
   </BrowserRouter>
 );
