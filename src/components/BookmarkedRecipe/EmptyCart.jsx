@@ -33,7 +33,7 @@ const EmptyCart = () => {
                       S
                       <img
                         src={pizzSlice}
-                        className="h-5 md:h-8 lg:h-10 2xl:h-12 w-auto mt-1 rotate-[183deg] inline-block align-middle"
+                        className="h-5.5 md:h-8 lg:h-10 2xl:h-12 w-auto mt-1 rotate-[183deg] inline-block align-middle"
                         alt="pizza slice"
                       />
                       VED
