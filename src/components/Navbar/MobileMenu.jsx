@@ -92,7 +92,7 @@ const MobileMenu = () => {
                     <span>Edit Product</span>
                   </li>
                 </NavLink>
-                <NavLink to={"/FavoriteRecipes"}>
+                <NavLink to={"/BookmarkedRecipes"}>
                   <li className="m-0. w-full h-8 flex items-center gap-2">
                     <span className="border-orange-400 border-1 bg-orange-200 flex items-center justify-center h-6 w-6 rounded-full">
                       <MdFavoriteBorder />

@@ -1,4 +1,3 @@
-import React from "react";
 import { useViewMode } from "../../context/viweModeContext";
 import list from "../../../src/assets/svg/listMode.svg";
 import grid from "../../../src/assets/svg/gridMode.svg";

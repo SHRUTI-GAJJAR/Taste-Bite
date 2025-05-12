@@ -1,14 +1,13 @@
 import NavBar from "../components/Navbar/NavBar";
 import "../App.css";
-import SearchBox from "../components/Navbar/SearchBox";
+import EmptyCart from "../components/BookmarkedRecipe/EmptyCart";
 
 const BookmarkedRecipes = () => {
   return (
-    <div className="w-full relative h-full bg-white dark:bg-main-dark transition-colors">
+    <div className="w-full relative h-screen bg-white dark:bg-main-dark transition-colors">
         <NavBar />
-        <SearchBox />
       <main>
-      
+        <EmptyCart />
       </main>
     </div>
   );
