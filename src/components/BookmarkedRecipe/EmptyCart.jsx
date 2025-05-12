@@ -1,6 +1,6 @@
 import HeaderTitle from "../Utils/HeaderTitle";
 import chillyFlex from "../../assets/svg/chillyFlex.svg";
-import pizzSlice from "../../assets/svg/pizzaSlice.svg";
+import frenchFry from "../../assets/svg/frenchFry.svg";
 import eptycartAfiv from "../../assets/image/eptycart.avif";
 import { NavLink } from "react-router";
 // import ViweMode from "../Utils/ViweMode"
@@ -24,28 +24,34 @@ const EmptyCart = () => {
               }}
             ></div>
             <div className="emptyConatantWraper z-10 flex flex-col lg:flex-row w-full md:h-[70vh] sm:h-[76vh] h-[78vh]">
-              <div className="textContantWrap flex 
-              items-center justify-center lg:w-[50%] lg:h-full w-full h-[40%]">
+              <div
+                className="textContantWrap flex 
+              items-center justify-center lg:w-[50%] lg:h-full w-full h-[40%]"
+              >
                 <div className="textWrap w-[95%] h-full flex items-center justify-center">
                   <p className="text-3xl md:text-4xl 2xl:text-6xl lg:text-5xl text-center lg:ml-2 lg:text-start leading-tight tracking-wide text-[#1f2937] dark:text-gray-200 font-bold">
-                    NO RECIPE{" "}
-                    <span className="inline-flex items-center whitespace-nowrap">
-                      S
+                    NO RECIPE SAVED YET.{" "}
+                    <span className="inline-flex items-center whitespace-nowrap w-fit h-fit">
+                      F
                       <img
-                        src={pizzSlice}
-                        className="h-5.5 md:h-8 lg:h-10 2xl:h-12 w-auto mt-1 rotate-[183deg] inline-block align-middle"
-                        alt="pizza slice"
+                        src={frenchFry}
+                        alt="frenchFry"
+                        className="h-6 md:h-8 lg:h-10 2xl:h-12 mx-1"
                       />
-                      VED
+                      ND
                     </span>{" "}
-                    YET. FIND SOMETHING TASTY TO TRY!
+                    SOMETHING TASTY TO TRY
                   </p>
                 </div>
               </div>
               <div className="emptyCartWrap flex items-center justify-center overflow-hidden lg:w-[50%] lg:h-full">
                 <div className="emptyCart flex gap-5 py-5 flex-col justify-center items-center h-fit px-4 max-w-[90%] sm:rounded-xl rounded-md bg-white dark:border-2 dark:border-[#2d2d2d]">
                   <div className="imgWraper h-[60%] w-[80%] flex items-center justify-center">
-                    <img src={eptycartAfiv} className="h-50 2xl:h-72" alt="emptyCart" />
+                    <img
+                      src={eptycartAfiv}
+                      className="h-50 2xl:h-72"
+                      alt="emptyCart"
+                    />
                   </div>
                   <div className="buttonWraper">
                     <div className="redirectButton flex items-center justify-center w-full">
