@@ -30,13 +30,27 @@ const NewRecipes = () => {
     localStorage.setItem("bookmarksItem", JSON.stringify(bookMarkedItem));
   }, [bookMarkedItem]);
 
-  const handelLocalStorageBookMark = (itemID) => {
+  const handelLocalStorageBookMark = (itemID, itemName) => {
     setBookmarkedItem((prev) => {
-      if (prev.includes(itemID)) {
-        return prev.filter((id) => id !== itemID);
-      } else {
-        return [...prev, itemID];
-      }
+      const isAlreadyBookmarked = prev.includes(itemID);
+      setTimeout(() => {
+        if (isAlreadyBookmarked) {
+          window.showRecipeToast(
+            false,
+            "Removed!",
+            `${itemName} has been removed from bookmarks.`
+          );
+        } else {
+          window.showRecipeToast(
+            true,
+            "Saved!",
+            `${itemName} has been added to bookmarks.`
+          );
+        }
+      }, 0);
+      return isAlreadyBookmarked
+        ? prev.filter((id) => id !== itemID)
+        : [...prev, itemID];
     });
   };
 
@@ -52,11 +66,11 @@ const NewRecipes = () => {
               <RecipeCard
                 key={index}
                 item={item}
+                handelLocalStorageBookMark={handelLocalStorageBookMark}
                 isBookmarked={
                   Array.isArray(bookMarkedItem) &&
                   bookMarkedItem.includes(item._id)
                 }
-                handelLocalStorageBookMark={handelLocalStorageBookMark}
               />
             ))
           )}

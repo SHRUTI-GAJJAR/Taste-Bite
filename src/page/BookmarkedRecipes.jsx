@@ -1,7 +1,7 @@
 import NavBar from "../components/Navbar/NavBar";
 import "../App.css";
-import EmptyCart from "../components/BookmarkedRecipe/EmptyCart";
-import RecipeCart from "../components/BookmarkedRecipe/RecipeCart";
+import EmptyCart from "../components/Bookmarked-Recipe/EmptyCart";
+import RecipeCart from "../components/Bookmarked-Recipe/RecipeCart";
 import { useEffect, useState } from "react";
 
 const BookmarkedRecipes = () => {

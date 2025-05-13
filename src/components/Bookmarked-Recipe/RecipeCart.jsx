@@ -2,6 +2,7 @@ import { useViewMode } from "../../context/viweModeContext";
 import HeaderTitle from "../Utils/HeaderTitle";
 import ViweMode from "../Utils/ViweMode";
 import FoodCategoryToogle from "./FoodCategoryToogle";
+import FoodSorting from "./FoodSorting";
 
 const RecipeCart = ({ items }) => {
   const { viewMode } = useViewMode();
@@ -15,6 +16,7 @@ const RecipeCart = ({ items }) => {
         <div className="mainContant w-full">
           <div className="subMenu flex items-center justify-between">
             <FoodCategoryToogle />
+            <FoodSorting />
           </div>
         </div>
       </div>

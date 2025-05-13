@@ -4,7 +4,6 @@ import { useFoodCategory } from "../../context/FoodCategoryContext";
 
 const FoodCategoryToggle = () => {
   const { isVeg, isNonVeg, toggleVeg, toggleNonVeg } = useFoodCategory();
-
   return (
     <div className="toggleButton flex items-center gap-4 justify-center w-fit">
       <div onClick={toggleVeg} className="veg cursor-pointer">

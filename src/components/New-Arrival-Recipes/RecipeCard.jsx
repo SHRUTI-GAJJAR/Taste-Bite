@@ -1,4 +1,3 @@
-// ✅ File: RecipeCard.jsx
 import { MdShare } from "react-icons/md";
 import { CgTimelapse } from "react-icons/cg";
 import vage from "../../assets/svg/vage.svg";
@@ -8,7 +7,11 @@ import RatingBadge from "./RatingBadge";
 import CategoryTag from "./CategoryTag";
 import "../../App.css";
 
-const RecipeCard = ({ item, handelLocalStorageBookMark, isBookmarked }) => {
+const RecipeCard = ({
+  item,
+  handelLocalStorageBookMark,
+  isBookmarked,
+}) => {
   return (
     <li className="recipeCard snap-start group cursor-pointer inline-block min-w-[48.5%] h-auto overflow-hidden 2xl:min-w-[24.2%] xl:min-w-[32.5%] lg:min-w-[32.4%] md:min-w-[49%] xxs:min-w-[32.2%]">
       <article className="p-2 select-none bg-[#f0f3f5] rounded-md md:rounded-2xl border w-full border-theme-light dark:border-2 dark:bg-[#1e1e1e] dark:border-[#2d2d2d]">
@@ -25,8 +28,9 @@ const RecipeCard = ({ item, handelLocalStorageBookMark, isBookmarked }) => {
             </div>
             <div className="saveRecipe bg-black min-h-9 min-w-9 rounded-full flex items-center justify-center">
               <span
-                onClick={() => handelLocalStorageBookMark(item._id)}
-                aria-label={isBookmarked ? "Remove Bookmark" : "Add Bookmark"}
+                onClick={() => {
+                  handelLocalStorageBookMark(item._id,item.name);
+                }}
                 className={`bookmark-icon p-1 flex items-center justify-center transition-transform duration-300 ${
                   isBookmarked ? "bookmarked" : ""
                 }`}
