@@ -1,5 +1,6 @@
 import HeaderTitle from "../Utils/HeaderTitle";
 import chillyFlex from "../../assets/svg/chillyFlex.svg";
+import textPiza from "../../assets/svg/textPiza.svg";
 import eptycartAfiv from "../../assets/image/eptycart.avif";
 import { NavLink } from "react-router";
 
@@ -28,7 +29,15 @@ const EmptyCart = () => {
               >
                 <div className="textWrap w-[95%] h-full flex items-center justify-center">
                   <p className="text-3xl md:text-4xl 2xl:text-6xl lg:text-5xl text-center lg:ml-2 lg:text-start leading-tight tracking-wide text-[#1f2937] dark:text-gray-200 font-bold">
-                    NO RECIPE SAVED YET. FIND SOMETHING TASTY TO TRY.
+                    N
+                    <span className="inline-flex">
+                      <img
+                        src={textPiza}
+                        alt="textPiza"
+                        className="ml-0.5 h-[1.5rem] md:h-[1.8rem] lg:h-[2.4rem] 2xl:h-[2.9rem]"
+                      />
+                    </span>{" "}
+                    RECIPE SAVED YET. FIND SOMETHING TASTY TO TRY.
                   </p>
                 </div>
               </div>
