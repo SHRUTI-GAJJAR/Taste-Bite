@@ -2,40 +2,29 @@ import NavBar from "../components/Navbar/NavBar";
 import "../App.css";
 import EmptyCart from "../components/Bookmarked-Recipe/EmptyCart";
 import RecipeCart from "../components/Bookmarked-Recipe/RecipeCart";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { BookmarkContext } from "./BookmarkContext";
 
 const BookmarkedRecipes = () => {
-  const [bookMarked, setBookMarked] = useState([]);
-
-  const loadBookMarks = () => {
-    const stored = localStorage.getItem("bookmarksItem");
-
-    try {
-      const parsed = stored ? JSON.parse(stored) : [];
-      setBookMarked(parsed);
-    } catch (err) {
-      console.log("Invalid JSON in localStorage", err);
-      setBookMarked([]);
-    }
-  };
-
+  const { bookMarked } = useContext(BookmarkContext);
+  const isEmpty = bookMarked.length === 0;
   useEffect(() => {
-    loadBookMarks();
-    const handelStorageChange = () => {
-      loadBookMarks();
-    };
-    window.addEventListener("storage", handelStorageChange);
+    const alreadyReloaded = sessionStorage.getItem("reloaded");
+
+    if (!alreadyReloaded) {
+      sessionStorage.setItem("reloaded", "true");
+      window.location.reload();
+    }
+
     return () => {
-      window.removeEventListener("storage", handelStorageChange);
+      sessionStorage.removeItem("reloaded");
     };
   }, []);
-
-  const isEmpty = bookMarked.length === 0;
 
   return (
     <div className="w-full relative h-screen bg-white dark:bg-main-dark transition-colors">
       <NavBar />
-      <main>{isEmpty ? <EmptyCart /> : <RecipeCart items={bookMarked} />}</main>
+      <main>{isEmpty ? <EmptyCart /> : <RecipeCart />}</main>
     </div>
   );
 };
