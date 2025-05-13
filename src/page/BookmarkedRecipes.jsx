@@ -5,26 +5,37 @@ import RecipeCart from "../components/BookmarkedRecipe/RecipeCart";
 import { useEffect, useState } from "react";
 
 const BookmarkedRecipes = () => {
-  const [bookMarked, setBookMarked] = useState({});
+  const [bookMarked, setBookMarked] = useState([]);
 
-  useEffect(() => {
+  const loadBookMarks = () => {
     const stored = localStorage.getItem("bookmarksItem");
 
     try {
-      const parsed = stored ? JSON.parse(stored) : {};
+      const parsed = stored ? JSON.parse(stored) : [];
       setBookMarked(parsed);
     } catch (err) {
       console.log("Invalid JSON in localStorage", err);
-      setBookMarked({});
+      setBookMarked([]);
     }
+  };
+
+  useEffect(() => {
+    loadBookMarks();
+    const handelStorageChange = () => {
+      loadBookMarks();
+    };
+    window.addEventListener("storage", handelStorageChange);
+    return () => {
+      window.removeEventListener("storage", handelStorageChange);
+    };
   }, []);
 
-  const isEmpyt = Object.keys(bookMarked).length === 0;
+  const isEmpty = bookMarked.length === 0;
 
   return (
     <div className="w-full relative h-screen bg-white dark:bg-main-dark transition-colors">
       <NavBar />
-      <main>{isEmpyt ? <EmptyCart /> : <RecipeCart items={bookMarked} />}</main>
+      <main>{isEmpty ? <EmptyCart /> : <RecipeCart items={bookMarked} />}</main>
     </div>
   );
 };

@@ -19,7 +19,7 @@ const NewRecipes = () => {
 
   const getLocalStorageBookmarks = () => {
     const storedBookmarks = JSON.parse(localStorage.getItem("bookmarksItem"));
-    return storedBookmarks || {};
+    return storedBookmarks || [];
   };
 
   const [bookMarkedItem, setBookmarkedItem] = useState(
@@ -31,25 +31,31 @@ const NewRecipes = () => {
   }, [bookMarkedItem]);
 
   const handelLocalStorageBookMark = (itemID) => {
-    setBookmarkedItem((prev) => ({
-      ...prev,
-      [itemID]: !prev[itemID],
-    }));
+    setBookmarkedItem((prev) => {
+      if (prev.includes(itemID)) {
+        return prev.filter((id) => id !== itemID);
+      } else {
+        return [...prev, itemID];
+      }
+    });
   };
 
   return (
     <section className="relative newRecipeWrapper m-auto h-fit my-3 w-[97vw] sm:my-6 md:max-w-[75vw]">
-      <HeaderTitle title={"New Recipes"}/>
+      <HeaderTitle title={"New Recipes"} />
       <div className="recipesSlider h-auto overflow-x-auto pb-[1rem] my-2 scroll-smooth snap-x snap-mandatory">
         <ul className="cardWrapper flex gap-2.5 xl:gap-3 h-auto w-full flex-nowrap whitespace-nowrap">
           {sliderDataLoading ? (
             <RecipeSimmerLoading />
           ) : (
-            uniqueCategoryRecipes.map((item, index) => ( 
+            uniqueCategoryRecipes.map((item, index) => (
               <RecipeCard
                 key={index}
                 item={item}
-                isBookmarked={bookMarkedItem[item._id] || false}
+                isBookmarked={
+                  Array.isArray(bookMarkedItem) &&
+                  bookMarkedItem.includes(item._id)
+                }
                 handelLocalStorageBookMark={handelLocalStorageBookMark}
               />
             ))

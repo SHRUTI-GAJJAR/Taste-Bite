@@ -4,8 +4,7 @@ import ViweMode from "../Utils/ViweMode";
 import FoodCategoryToogle from "./FoodCategoryToogle";
 
 const RecipeCart = ({ items }) => {
-
-    const { viewMode } = useViewMode()
+  const { viewMode } = useViewMode();
   return (
     <section className="w-full">
       <div className="emptyCartWrap m-auto md:max-w-[75vw] w-[97vw]">
@@ -14,9 +13,9 @@ const RecipeCart = ({ items }) => {
           <ViweMode />
         </div>
         <div className="mainContant w-full">
-            <div className="subMenu flex items-center justify-between">
-                <FoodCategoryToogle />
-            </div>
+          <div className="subMenu flex items-center justify-between">
+            <FoodCategoryToogle />
+          </div>
         </div>
       </div>
     </section>

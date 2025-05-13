@@ -10,13 +10,13 @@ export const FoodCategoryProvider = ({ children }) => {
   const toggleVeg = () => {
     const newVeg = !isVeg;
     setIsVeg(newVeg);
-    if (newVeg && isNonVeg) setIsNonVeg(false); 
+    if (newVeg && isNonVeg) setIsNonVeg(false);
   };
 
   const toggleNonVeg = () => {
     const newNonVeg = !isNonVeg;
     setIsNonVeg(newNonVeg);
-    if (newNonVeg && isVeg) setIsVeg(false); 
+    if (newNonVeg && isVeg) setIsVeg(false);
   };
 
   const resetCategory = () => {
