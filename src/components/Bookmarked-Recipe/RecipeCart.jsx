@@ -1,18 +1,16 @@
 import { useContext, useEffect } from "react";
 import { useViewMode } from "../../context/viweModeContext";
-import getCartInitialData from "../Utils/GetCartInitialData";
 import HeaderTitle from "../Utils/HeaderTitle";
 import ViweMode from "../Utils/ViweMode";
 import FoodCategoryToogle from "./FoodCategoryToogle";
 import FoodSorting from "./FoodSorting";
 import { FoodSortContext } from "../../context/FoodSortContext";
-import { useFoodCategory } from "../../context/FoodCategoryContext";
 import BottomBarNavigation from "./BottomBarNavigation";
+import SortedFoodList from "./SortedFoodList";
+import SortedFoodGrid from "./SortedFoodGrid";
 
 const RecipeCart = () => {
   const { sortedFoods } = useContext(FoodSortContext);
-  console.log(sortedFoods);
-  const { isVeg, isNonVeg } = useFoodCategory();
   const { viewMode } = useViewMode();
 
   return (
@@ -23,14 +21,12 @@ const RecipeCart = () => {
           <ViweMode />
         </div>
         <div className="mainContant w-full">
-          <div className="subMenu flex items-center justify-between">
+          <div className="subMenu flex items-center mb-2 justify-between">
             <FoodCategoryToogle />
             <FoodSorting />
           </div>
-          <div className="mainData text-2xl dark:text-white break-words">
-            {JSON.stringify(sortedFoods)}
-            {JSON.stringify(sortedFoods)}
-            {JSON.stringify(sortedFoods)}
+          <div className="mainData mt-1">
+            {viewMode === "list" ? <SortedFoodList /> : <SortedFoodGrid />}
           </div>
         </div>
         <BottomBarNavigation itemLength={sortedFoods.length} />

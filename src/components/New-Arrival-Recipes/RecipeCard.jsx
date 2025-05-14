@@ -5,15 +5,19 @@ import nonVage from "../../assets/svg/nonVage.svg";
 import ImageWithFallback from "./ImageWithFallback";
 import RatingBadge from "./RatingBadge";
 import CategoryTag from "./CategoryTag";
+import { motion } from "framer-motion";
+
 import "../../App.css";
 
-const RecipeCard = ({
-  item,
-  handelLocalStorageBookMark,
-  isBookmarked,
-}) => {
+const RecipeCard = ({ item, handelLocalStorageBookMark, isBookmarked }) => {
   return (
-    <li className="recipeCard snap-start group cursor-pointer inline-block min-w-[48.5%] h-auto overflow-hidden 2xl:min-w-[24.2%] xl:min-w-[32.5%] lg:min-w-[32.4%] md:min-w-[49%] xxs:min-w-[32.2%]">
+    <motion.li
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.3 } }}
+      
+      className="recipeCard group snap-start cursor-pointer inline-block min-w-[48.5%] h-auto overflow-hidden 2xl:min-w-[24.2%] xl:min-w-[32.5%] lg:min-w-[32.4%] md:min-w-[49%] xxs:min-w-[32.2%]"
+    >
       <article className="p-2 select-none bg-[#f0f3f5] rounded-md md:rounded-2xl border w-full border-theme-light dark:border-2 dark:bg-[#1e1e1e] dark:border-[#2d2d2d]">
         <figure className="relative rounded-md overflow-hidden w-full h-[8rem] md:rounded-xl 2xl:h-[14rem] md:h-[12rem]">
           <div className="acatios w-full h-fit top-2 z-10 px-2 absolute flex items-center justify-between">
@@ -22,14 +26,14 @@ const RecipeCard = ({
                 <img
                   src={item.Isvage ? vage : nonVage}
                   alt="vegIcon"
-                  className="h-6 w-6"
+                  className="h-6 w-6 group-hover:scale-110"
                 />
               </span>
             </div>
             <div className="saveRecipe bg-black min-h-9 min-w-9 rounded-full flex items-center justify-center">
               <span
                 onClick={() => {
-                  handelLocalStorageBookMark(item._id,item.name);
+                  handelLocalStorageBookMark(item._id, item.name);
                 }}
                 className={`bookmark-icon p-1 flex items-center justify-center transition-transform duration-300 ${
                   isBookmarked ? "bookmarked" : ""
@@ -103,7 +107,7 @@ const RecipeCard = ({
           <button className="text-white font-semibold">View Full Recipe</button>
         </div>
       </article>
-    </li>
+    </motion.li>
   );
 };
 
