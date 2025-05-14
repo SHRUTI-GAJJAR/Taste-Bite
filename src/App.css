@@ -7,6 +7,11 @@ body {
   margin: 0;
 }
 
+[data-theme="dark"] body {
+  background-color: #121212;
+  transition: background-color linear 150ms;
+}
+
 @theme {
   --color-white: #ffffff;
   --color-black: #000000;

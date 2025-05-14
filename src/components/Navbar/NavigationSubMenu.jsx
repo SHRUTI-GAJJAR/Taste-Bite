@@ -54,7 +54,7 @@ const NavigationSubMenu = () => {
           <ul className="absolute text-black dark:text-white text-sm md:text-[1.2rem] md:top-[3rem] top-[2.5rem] left-0 md:min-w-50 min-w-20 max-w-xs border-2 rounded-md border-border-light dark:border-border-dark bg-white dark:bg-sub-black py-2 z-50 overflow-hidden">
             <li className="whitespace-nowrap overflow-hidden text-ellipsis md:mx-1 mx-0.5 rounded-sm md:px-2 px-1 py-0.5 md:min-w-40 min-w-25 hover:bg-hover-light dark:hover:bg-hover-dark transition">
               <NavLink className="flex gap-1.5 items-center" to={"/AddProduct"}>
-                <span className="flex items-center justify-center h-6 w-6 border-1 bg-green-200 border-green-400 rounded-full">
+                <span className="flex items-center justify-center h-6 w-6 border-1 bg-green-200 border-green-400/80 rounded-full">
                   <IoAdd className="text-black h-4 w-4" />
                 </span>
                 <span>Add Product</span>
@@ -65,7 +65,7 @@ const NavigationSubMenu = () => {
                 className="flex gap-1.5 items-center"
                 to={"/DeleteProduct"}
               >
-                <span className="flex items-center justify-center h-6 w-6 border-1 bg-red-200 border-red-400 rounded-full">
+                <span className="flex items-center justify-center h-6 w-6 border-1 bg-red-200/80 border-red-400 rounded-full">
                   <IoIosRemoveCircleOutline className="text-black h-4 w-4" />
                 </span>
                 <span>Delete Product</span>
@@ -76,7 +76,7 @@ const NavigationSubMenu = () => {
                 className="flex gap-1.5 items-center"
                 to={"/UpdateProduct"}
               >
-                <span className="flex items-center justify-center h-6 w-6 border-1 bg-yellow-200 border-yellow-400 rounded-full">
+                <span className="flex items-center justify-center h-6 w-6 border-1 bg-yellow-200/80 border-yellow-400 rounded-full">
                   <MdEdit className="text-black h-4 w-4" />
                 </span>
                 <span>Update Product</span>
@@ -87,7 +87,7 @@ const NavigationSubMenu = () => {
                 className="flex gap-1.5 items-center"
                 to={"/BookmarkedRecipes"}
               >
-                <span className="flex items-center justify-center h-6 w-6 border-1 bg-orange-200 border-orange-400 rounded-full">
+                <span className="flex items-center justify-center h-6 w-6 border-1 bg-orange-200/80 border-orange-400 rounded-full">
                   <MdFavoriteBorder className="text-black h-4 w-4" />
                 </span>
                 <span>Bookmark Recipes</span>

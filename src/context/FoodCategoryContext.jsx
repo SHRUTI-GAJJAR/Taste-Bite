@@ -1,7 +1,7 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react"
 
-const FoodCategoryContext = createContext();
-export const useFoodCategory = () => useContext(FoodCategoryContext);
+const FoodCategoryContext = createContext()
+export const useFoodCategory = () => useContext(FoodCategoryContext)
 
 export const FoodCategoryProvider = ({ children }) => {
   const [isVeg, setIsVeg] = useState(false);

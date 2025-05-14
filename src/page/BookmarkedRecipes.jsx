@@ -10,7 +10,7 @@ const BookmarkedRecipes = () => {
   const isEmpty = bookMarked.length === 0;
 
   return (
-    <div className="w-full relative h-screen bg-white dark:bg-main-dark transition-colors">
+    <div className="w-full relative h-full bg-white dark:bg-main-dark transition-colors">
       <NavBar />
       <main>{isEmpty ? <EmptyCart /> : <RecipeCart />}</main>
     </div>

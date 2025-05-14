@@ -34,7 +34,7 @@ const EmptyCart = () => {
                       <img
                         src={textPiza}
                         alt="textPiza"
-                        className="ml-0.5 h-[1.5rem] md:h-[1.8rem] lg:h-[2.4rem] 2xl:h-[2.9rem]"
+                        className="ml-0.5 h-[1.5rem] md:h-[1.8rem] lg:h-[2.4rem] 2xl:h-[3rem]"
                       />
                     </span>{" "}
                     RECIPE SAVED YET. FIND SOMETHING TASTY TO TRY.

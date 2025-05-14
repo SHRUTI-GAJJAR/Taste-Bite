@@ -57,7 +57,7 @@ const FoodSorting = () => {
       </div>
 
       {isOpen && (
-        <div className="absolute top-8 mt-2 w-full bg-transperent-dark border-theme-light border rounded z-10">
+        <div className="absolute text-black dark:text-white top-8 mt-2 w-full dark:bg-[#1e1e1e] bg-white dark:border-2 dark:border-[#2d2d2d] border-theme-light border rounded z-10">
           {sortingOptions.map((option) => (
             <div
               key={option.value}

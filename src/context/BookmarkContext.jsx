@@ -44,6 +44,18 @@ export const BookmarkProvider = ({ children }) => {
     }, 0);
   };
 
+  const clearBookmarks = () => {
+    window.showRecipeToast(
+      true,
+      "All Bookmarks Cleared",
+      "All bookmarks have been removed."
+    );
+    setTimeout(() => {
+      saveBookmarks([]);
+      localStorage.removeItem("bookmarksItem")
+    }, 1000);
+  };
+
   useEffect(() => {
     loadBookMarks();
 
@@ -60,7 +72,12 @@ export const BookmarkProvider = ({ children }) => {
 
   return (
     <BookmarkContext.Provider
-      value={{ bookMarked, setBookMarked: saveBookmarks, toggleBookmark }}
+      value={{
+        bookMarked,
+        setBookMarked: saveBookmarks,
+        toggleBookmark,
+        clearBookmarks,
+      }}
     >
       {children}
     </BookmarkContext.Provider>

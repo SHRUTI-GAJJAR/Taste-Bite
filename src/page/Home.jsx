@@ -10,7 +10,7 @@ const Home = () => {
     <div className="w-full relative h-full bg-white dark:bg-[#121212] transition-colors">
       <NavBar />
       <SearchBox />
-      <main className="pb-20 ">
+      <main>
         <Carousel />
         <HomePageCategory />
         <NewRecipes />
