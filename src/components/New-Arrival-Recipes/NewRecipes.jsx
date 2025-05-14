@@ -2,11 +2,13 @@ import { useApi } from "../../context/apiContext";
 import RecipeSimmerLoading from "./RecipeSimmerLoading";
 import RecipeCard from "./RecipeCard";
 import "../../App.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import HeaderTitle from "../Utils/HeaderTitle";
+import { BookmarkContext } from "../../context/BookmarkContext";
 
 const NewRecipes = () => {
   const { recipeSliderData, sliderDataLoading } = useApi();
+  const { bookMarked, toggleBookmark } = useContext(BookmarkContext);
 
   const uniqueCategoryRecipes = recipeSliderData.filter(
     (item, index, self) =>
@@ -16,43 +18,6 @@ const NewRecipes = () => {
           temp.categories.toLowerCase() === item.categories.toLowerCase()
       )
   );
-
-  const getLocalStorageBookmarks = () => {
-    const storedBookmarks = JSON.parse(localStorage.getItem("bookmarksItem"));
-    return storedBookmarks || [];
-  };
-
-  const [bookMarkedItem, setBookmarkedItem] = useState(
-    getLocalStorageBookmarks
-  );
-
-  useEffect(() => {
-    localStorage.setItem("bookmarksItem", JSON.stringify(bookMarkedItem));
-  }, [bookMarkedItem]);
-
-  const handelLocalStorageBookMark = (itemID, itemName) => {
-    setBookmarkedItem((prev) => {
-      const isAlreadyBookmarked = prev.includes(itemID);
-      setTimeout(() => {
-        if (isAlreadyBookmarked) {
-          window.showRecipeToast(
-            false,
-            "Removed!",
-            `${itemName} has been removed from bookmarks.`
-          );
-        } else {
-          window.showRecipeToast(
-            true,
-            "Saved!",
-            `${itemName} has been added to bookmarks.`
-          );
-        }
-      }, 0);
-      return isAlreadyBookmarked
-        ? prev.filter((id) => id !== itemID)
-        : [...prev, itemID];
-    });
-  };
 
   return (
     <section className="relative newRecipeWrapper m-auto h-fit my-3 w-[97vw] sm:my-6 md:max-w-[75vw]">
@@ -66,10 +31,9 @@ const NewRecipes = () => {
               <RecipeCard
                 key={index}
                 item={item}
-                handelLocalStorageBookMark={handelLocalStorageBookMark}
+                handelLocalStorageBookMark={toggleBookmark}
                 isBookmarked={
-                  Array.isArray(bookMarkedItem) &&
-                  bookMarkedItem.includes(item._id)
+                  Array.isArray(bookMarked) && bookMarked.includes(item._id)
                 }
               />
             ))

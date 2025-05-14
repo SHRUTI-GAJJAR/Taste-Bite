@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { useApi } from "../context/apiContext"; // ✅ Use hook here
-import { BookmarkContext } from "../page/BookmarkContext";
+import { useApi } from "../context/apiContext";
+import { BookmarkContext } from "../context/BookmarkContext";
 import getCartInitialData from "../components/Utils/GetCartInitialData";
 
 export const FoodSortContext = createContext();

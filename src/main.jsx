@@ -7,7 +7,7 @@ import { ApiProvider } from "./context/apiContext.jsx";
 import { ViewModeProvider } from "./context/viweModeContext.jsx";
 import { FoodCategoryProvider } from "./context/FoodCategoryContext.jsx";
 import FoodSortProvider from "./context/FoodSortContext.jsx";
-import { BookmarkProvider } from "./page/BookmarkContext.jsx";
+import { BookmarkProvider } from "./context/BookmarkContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>

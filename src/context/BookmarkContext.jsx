@@ -7,7 +7,6 @@ export const BookmarkProvider = ({ children }) => {
 
   const loadBookMarks = () => {
     const stored = localStorage.getItem("bookmarksItem");
-
     try {
       const parsed = stored ? JSON.parse(stored) : [];
       setBookMarked(parsed);
@@ -20,6 +19,29 @@ export const BookmarkProvider = ({ children }) => {
   const saveBookmarks = (data) => {
     setBookMarked(data);
     localStorage.setItem("bookmarksItem", JSON.stringify(data));
+  };
+
+  const toggleBookmark = (id, itemName) => {
+    let updatedBookmarks;
+    let isAdded;
+
+    if (bookMarked.includes(id)) {
+      updatedBookmarks = bookMarked.filter((bookmarkId) => bookmarkId !== id);
+      isAdded = false;
+    } else {
+      updatedBookmarks = [...bookMarked, id];
+      isAdded = true;
+    }
+
+    saveBookmarks(updatedBookmarks);
+
+    setTimeout(() => {
+      window.showRecipeToast(
+        isAdded,
+        isAdded ? "Saved!" : "Removed!",
+        `${itemName} ${isAdded ? "added." : "removed."}`
+      );
+    }, 0);
   };
 
   useEffect(() => {
@@ -38,7 +60,7 @@ export const BookmarkProvider = ({ children }) => {
 
   return (
     <BookmarkContext.Provider
-      value={{ bookMarked, setBookMarked: saveBookmarks }}
+      value={{ bookMarked, setBookMarked: saveBookmarks, toggleBookmark }}
     >
       {children}
     </BookmarkContext.Provider>
