@@ -3,8 +3,9 @@ import { useViewMode } from "../../context/viweModeContext";
 import ViweMode from "../Utils/ViweMode";
 import ListCategory from "./ListCategory";
 import GridCategory from "./GridCategory";
-import "../../App.css";
+import { MdOutlineArrowForwardIos } from "react-icons/md";
 import HeaderTitle from "../Utils/HeaderTitle";
+import { NavLink } from "react-router";
 
 const HomePageCategory = () => {
   const { viewMode } = useViewMode();
@@ -17,6 +18,14 @@ const HomePageCategory = () => {
       </div>
       <div className="displayCategory my-2">
         {viewMode === "list" ? <ListCategory /> : <GridCategory />}
+      </div>
+      <div className="epxploreMore cursor-pointer">
+        <NavLink to="/Categories">
+          <div className="redirect flex items-center justify-start font-semibold gap-0.5">
+            <p className="text-theme-light">Viwe All Categories</p>
+            <MdOutlineArrowForwardIos className="text-theme-light text-sm" />
+          </div>
+        </NavLink>
       </div>
     </section>
   );

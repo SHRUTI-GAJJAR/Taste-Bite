@@ -13,7 +13,6 @@ import NoFoodFound from "../Bookmarked-Recipe/NoFoodFound";
 const RecipeCart = () => {
   const { sortedFoods } = useContext(FoodSortContext);
   const { viewMode } = useViewMode();
-  console.log(sortedFoods);
 
   return (
     <section className="relative h-auto flex items-center justify-center">
@@ -37,7 +36,7 @@ const RecipeCart = () => {
             )}
           </div>
         </div>
-        <BottomBarNavigation itemLength={sortedFoods.length} />
+        <BottomBarNavigation />
       </div>
     </section>
   );

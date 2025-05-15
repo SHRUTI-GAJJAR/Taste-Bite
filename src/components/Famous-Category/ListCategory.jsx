@@ -25,9 +25,8 @@ const ListCategory = () => {
       ) : (
         category.map((Item, index) => {
           return (
-            <AnimatePresence>
+            <AnimatePresence key={index}>
               <motion.li
-                key={index}
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.3 } }}

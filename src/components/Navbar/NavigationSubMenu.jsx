@@ -47,7 +47,7 @@ const NavigationSubMenu = () => {
           }cursor-pointer flex items-center justify-center pt gap-0.5 hover:text-gray-800 dark:hover:text-white transition-colors`}
         >
           <p>Navigation</p>
-          <FaChevronDown className="md:h-3 h-2.5 md:mt-1 mt-0.5" />
+          <FaChevronDown className="md:h-2.5 h-2.5 md:mt-1 mt-0.5" />
         </li>
 
         {open && (
