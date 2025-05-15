@@ -16,7 +16,7 @@ const HomePageCategory = () => {
         <HeaderTitle title={"Explore Categories"} />
         <ViweMode></ViweMode>
       </div>
-      <div className="displayCategory my-2">
+      <div className="displayCategory mt-2 sm:mb-2 mb-0">
         {viewMode === "list" ? <ListCategory /> : <GridCategory />}
       </div>
       <div className="epxploreMore cursor-pointer">
