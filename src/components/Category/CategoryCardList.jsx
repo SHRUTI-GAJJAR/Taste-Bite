@@ -4,7 +4,11 @@ import { normalizedIcons, bgClasses } from "../../services/script/recipeHelper";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router";
 
-const CategoryCard = ({ categoryName, categoryImg, CategoryDescription }) => {
+const CategoryCardList = ({
+  categoryName,
+  categoryImg,
+  CategoryDescription,
+}) => {
   const formattedKey = categoryName.replace(/\s+/g, "_");
   const svgIcon = normalizedIcons[formattedKey];
   const categoryBg = bgClasses[formattedKey];
@@ -29,7 +33,9 @@ const CategoryCard = ({ categoryName, categoryImg, CategoryDescription }) => {
             </NavLink>
           </div>
           <div className="categorySubText w-full">
-            <p className="w-[90%] text-sm text-gray-700/70 line-clamp-1">{CategoryDescription}</p>
+            <p className="w-[90%] text-sm text-gray-700/70 line-clamp-1">
+              {CategoryDescription}
+            </p>
           </div>
         </div>
         <div
@@ -58,4 +64,4 @@ const CategoryCard = ({ categoryName, categoryImg, CategoryDescription }) => {
     </motion.li>
   );
 };
-export default CategoryCard;
+export default CategoryCardList;
