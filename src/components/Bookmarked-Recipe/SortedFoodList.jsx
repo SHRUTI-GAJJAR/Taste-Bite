@@ -6,12 +6,10 @@ import NotFound from "../../assets/image/NOTFOUND!.png";
 import { FoodSortContext } from "../../context/FoodSortContext";
 import { BookmarkContext } from "../../context/BookmarkContext";
 import { useContext } from "react";
-import { useFoodCategory } from "../../context/FoodCategoryContext";
 import { motion, AnimatePresence } from "framer-motion";
 
 const SortedFoodList = () => {
   const { sortedFoods } = useContext(FoodSortContext);
-  const { isVeg, isNonVeg } = useFoodCategory();
   const { bookMarked, toggleBookmark } = useContext(BookmarkContext);
 
   return (

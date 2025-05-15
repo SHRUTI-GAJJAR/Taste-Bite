@@ -7,8 +7,6 @@ import RatingBadge from "./RatingBadge";
 import CategoryTag from "./CategoryTag";
 import { motion } from "framer-motion";
 
-import "../../App.css";
-
 const RecipeCard = ({ item, handelLocalStorageBookMark, isBookmarked }) => {
   return (
     <motion.li

@@ -3,7 +3,7 @@ import RecipeSimmerLoading from "./RecipeSimmerLoading";
 import RecipeCard from "./RecipeCard";
 import "../../App.css";
 import { AnimatePresence } from "framer-motion";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import HeaderTitle from "../Utils/HeaderTitle";
 import { BookmarkContext } from "../../context/BookmarkContext";
 

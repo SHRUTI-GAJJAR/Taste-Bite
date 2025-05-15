@@ -5,7 +5,7 @@ import { useFoodCategory } from "../../context/FoodCategoryContext";
 const FoodCategoryToggle = () => {
   const { isVeg, isNonVeg, toggleVeg, toggleNonVeg } = useFoodCategory();
   return (
-    <div className="toggleButton flex items-center gap-4 justify-center w-fit">
+    <div className="toggleButton flex items-center sm:gap-4 gap-2 justify-center w-fit">
       <div onClick={toggleVeg} className="veg cursor-pointer">
         <div className="toggle h-9 w-16 relative flex items-center justify-center border border-gray-700/20 dark:border-[#2d2d2d] rounded-full">
           <div
@@ -23,7 +23,6 @@ const FoodCategoryToggle = () => {
           </div>
         </div>
       </div>
-
       <div onClick={toggleNonVeg} className="nonVeg cursor-pointer">
         <div className="toggle h-9 w-16 relative flex items-center justify-center border border-gray-700/20 dark:border-[#2d2d2d] rounded-full">
           <div

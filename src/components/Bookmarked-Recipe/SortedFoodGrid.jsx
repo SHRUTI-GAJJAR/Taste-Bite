@@ -11,7 +11,6 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const SortedFoodGrid = () => {
   const { sortedFoods } = useContext(FoodSortContext);
-  const { isVeg, isNonVeg } = useFoodCategory();
   const { bookMarked, toggleBookmark } = useContext(BookmarkContext);
 
   return (
@@ -38,7 +37,7 @@ const SortedFoodGrid = () => {
                     alt="foodImg"
                     className="object-cover object-center transition-transform duration-300 group-hover:scale-110 h-38 w-full"
                   />
-                  <img src={Item.isVeg ? vage : nonVage} alt="foodcateGory" className="absolute top-1 right-1 h-5.5"/>
+                  <img src={Item.Isvage ? vage : nonVage} alt="foodcateGory" className="absolute top-1 right-1 h-5.5"/>
                 </div>
                 <div className="nameAndRating flex items-center justify-between w-full">
                   <div className="foodName w-[75%]">

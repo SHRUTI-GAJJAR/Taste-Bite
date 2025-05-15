@@ -13,15 +13,15 @@ createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <BookmarkProvider>
       <ApiProvider>
-        <FoodSortProvider>
-          <ThemeProvider>
-            <FoodCategoryProvider>
+        <FoodCategoryProvider>
+          <FoodSortProvider>
+            <ThemeProvider>
               <ViewModeProvider>
                 <App />
               </ViewModeProvider>
-            </FoodCategoryProvider>
-          </ThemeProvider>
-        </FoodSortProvider>
+            </ThemeProvider>
+          </FoodSortProvider>
+        </FoodCategoryProvider>
       </ApiProvider>
     </BookmarkProvider>
   </BrowserRouter>
