@@ -7,12 +7,18 @@ import AddProduct from "../../page/AddProduct";
 import DeleteProduct from "../../page/DeleteProduct";
 import UpdateProduct from "../../page/UpdateProduct";
 import BookmarkedRecipes from "../../page/BookmarkedRecipes";
+import CategoriesWiseRecipes from "../../components/All-Recipes/CategoriesWiseRecipes";
 
 const Routing = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/Recipe" element={<Recipe />} />
+      <Route path="/Recipe" element={<Recipe />}>
+        <Route
+          path="/Recipe/:CategoriesName"
+          element={<CategoriesWiseRecipes />}
+        />
+      </Route>
       <Route path="/Categories" element={<Categories />} />
       <Route path="/AddProduct" element={<AddProduct />} />
       <Route path="/UpdateProduct" element={<UpdateProduct />} />

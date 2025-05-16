@@ -12,7 +12,7 @@ const sortingOptions = [
   { label: "0 To 5", value: "rating-asc", icon: <BiSortUp /> },
   { label: "A To Z", value: "az", icon: <AiOutlineSortAscending /> },
   { label: "Z To A", value: "za", icon: <AiOutlineSortDescending /> },
-];
+]
 
 const FoodSorting = () => {
   const { handleSort } = useContext(FoodSortContext);
@@ -41,7 +41,7 @@ const FoodSorting = () => {
   return (
     <div ref={dropdownRef} className="relative flex h-fit w-fit">
       <div
-        className="cursor-pointer text-sm px-3 text-white h-9 rounded-md bg-[linear-gradient(to_right,#e53935,#e35d5b)] flex items-center justify-center"
+        className="cursor-pointer font-semibold text-sm px-3 text-white h-9 rounded-md bg-[linear-gradient(to_right,#e53935,#e35d5b)] flex items-center justify-center"
         onClick={toggleDropdown}
       >
         {selected ? (

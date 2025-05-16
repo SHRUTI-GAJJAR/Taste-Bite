@@ -105,7 +105,7 @@ const MobileMenu = () => {
             <i className="line h-fit w-full border-0.1 border-b border-dashed border-white"></i>
             <li className="flex p-2 w-full cursor-pointer items-center justify-between">
               <span>
-                <NavLink to={"/Recipe"}>Recipe</NavLink>
+                <NavLink to={"/Recipe"}>Recipes</NavLink>
               </span>
               <MdArrowOutward size={"1.3em"} />
             </li>

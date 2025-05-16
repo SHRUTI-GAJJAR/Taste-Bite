@@ -33,7 +33,7 @@ const Navigations = () => {
             }
             to={"/Recipe"}
           >
-            Recipe
+            Recipes
           </NavLink>
         </li>
         <li className="cursor-pointer dark:hover:text-white transition-colors">
