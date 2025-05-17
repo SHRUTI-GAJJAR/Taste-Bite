@@ -1,71 +1,52 @@
 import { useState } from "react";
 import { LuFilter } from "react-icons/lu";
 import { IoClose } from "react-icons/io5";
-import { motion, AnimatePresence, useMotionValue } from "framer-motion";
 
 const FilterModule = () => {
   const [openFilterModule, setOpenFilterModule] = useState(false);
-  const y = useMotionValue(0);
 
-  const openFilterMenu = () => {
+  const toggleDrawer = () => {
     setOpenFilterModule((prev) => !prev);
-    y.set(0); // reset position when opened or closed
   };
 
   return (
     <div className="w-full h-fit">
-      {/* Top Icon */}
-      <div className="w-full flex items-center justify-end">
+      {/* Filter Button */}
+      <div className="w-full relative flex items-center justify-end"> 
         <div
-          onClick={openFilterMenu}
-          className="relative bg-transperent-dark h-10 w-10 rounded-sm border border-theme-light flex items-center justify-center cursor-pointer"
+          onClick={toggleDrawer}
+          className="h-10 w-10 rounded-sm border bg-transperent-dark border-theme-light flex items-center justify-center cursor-pointer"
         >
           <LuFilter className="text-theme-light text-[1.2rem]" />
-          <div className="hidden absolute -top-1.5 -right-1.5 text-sm font-semibold text-white bg-theme-light h-5.5 w-5.5 items-center justify-center rounded-full">
-            <p>3</p>
-          </div>
         </div>
       </div>
 
-      <AnimatePresence>
-        {openFilterModule && (
-          <motion.div
-            className="min-h-[70vh] fixed left-0 right-0 bottom-0 z-50 bg-white rounded-t-3xl shadow-xl p-4 border-t-2 border-dashed border-orange-600"
-            initial={{ y: "100%" }}
-            animate={{ y: 0 }}
-            exit={{ y: "100%" }}
-            transition={{
-              type: "tween",
-              duration: 0.4,
-              ease: "easeInOut",
-            }}
-            drag="y"
-            dragConstraints={{ top: 0 }}
-            dragElastic={false}
-            dragMomentum={false}
-            style={{ y }}
-            onDragEnd={(event, info) => {
-              if (info.offset.y > 100) {
-                setOpenFilterModule(false);
-              } else {
-                y.set(0);
-              }
-            }}
-          >
-            <div className="w-full overflow-auto flex flex-col">
-              <div className="w-12 h-1.5 bg-theme-light rounded-full mx-auto mb-2 cursor-pointer" />
-              <div className="filterName w-full flex items-center justify-center">
-                <h2 className="font-semibold mb-2 text-xl">Recipe Filter</h2>
-                <div className="justify-end">
-                  <button onClick={openFilterMenu}>
-                    <IoClose size={24} />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <div
+        className={`fixed bottom-0 left-0 right-0 z-50 
+        transform transition-transform duration-300 ease-in-out
+        ${openFilterModule ? "translate-y-0" : "translate-y-full"}
+        bg-gray-50 rounded-t-3xl p-4 
+        w-full md:max-w-[75vw] mx-auto 
+        max-h-[66vh] overflow-y-auto`}
+      >
+        <div className="w-full">
+          <div className="flex justify-between items-center mb-2">
+            <h2 className="font-semibold text-xl">Recipe Filter</h2>
+            <button
+              className="bg-gray-200 p-1 rounded-full"
+              onClick={toggleDrawer}
+            >
+              <IoClose className="text-gray-800 text-xl" />
+            </button>
+          </div>
+
+          <div className="border-b border-dashed border-gray-400 mb-4" />
+
+          <div className="filterData space-y-4">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In ipsum, voluptates voluptatem debitis sint nihil illo molestiae architecto commodi magni blanditiis aperiam aut voluptate voluptatibus velit placeat maxime quis ex?</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

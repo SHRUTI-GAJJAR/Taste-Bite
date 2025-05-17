@@ -168,3 +168,13 @@ body {
   }
 }
 
+/* If needed for smooth transform */
+.drawer-open {
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.drawer-closed {
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+}
