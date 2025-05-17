@@ -164,7 +164,7 @@ body {
   }
   .scrollBarVisible {
     -ms-overflow-style: none; /* IE/Edge */
-    scrollbar-width: none;    /* Firefox */
+    scrollbar-width: none; /* Firefox */
   }
 }
 
