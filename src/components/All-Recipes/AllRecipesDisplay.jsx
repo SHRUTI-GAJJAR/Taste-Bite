@@ -9,7 +9,7 @@ import {
 } from "../../services/script/recipeHelper";
 
 const AllRecipesDisplay = () => {
-  const { categoryName, fetchCategoriesName, categoryLoading } = useApi();
+  const { categoryName, fetchCategoriesName } = useApi();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -74,6 +74,7 @@ const AllRecipesDisplay = () => {
             );
           })}
         </div>
+        <div className="border-1 border-dashed md:mt-1.5 mt-1 md:mb-2 mb-2 h-px w-[100%] border-gray-700/45"></div>
       </div>
     </section>
   );
