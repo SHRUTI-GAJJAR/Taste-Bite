@@ -27,7 +27,7 @@ const FilterModule = () => {
         ${openFilterModule ? "translate-y-0" : "translate-y-full"}
         bg-[#f3f3f7] dark:bg-[#1e1e1e] rounded-t-3xl p-4 
         w-full md:max-w-[75vw] mx-auto 
-        max-h-[66vh] overflow-y-auto`}
+        max-h-[66vh] overflow-y-hidden`}
       >
         <div className="w-full">
           <div className="flex justify-between items-center mb-2">
