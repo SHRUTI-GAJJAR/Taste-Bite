@@ -39,7 +39,7 @@ const SortedFoodList = () => {
                   <div className="vgeAndNonvge flex w-fit items-center justify-start">
                     <span>
                       <img
-                        src={Item.isVeg ? vage : nonVage}
+                        src={Item.Isvage ? vage : nonVage}
                         alt="vegIcon"
                         className="h-5.5 w-5.5 2xl:h-7 2xl:w-7"
                       />

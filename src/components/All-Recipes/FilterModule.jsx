@@ -2,6 +2,7 @@ import { useState } from "react";
 import { LuFilter } from "react-icons/lu";
 import { IoClose } from "react-icons/io5";
 import FilterSheet from "./FilterSheet";
+import { useFilter } from "../../context/FilterContext";
 
 const FilterModule = () => {
   const [openFilterModule, setOpenFilterModule] = useState(false);
@@ -9,6 +10,8 @@ const FilterModule = () => {
   const toggleDrawer = () => {
     setOpenFilterModule((prev) => !prev);
   };
+
+  const { appliedFilterCount } = useFilter();
 
   return (
     <div className="w-full h-fit">
@@ -19,6 +22,13 @@ const FilterModule = () => {
         >
           <LuFilter className="text-theme-light text-[1.2rem]" />
         </div>
+        {appliedFilterCount === 0 ? (
+          ""
+        ) : (
+          <div className="bage h-5 text-sm w-5 flex text-white rounded-full bg-theme-light items-center justify-center font-semibold absolute -top-1.5 -right-1.5">
+            <p>{appliedFilterCount}</p>
+          </div>
+        )}
       </div>
 
       <div
@@ -44,7 +54,7 @@ const FilterModule = () => {
 
           <div className="border-b border-dashed dark:border-gray-500 border-gray-400 mb-4" />
 
-          <div className="filterData overflow-y-auto h-[46vh] scroll-smooth scrollbar-thin scrollbar-thumb-gray-400 dark:scrollbar-thumb-gray-600">
+          <div className="filterData noScrollBar overflow-y-auto h-[46vh] scroll-smooth scrollbar-thin scrollbar-thumb-gray-400 dark:scrollbar-thumb-gray-600">
             <div className="flex flex-col gap-2">
               <FilterSheet />
             </div>

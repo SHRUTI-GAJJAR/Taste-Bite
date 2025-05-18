@@ -1,18 +1,21 @@
-import { useState } from "react";
+import {
+  AiOutlineSortAscending,
+  AiOutlineSortDescending,
+} from "react-icons/ai";
 import { BiSortDown, BiSortUp } from "react-icons/bi";
-import { AiOutlineSortAscending, AiOutlineSortDescending } from "react-icons/ai";
 import { motion } from "framer-motion";
+import { useFilter } from "../../context/FilterContext";
 
 const RecipeSort = () => {
-  const [ratingSort, setRatingSort] = useState("");
-  const [alphabetSort, setAlphabetSort] = useState("");
+  const { sortByRating, setSortByRating, sortByName, setSortByName } =
+    useFilter();
 
-  const handleRatingSort = (value) => {
-    setRatingSort((prev) => (prev === value ? "" : value));
+  const handleRatingSort = (type) => {
+    setSortByRating(sortByRating === type ? "" : type);
   };
 
-  const handleAlphabetSort = (value) => {
-    setAlphabetSort((prev) => (prev === value ? "" : value));
+  const handleNameSort = (type) => {
+    setSortByName(sortByName === type ? "" : type);
   };
 
   const sortButtonClasses = (isActive) =>
@@ -26,39 +29,44 @@ const RecipeSort = () => {
       animate={{ height: "auto", opacity: 1 }}
       exit={{ height: 0, opacity: 0 }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      className="overflow-hidden px-4"
+      className="overflow-hidden px-"
     >
-      <div className="flex md:flex-row flex-col gap-4 text-gray-600 dark:text-gray-200 py-4">
-        <div className="w-full flex justify-between gap-2">
-          <div
-            onClick={() => handleRatingSort("desc")}
-            className={sortButtonClasses(ratingSort === "desc")}
-          >
-            <BiSortDown />
-            <p>5 To 0</p>
-          </div>
-          <div
-            onClick={() => handleRatingSort("asc")}
-            className={sortButtonClasses(ratingSort === "asc")}
-          >
-            <BiSortUp />
-            <p>0 To 5</p>
+      <div className="flex flex-col gap-4 text-gray-600 dark:text-gray-200 py-4">
+        <div>
+          <div className="w-full flex justify-between gap-2">
+            <div
+              onClick={() => handleRatingSort("rating-desc")}
+              className={sortButtonClasses(sortByRating === "rating-desc")}
+            >
+              <BiSortDown />
+              <p>5 To 0</p>
+            </div>
+            <div
+              onClick={() => handleRatingSort("rating-asc")}
+              className={sortButtonClasses(sortByRating === "rating-asc")}
+            >
+              <BiSortUp />
+              <p>0 To 5</p>
+            </div>
           </div>
         </div>
-        <div className="w-full flex justify-between gap-2">
-          <div
-            onClick={() => handleAlphabetSort("az")}
-            className={sortButtonClasses(alphabetSort === "az")}
-          >
-            <AiOutlineSortAscending />
-            <p>A To Z</p>
-          </div>
-          <div
-            onClick={() => handleAlphabetSort("za")}
-            className={sortButtonClasses(alphabetSort === "za")}
-          >
-            <AiOutlineSortDescending />
-            <p>Z To A</p>
+
+        <div>
+          <div className="w-full flex justify-between gap-2">
+            <div
+              onClick={() => handleNameSort("az")}
+              className={sortButtonClasses(sortByName === "az")}
+            >
+              <AiOutlineSortAscending />
+              <p>A To Z</p>
+            </div>
+            <div
+              onClick={() => handleNameSort("za")}
+              className={sortButtonClasses(sortByName === "za")}
+            >
+              <AiOutlineSortDescending />
+              <p>Z To A</p>
+            </div>
           </div>
         </div>
       </div>

@@ -34,7 +34,7 @@ const AllRecipesDisplay = () => {
               }`
             }
             to={`/Recipe/All`}
-          >
+          > 
             <div className="categoryImg h-10 w-full">
               <img src={ALL} alt="svg" className="w-full h-full" />
             </div>

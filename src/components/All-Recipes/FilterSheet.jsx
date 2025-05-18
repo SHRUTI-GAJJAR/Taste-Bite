@@ -1,17 +1,21 @@
+import { useFilter } from "../../context/FilterContext";
 import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa6";
-import FoodCategoryToggle from "../Bookmarked-Recipe/FoodCategoryToogle";
 import TimeRangeSlider from "./TimeRangeSlider";
 import { AnimatePresence, motion } from "framer-motion";
 import RecipeSort from "./RecipeSort";
 import CategorySideMenu from "./CategorySideMenu";
+import FoodCategoryToggle from "../Bookmarked-Recipe/FoodCategoryToogle";
 
 const FilterSheet = () => {
+  const { resetAllFilters } = useFilter();
   const [openSections, setOpenSections] = useState({
     foodCategory: false,
     sortCategory: false,
     categories: false,
   });
+
+  const { appliedFilterCount } = useFilter();
 
   const toggleSection = (section) => {
     setOpenSections((prev) => ({
@@ -104,6 +108,20 @@ const FilterSheet = () => {
             </motion.div>
           )}
         </AnimatePresence>
+      </div>
+
+      <div className="buttonWrap flex items-center justify-between">
+        <div
+          onClick={resetAllFilters}
+          className="clearAll cursor-pointer flex items-center justify-center px-8 py-2 font-semibold rounded-full text-[1.1rem] bg-gray-200"
+        >
+          <p>Clear All</p>
+          {appliedFilterCount === 0 ? "" : <p>({appliedFilterCount})</p>}
+        </div>
+        <div className="applyAll flex items-center justify-center px-8 py-2 font-semibold rounded-full text-[1.1rem] text-white bg-theme-light">
+          <p>Apply All</p>
+          {appliedFilterCount === 0 ? "" : <p>({appliedFilterCount})</p>}
+        </div>
       </div>
     </>
   );

@@ -1,15 +1,15 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useApi } from "../context/apiContext";
 import { BookmarkContext } from "../context/BookmarkContext";
 import getCartInitialData from "../components/Utils/GetCartInitialData";
-import { useFoodCategory } from "./FoodCategoryContext";
+import { useFilter } from "./FilterContext";
 
 export const FoodSortContext = createContext();
 
 const FoodSortProvider = ({ children }) => {
   const { recipeSliderData } = useApi();
   const { bookMarked } = useContext(BookmarkContext);
-  const { isVeg, isNonVeg, resetCategory } = useFoodCategory();
+  const { isVeg, isNonVeg, resetAllFilters } = useFilter();
 
   const [foods, setFoods] = useState([]);
   const [sortedFoods, setSortedFoods] = useState([]);
@@ -17,7 +17,7 @@ const FoodSortProvider = ({ children }) => {
 
   const resetFilter = () => {
     setSortType("");
-    resetCategory()
+    resetAllFilters();
   };
 
   useEffect(() => {
@@ -73,3 +73,12 @@ const FoodSortProvider = ({ children }) => {
 };
 
 export default FoodSortProvider;
+
+// ✅ Custom Hook
+export const useFoodSort = () => {
+  const context = useContext(FoodSortContext);
+  if (!context) {
+    throw new Error("useFoodSort must be used within a FoodSortProvider");
+  }
+  return context;
+};

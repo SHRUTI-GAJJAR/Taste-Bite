@@ -1,19 +1,19 @@
+import "./index.css";
+import App from "./App.jsx";
 import { BrowserRouter } from "react-router";
 import { ThemeProvider } from "./context/ThemeContext.jsx";
 import { createRoot } from "react-dom/client";
-import "./index.css";
-import App from "./App.jsx";
 import { ApiProvider } from "./context/apiContext.jsx";
 import { ViewModeProvider } from "./context/viweModeContext.jsx";
-import { FoodCategoryProvider } from "./context/FoodCategoryContext.jsx";
 import FoodSortProvider from "./context/FoodSortContext.jsx";
 import { BookmarkProvider } from "./context/BookmarkContext.jsx";
+import { FilterProvider } from "./context/FilterContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <BookmarkProvider>
-      <ApiProvider>
-        <FoodCategoryProvider>
+    <FilterProvider>
+      <BookmarkProvider>
+        <ApiProvider>
           <FoodSortProvider>
             <ThemeProvider>
               <ViewModeProvider>
@@ -21,8 +21,8 @@ createRoot(document.getElementById("root")).render(
               </ViewModeProvider>
             </ThemeProvider>
           </FoodSortProvider>
-        </FoodCategoryProvider>
-      </ApiProvider>
-    </BookmarkProvider>
+        </ApiProvider>
+      </BookmarkProvider>
+    </FilterProvider>
   </BrowserRouter>
 );

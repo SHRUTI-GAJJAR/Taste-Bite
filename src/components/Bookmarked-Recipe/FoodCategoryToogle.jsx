@@ -1,9 +1,9 @@
 import vage from "../../assets/svg/vage.svg";
 import nonVage from "../../assets/svg/nonVage.svg";
-import { useFoodCategory } from "../../context/FoodCategoryContext";
+import { useFilter } from "../../context/FilterContext";
 
 const FoodCategoryToggle = () => {
-  const { isVeg, isNonVeg, toggleVeg, toggleNonVeg } = useFoodCategory();
+  const { isVeg, isNonVeg, toggleVeg, toggleNonVeg } = useFilter();
 
   return (
     <div className="toggleButton flex items-center sm:gap-4 gap-2 justify-center w-fit">

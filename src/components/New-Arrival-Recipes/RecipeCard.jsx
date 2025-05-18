@@ -8,6 +8,11 @@ import CategoryTag from "./CategoryTag";
 import { motion } from "framer-motion";
 
 const RecipeCard = ({ item, handelLocalStorageBookMark, isBookmarked }) => {
+  const formatTime = (minutes) => {
+    const h = Math.floor(minutes / 60);
+    const m = minutes % 60;
+    return `${h > 0 ? `${h}Hour ` : ""}${m > 0 ? `${m}Min` : ""}`.trim();
+  };
   return (
     <motion.li
       initial={{ opacity: 0, scale: 0.95 }}
@@ -89,13 +94,13 @@ const RecipeCard = ({ item, handelLocalStorageBookMark, isBookmarked }) => {
               <span className="shareText xl:text-[1.01rem] 2xl:text-[1.1rem] text-theme-light">
                 Share
               </span>
-            </div>
+            </div> 
             <div className="cookTime flex justify-center items-center gap-0.5">
               <span className="timerIcon">
                 <CgTimelapse className="text-gray-500 dark:text-gray-400 text-[1rem] 2xl:text-[1.1rem]" />
               </span>
               <span className="time font-semibold text-gray-500 2xl:text-[1.1rem] xl:text-[1.01rem] dark:text-gray-400">
-                {item.cookingTime}
+                {formatTime(item.cookingTime)}
               </span>
             </div>
           </div>

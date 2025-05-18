@@ -182,3 +182,11 @@ body {
 [data-theme="dark"] .rc-slider-rail {
   background-color: #1e1e1e !important; /* Darker rail for dark mode */
 }
+
+.noScrollBar::-webkit-scrollbar {
+  display: none;
+}
+.noScrollBar {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
