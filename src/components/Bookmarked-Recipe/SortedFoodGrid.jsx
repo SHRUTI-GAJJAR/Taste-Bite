@@ -6,7 +6,6 @@ import nonVage from "../../assets/svg/nonVage.svg";
 import CategoryTag from "../New-Arrival-Recipes/CategoryTag";
 import RatingBadge from "../New-Arrival-Recipes/RatingBadge";
 import NotFound from "../../assets/image/NOTFOUND!.png";
-import { useFoodCategory } from "../../context/FoodCategoryContext";
 import { motion, AnimatePresence } from "framer-motion";
 
 const SortedFoodGrid = () => {
@@ -19,7 +18,7 @@ const SortedFoodGrid = () => {
         <ul className="flex flex-wrap items-center gap-2">
           {sortedFoods.map((Item) => {
             return (
-              <motion.li 
+              <motion.li
                 className="flex group cursor-pointer flex-col items-start justify-center 2xl:w-[19.3%] lg:w-[24.2%] sm:w-[32.2%] w-[48%] rounded-md md:rounded-xl border border-theme-light bg-[#f0f3f5] p-2 gap-2 dark:border-2 dark:border-[#2d2d2d] dark:bg-[#1e1e1e]"
                 key={Item._id}
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -37,11 +36,17 @@ const SortedFoodGrid = () => {
                     alt="foodImg"
                     className="object-cover object-center transition-transform duration-300 group-hover:scale-110 h-38 w-full"
                   />
-                  <img src={Item.Isvage ? vage : nonVage} alt="foodcateGory" className="absolute top-1 right-1 h-5.5"/>
+                  <img
+                    src={Item.Isvage ? vage : nonVage}
+                    alt="foodcateGory"
+                    className="absolute top-1 right-1 h-5.5"
+                  />
                 </div>
                 <div className="nameAndRating flex items-center justify-between w-full">
                   <div className="foodName w-[75%]">
-                    <h4 className="truncate w-full text-[1.2rem] font-semibold dark:text-white ">{Item.name}</h4>
+                    <h4 className="truncate w-full text-[1.2rem] font-semibold dark:text-white ">
+                      {Item.name}
+                    </h4>
                   </div>
                   <div className="ratingBage">
                     <RatingBadge rating={Item.rating} />

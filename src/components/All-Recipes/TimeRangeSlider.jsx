@@ -13,7 +13,7 @@ const TimeRangeSlider = () => {
   };
 
   return (
-    <div className="pt-4 max-w-full mx-auto">
+    <div className="w-full px-4 pt-4">
       <Slider
         range
         min={1}
@@ -27,21 +27,23 @@ const TimeRangeSlider = () => {
           return React.cloneElement(node, {
             style: {
               ...node.props.style,
-              backgroundColor: isDragging ? "#ff642f" : "#ff642f",
-              borderColor: isDragging ? "#ff642f" : "#ff642f",
-              boxShadow: isDragging ? "0 0 0 5px rgba(255, 100, 47, 0.3)" : "",
+              backgroundColor: "#ff642f",
+              borderColor: "#ff642f",
+              boxShadow: isDragging
+                ? "0 0 0 5px rgba(255, 100, 47, 0.3)"
+                : "",
             },
           });
         }}
         trackStyle={[{ backgroundColor: "#ff642f" }]}
       />
 
-      <div className="flex justify-between mt-4 text-gray-800">
-        <div className="p-1 border-dashed border border-theme-light rounded-md min-w-20 flex items-center justify-center text-theme-light bg-transperent-dark">
-          <strong>{formatTime(range[0])}</strong>
+      <div className="flex justify-between mt-4 gap-4">
+        <div className="px-3 py-1 border-dashed border border-transperent-border-dark rounded-md min-w-[80px] text-center text-orange-500 dark:bg-transperent-dark bg-orange-50 font-medium">
+          {formatTime(range[0])}
         </div>
-        <div className="p-1 border-dashed border border-theme-light rounded-md min-w-20 flex items-center justify-center text-theme-light bg-transperent-dark">
-          <strong>{formatTime(range[1])}</strong>
+        <div className="px-3 py-1 border-dashed border border-transperent-border-dark rounded-md min-w-[80px] text-center text-orange-500 dark:bg-transperent-dark bg-orange-50 font-medium">
+          {formatTime(range[1])}
         </div>
       </div>
     </div>
