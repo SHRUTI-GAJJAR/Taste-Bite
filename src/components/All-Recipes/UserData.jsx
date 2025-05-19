@@ -28,7 +28,6 @@ const UserData = ({ recipeId, recipeData, userDetails }) => {
   const userDetailData = userDetails.find(
     (user) => user.id?.toString() === recipeData.user?.toString()
   );
-console.log(userDetailData);
 
   return (
     <div className="userDetailsDate flex flex-col dark:bg-black dark:border-2 dark:border-[#2d2d2d] bg-white border gap-1 border-gray-400 pl-2 px-2 py-2 rounded-md md:rounded-xl">
