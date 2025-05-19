@@ -21,7 +21,7 @@ const HomePageCategory = () => {
       </div>
       <div className="epxploreMore cursor-pointer">
         <NavLink to="/Categories">
-          <div className="redirect flex items-center justify-start font-semibold gap-0.5">
+          <div className="redirect mt-0.5 sm:mt-0 flex items-center justify-start font-semibold gap-0.5">
             <p className="text-theme-light">Viwe All Categories</p>
             <MdOutlineArrowForwardIos className="text-theme-light text-sm" />
           </div>

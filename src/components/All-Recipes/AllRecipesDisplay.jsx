@@ -9,19 +9,26 @@ import {
 } from "../../services/script/recipeHelper";
 
 const AllRecipesDisplay = () => {
-  const { categoryName, fetchCategoriesName } = useApi();
+  const {
+    categoryName,
+    fetchCategoriesName,
+    fetchCategoryCount,
+    categoryCount,
+  } = useApi();
   const navigate = useNavigate();
 
   useEffect(() => {
     fetchCategoriesName();
+    fetchCategoryCount();
     if (window.location.pathname === "/Recipe") {
       navigate("/Recipe/All", { replace: true });
     }
   }, []);
+
   return (
     <section className="relative h-auto flex items-center justify-center">
       <div className="cartWrap m-auto md:max-w-[75vw] w-[97vw]">
-        <div className="headerTitleWrap flex gap-2 mt-3 mb-2 sm:mt-6">  
+        <div className="headerTitleWrap flex gap-2 mt-3 mb-2 sm:mt-6">
           <HeaderTitle title={"All Recipes"} />
         </div>
         <div className="categorySlider pb-2 flex items-center gap-1.5 overflow-x-scroll scroll-smooth snap-x snap-mandatory scrollBarVisible">
@@ -34,12 +41,21 @@ const AllRecipesDisplay = () => {
               }`
             }
             to={`/Recipe/All`}
-          > 
+          >
             <div className="categoryImg h-10 w-full">
               <img src={ALL} alt="svg" className="w-full h-full" />
             </div>
             <div className="categoryName dark:text-gray-200 text-gray-800 text-[1.1rem] font-semibold whitespace-nowrap">
-              <p>All</p>
+              <p>
+                All (
+                {categoryCount
+                  ? Object.values(categoryCount).reduce(
+                      (sum, val) => sum + val,
+                      0
+                    )
+                  : 0}
+                )
+              </p>
             </div>
           </NavLink>
           {categoryName.map((catName, index) => {
@@ -68,7 +84,9 @@ const AllRecipesDisplay = () => {
                   />
                 </div>
                 <div className="categoryName text-gray-800 dark:text-gray-200 text-[1.1rem] font-semibold whitespace-nowrap">
-                  <p>{catName}</p>
+                  <p>
+                    {catName} ({categoryCount[catName]})
+                  </p>
                 </div>
               </NavLink>
             );

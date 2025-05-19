@@ -62,7 +62,7 @@ const FilterSheet = () => {
 
       <div className="recipeTime bg-white dark:bg-[#2d2d2d] rounded-md px-4 py-4 mb-4">
         <p className="text-xl dark:text-gray-200 font-semibold mb-2">
-          Cook Time Range
+          Cook Time Duration
         </p>
         <TimeRangeSlider />
       </div>

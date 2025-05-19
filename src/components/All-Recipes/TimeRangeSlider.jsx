@@ -4,7 +4,7 @@ import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 
 const TimeRangeSlider = () => {
-  const { timeRange, setTimeRange } = useFilter(); // ✅ Added setTimeRange
+  const { timeRange, setTimeRange } = useFilter();
   const [draggingIndex, setDraggingIndex] = useState(null);
 
   const formatTime = (minutes) => {

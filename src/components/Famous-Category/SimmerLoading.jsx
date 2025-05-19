@@ -8,7 +8,7 @@ const SimmerLoading = () => {
     <>
       {viewMode === "list"
         ? [...Array(8)].map((_, index) => { 
-            return (
+            return ( 
               <li
                 key={index}
                 className="w-full lg:w-[49%] gap-2 h-16 px-2.5 rounded-md items-center dark:bg-[#1a1a1a] flex bg-[#f0f3f5]"

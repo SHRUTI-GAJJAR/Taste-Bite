@@ -8,7 +8,7 @@ import {
 import { useFilter } from "../../context/FilterContext";
 
 const CategorySideMenu = ({ isOpen, onClose }) => {
-  const { categoryName, categoryLoading } = useApi();
+  const { categoryName, categoryLoading, categoryCount } = useApi();
   const { selectedCategories, toggleCategory } = useFilter();
 
   return (
@@ -74,7 +74,7 @@ const CategorySideMenu = ({ isOpen, onClose }) => {
                         alt={`${catName} icon`}
                       />
                     </span>
-                    <p className="text-xl">{catName}</p>
+                    <p className="text-xl">{catName} ({categoryCount[catName]})</p>
                   </button>
                 );
               })
