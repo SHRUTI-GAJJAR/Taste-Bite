@@ -24,6 +24,8 @@ const CategoriesWiseRecipes = () => {
     detailRecipeData,
     detailRecipeDataLoading,
     fetchRecipe,
+    fetchUserData,
+    userData,
     userLoading,
   } = useApi();
 
@@ -36,7 +38,8 @@ const CategoriesWiseRecipes = () => {
       fetchCategoriesData(CategoriesName);
     }
     fetchRecipe();
-  }, [CategoriesName]);
+    fetchUserData()
+  }, [CategoriesName]);  
 
   const isLoading =
   detailRecipeDataLoading || userLoading;
@@ -56,10 +59,9 @@ const CategoriesWiseRecipes = () => {
                 ? recipeSliderData
                 : categoryWiseData
               ).map((item, index) => {
-                // const recipeDetailData = detailRecipeData.find(
-                //   (recipe) => recipe._id?.toString() === item._id?.toString()
-                // );
-                // console.log(recipeDetailData._id);
+                const recipeDetailData = detailRecipeData.find(
+                  (recipe) => recipe._id?.toString() === item.full_recipe?.toString()
+                );
                 return (
                   <motion.li
                     initial={{ opacity: 0, scale: 0.95 }}
@@ -166,7 +168,8 @@ const CategoriesWiseRecipes = () => {
 
                         <UserData
                           recipeId={item._id}
-                          // recipeData={recipeDetailData}
+                          recipeData={recipeDetailData}
+                          userDetails={userData}
                         />
                         <div className="redirectButton mt-1 text-white font-semibold shadow-md flex items-center justify-center rounded-md py-1 bg-[linear-gradient(to_right,#e53935,#e35d5b)] md:rounded-xl md:text-[1.2rem] 2xl:mt-1">
                           <button>Viwe Full Recipe</button>
