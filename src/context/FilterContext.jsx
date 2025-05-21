@@ -8,6 +8,7 @@ export const FilterProvider = ({ children }) => {
   const defaultMaxTime = 120;
 
   const [selectedCategories, setSelectedCategories] = useState([]);
+  const [isFilterApplied, setFilterApplied] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [isVeg, setIsVeg] = useState(false);
   const [isNonVeg, setIsNonVeg] = useState(false);
@@ -15,6 +16,10 @@ export const FilterProvider = ({ children }) => {
   const [maxTime, setMaxTime] = useState(defaultMaxTime);
   const [sortByRating, setSortByRating] = useState("");
   const [sortByName, setSortByName] = useState("");
+
+  const applyFilterNow = () => {
+    setFilterApplied(true);
+  };
 
   const timeRange = [minTime, maxTime];
 
@@ -52,6 +57,7 @@ export const FilterProvider = ({ children }) => {
     setMaxTime(defaultMaxTime);
     setSortByRating("");
     setSortByName("");
+    setFilterApplied(false)
   };
 
   const appliedFilterCount =
@@ -87,6 +93,9 @@ export const FilterProvider = ({ children }) => {
         setSortByName,
         resetAllFilters,
         appliedFilterCount,
+        applyFilterNow,
+        isFilterApplied,
+        setFilterApplied,
       }}
     >
       {children}

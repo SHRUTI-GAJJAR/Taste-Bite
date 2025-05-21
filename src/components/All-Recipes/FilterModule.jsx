@@ -10,8 +10,20 @@ const FilterModule = () => {
   const toggleDrawer = () => {
     setOpenFilterModule((prev) => !prev);
   };
+  const { resetAllFilters, applyFilterNow } = useFilter();
 
   const { appliedFilterCount } = useFilter();
+  const applyFilters = () => {
+    if (appliedFilterCount > 0) {
+      applyFilterNow();
+      setOpenFilterModule(false);
+    } else return;
+  };
+
+  const resetFilters = () => {
+    resetAllFilters()
+    setOpenFilterModule(false)
+  }
 
   return (
     <div className="w-full h-fit">
@@ -37,7 +49,7 @@ const FilterModule = () => {
         ${openFilterModule ? "translate-y-0" : "translate-y-full"}
         bg-[#f3f3f7] dark:bg-[#1e1e1e] rounded-t-3xl p-4 
         w-full md:max-w-[75vw] mx-auto 
-        max-h-[66vh] overflow-y-hidden`}
+        h-fit overflow-y-hidden`}
       >
         <div className="w-full">
           <div className="flex justify-between items-center mb-2">
@@ -54,9 +66,33 @@ const FilterModule = () => {
 
           <div className="border-b border-dashed dark:border-gray-500 border-gray-400 mb-4" />
 
-          <div className="filterData noScrollBar overflow-y-auto h-[46vh] scroll-smooth scrollbar-thin scrollbar-thumb-gray-400 dark:scrollbar-thumb-gray-600">
+          <div className="filterData noScrollBar overflow-y-auto h-fit scroll-smooth scrollbar-thin scrollbar-thumb-gray-400 dark:scrollbar-thumb-gray-600">
             <div className="flex flex-col gap-2">
               <FilterSheet />
+              <div className="buttonWrap flex items-center justify-between">
+                <div
+                  onClick={resetFilters}
+                  className="clearAll cursor-pointer flex items-center justify-center px-8 py-2 font-semibold rounded-full text-[1.1rem] bg-gray-200"
+                >
+                  <p>Clear All</p>
+                  {appliedFilterCount === 0 ? (
+                    ""
+                  ) : (
+                    <p>({appliedFilterCount})</p>
+                  )}
+                </div>
+                <div
+                  onClick={applyFilters}
+                  className="applyAll flex items-center justify-center px-8 py-2 font-semibold rounded-full text-[1.1rem] text-white bg-theme-light"
+                >
+                  <p>Apply All</p>
+                  {appliedFilterCount === 0 ? (
+                    ""
+                  ) : (
+                    <p>({appliedFilterCount})</p>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -29,14 +29,14 @@ const CategorySideMenu = ({ isOpen, onClose }) => {
         animate={{ x: isOpen ? 0 : "100%" }}
         exit={{ x: "100%" }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
-        className="fixed top-0 h-[65vh] right-0 w-full dark:bg-[#1e1e1e] bg-[#f3f3f7] z-50 overflow-hidden p-6 flex gap-2 flex-col"
+        className="fixed top-0  h-[66vh] right-0 w-full dark:bg-[#1e1e1e] bg-[#f3f3f7] z-50 overflow-hidden p-6 flex gap-2 flex-col"
       >
         <div className="titelBar flex w-full items-center justify-between">
           <h2 className="text-[1.5rem] text-black dark:text-gray-200 font-bold">
             Select Categories
           </h2>
           <button
-            className="text-black dark:text-gray-200 rounded-full bg-gray-200 dark:bg-[#2d2d2d] p-2 font-semibold"
+            className="text-black cursor-pointer dark:text-gray-200 rounded-full bg-gray-200 dark:bg-[#2d2d2d] p-2 font-semibold"
             onClick={onClose}
           >
             <RiArrowGoBackLine className="text-[1.1rem]" />
@@ -45,11 +45,11 @@ const CategorySideMenu = ({ isOpen, onClose }) => {
 
         <div className="border-1 border-dashed mt-2 mb-2 h-px w-full border-gray-700/45"></div>
 
-        <div className="categorySelecation">
-          <div className="grid grid-cols-1 noScrollBar h-[42vh] md:grid-cols-2 gap-2 overflow-y-auto">
+        <div className="categorySelecation noScrollBar h-fit overflow-y-auto">
+          <div className="grid grid-cols-1  md:grid-cols-2 gap-2 ">
             {!categoryLoading && categoryName.length > 0 ? (
               categoryName.map((catName, index) => {
-                const formattedKey = catName.replace(/\s+/g, "_");
+                const formattedKey = catName.replace(/\s+/g, "_");  
                 const svgIcon = normalizedCategoryIcons[formattedKey];
                 const isSelected = selectedCategories.includes(catName);
 
@@ -74,7 +74,9 @@ const CategorySideMenu = ({ isOpen, onClose }) => {
                         alt={`${catName} icon`}
                       />
                     </span>
-                    <p className="text-xl">{catName} ({categoryCount[catName]})</p>
+                    <p className="text-xl">
+                      {catName} ({categoryCount[catName]})
+                    </p>
                   </button>
                 );
               })

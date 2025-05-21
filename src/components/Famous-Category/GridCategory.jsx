@@ -5,25 +5,21 @@ import { IoIosArrowForward } from "react-icons/io";
 import NotFound from "../../assets/image/NOTFOUND!.png";
 import SimmerLoading from "./SimmerLoading";
 import { motion, AnimatePresence } from "framer-motion";
-import "../../App.css";
+import "../../App.css"; 
 
 const GridCategory = () => {
-  const { category, fetchCategories, Loading } = useApi();
+  const { category, fetchCategories, sliderDataLoading, categoryCount } = useApi();
   useEffect(() => {
     fetchCategories();
   }, []);
 
   return (
     <ul className={`w-full flex flex-wrap gap-3 justify-between`}>
-      {Loading ? (
+      {sliderDataLoading ? (
         <div className="text-center text-lg w-full py-1">
           <ul className="flex h-fit w-full flex-wrap flex-row gap-3.5">
             <SimmerLoading />
           </ul>
-        </div>
-      ) : category.length === 0 ? (
-        <div className="text-center text-lg py-10 text-gray-400">
-          No categories available
         </div>
       ) : (
         category.map((Item, index) => {
@@ -49,7 +45,7 @@ const GridCategory = () => {
                 </div>
                 <div className="textContantWrap w-full mb-2 flex flex-col items-center justify-center">
                   <p className="mainText xl:text-xl text-black dark:text-white font-semibold">
-                    {Item.Category}
+                    {Item.Category} 
                   </p>
                   <p className="subText w-fit text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
                     {Item.CategoryDescription}

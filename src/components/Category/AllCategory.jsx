@@ -8,13 +8,18 @@ import CategoryCardList from "./CategoryCardList";
 import CategoryCardGrid from "./CategoryCardGrid";
 
 const AllCategory = () => {
-  const { category, fetchCategories, Loading } = useApi();
+  const {
+    category,
+    fetchCategories,
+    fetchCategoryCount,
+    Loading,
+    categoryCount,
+  } = useApi();
   useEffect(() => {
-    fetchCategories();
+    fetchCategoryCount(), fetchCategories();
   }, []);
 
   const { viewMode } = useViewMode();
-
   return (
     <section>
       <div className="categoryWrap pb-10 h-fit m-auto md:max-w-[75vw] w-[97vw]">
@@ -27,12 +32,17 @@ const AllCategory = () => {
             <ul className="flex flex-wrap w-full flex-col lg:flex-row gap-2">
               <AnimatePresence>
                 {category.map((item, index) => {
+                  let totalRecipe;
+                  item.Category === "Dessert"
+                    ? (totalRecipe = categoryCount["Dessart"])
+                    : (totalRecipe = categoryCount[item.Category]);
                   return (
                     <CategoryCardList
                       key={index}
                       categoryName={item.Category}
                       categoryImg={item.Thumbnail_img}
                       CategoryDescription={item.CategoryDescription}
+                      availbleRecipe={totalRecipe}
                     />
                   );
                 })}
@@ -42,12 +52,17 @@ const AllCategory = () => {
             <ul className="flex flex-wrap w-full gap-2">
               <AnimatePresence>
                 {category.map((item, index) => {
+                  let totalRecipe;
+                  item.Category === "Dessert"
+                    ? (totalRecipe = categoryCount["Dessart"])
+                    : (totalRecipe = categoryCount[item.Category]);
                   return (
                     <CategoryCardGrid
                       key={index}
                       categoryName={item.Category}
                       categoryImg={item.Thumbnail_img}
                       CategoryDescription={item.CategoryDescription}
+                      availbleRecipe={totalRecipe}
                     />
                   );
                 })}

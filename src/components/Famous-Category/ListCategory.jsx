@@ -7,21 +7,17 @@ import NotFound from "../../assets/image/NOTFOUND!.png";
 import SimmerLoading from "./SimmerLoading";
 
 const ListCategory = () => {
-  const { category, fetchCategories, Loading } = useApi();
+  const { category, fetchCategories, sliderDataLoading } = useApi();
   useEffect(() => {
     fetchCategories();
   }, []);
 
   return (
     <ul className={`w-full flex flex-wrap justify-between`}>
-      {Loading ? (
+      {sliderDataLoading ? (
         <ul className="flex h-fit w-full lg:flex-row lg:flex-wrap flex-col gap-3.5">
           <SimmerLoading />
         </ul>
-      ) : category.length === 0 ? (
-        <div className="text-center text-lg py-10 text-gray-400">
-          No categories available
-        </div>
       ) : (
         category.map((Item, index) => {
           return (
@@ -61,7 +57,8 @@ const ListCategory = () => {
             </AnimatePresence>
           );
         })
-      )}
+      )
+      }
     </ul>
   );
 };

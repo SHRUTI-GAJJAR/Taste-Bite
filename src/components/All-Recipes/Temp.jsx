@@ -3,7 +3,6 @@ import { useFilter } from "../../context/FilterContext";
 const Temp = () => {
   const {
     selectedCategories,
-    searchTerm,
     isVeg,
     isNonVeg,
     minTime,

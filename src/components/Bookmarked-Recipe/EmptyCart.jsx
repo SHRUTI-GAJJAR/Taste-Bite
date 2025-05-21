@@ -10,7 +10,6 @@ const EmptyCart = () => {
       <div className="emptyCartWrap m-auto md:max-w-[75vw] w-[97vw]">
         <div className="headerTitleWrap flex gap-2 mt-3 mb-1 sm:mt-6">
           <HeaderTitle title={"Bookmarked Recipes"} />
-          {/* <ViweMode /> */}
         </div>
 
         <div className="emptyContant rounded-md  sm:rounded-2xl my-2 overflow-hidden border border-theme-light dark:border-2 dark:border-[#2d2d2d] bg-[#f0f3f5] dark:bg-[#1e1e1e] w-full h-fit flex items-center justify-center">
