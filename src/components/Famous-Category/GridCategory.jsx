@@ -5,10 +5,12 @@ import { IoIosArrowForward } from "react-icons/io";
 import NotFound from "../../assets/image/NOTFOUND!.png";
 import SimmerLoading from "./SimmerLoading";
 import { motion, AnimatePresence } from "framer-motion";
-import "../../App.css"; 
+import "../../App.css";
+import { Link } from "react-router";
 
 const GridCategory = () => {
-  const { category, fetchCategories, sliderDataLoading, categoryCount } = useApi();
+  const { category, fetchCategories, sliderDataLoading, categoryCount } =
+    useApi();
   useEffect(() => {
     fetchCategories();
   }, []);
@@ -45,16 +47,25 @@ const GridCategory = () => {
                 </div>
                 <div className="textContantWrap w-full mb-2 flex flex-col items-center justify-center">
                   <p className="mainText xl:text-xl text-black dark:text-white font-semibold">
-                    {Item.Category} 
+                    {Item.Category}
                   </p>
                   <p className="subText w-fit text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
                     {Item.CategoryDescription}
                   </p>
                 </div>
-                <button className="shadow-md redirectButton h-8 w-[100%] cursor-pointer rounded-md flex items-center justify-center bg-[linear-gradient(to_right,#e53935,#e35d5b)]">
-                  <p className="text-white font-semibold">Explore More</p>
-                  <IoIosArrowForward className="text-xl text-white" />
-                </button>
+                <Link
+                  to={`/Recipe/${
+                    Item.Category === "Dessert"
+                      ? "Dessart"
+                      : Item.Category.replace(/\s+/g, "-")
+                  }`}
+                  className="w-full"
+                >
+                  <button className="shadow-md redirectButton h-8 w-[100%] cursor-pointer rounded-md flex items-center justify-center bg-[linear-gradient(to_right,#e53935,#e35d5b)]">
+                    <p className="text-white font-semibold">Explore More</p>
+                    <IoIosArrowForward className="text-xl text-white" />
+                  </button>
+                </Link>
               </motion.li>
             </AnimatePresence>
           );

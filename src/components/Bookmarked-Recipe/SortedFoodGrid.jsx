@@ -7,6 +7,7 @@ import CategoryTag from "../New-Arrival-Recipes/CategoryTag";
 import RatingBadge from "../New-Arrival-Recipes/RatingBadge";
 import NotFound from "../../assets/image/NOTFOUND!.png";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router";
 
 const SortedFoodGrid = () => {
   const { sortedFoods } = useContext(FoodSortContext);
@@ -26,35 +27,40 @@ const SortedFoodGrid = () => {
                 exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.3 } }}
                 layout
               >
-                <div className="imgAndFoodCategory rounded-md md:rounded-xl relative overflow-hidden w-full">
-                  <img
-                    src={`https://taste-bite-api.onrender.com/${Item.Thumbnail_img}`}
-                    onError={(e) => {
-                      e.target.onerror = null;
-                      e.target.src = NotFound;
-                    }}
-                    alt="foodImg"
-                    className="object-cover object-center transition-transform duration-300 group-hover:scale-110 h-38 w-full"
-                  />
-                  <img
-                    src={Item.Isvage ? vage : nonVage}
-                    alt="foodcateGory"
-                    className="absolute top-1 right-1 h-5.5"
-                  />
-                </div>
-                <div className="nameAndRating flex items-center justify-between w-full">
-                  <div className="foodName w-[75%]">
-                    <h4 className="truncate w-full text-[1.2rem] font-semibold dark:text-white ">
-                      {Item.name}
-                    </h4>
+                <Link
+                  to={`/Recipe/${Item.categories}/${Item._id}`}
+                  className="w-full flex flex-col gap-2"
+                >
+                  <div className="imgAndFoodCategory rounded-md md:rounded-xl relative overflow-hidden w-full">
+                    <img
+                      src={`https://taste-bite-api.onrender.com/${Item.Thumbnail_img}`}
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = NotFound;
+                      }}
+                      alt="foodImg"
+                      className="object-cover object-center transition-transform duration-300 group-hover:scale-110 h-38 w-full"
+                    />
+                    <img
+                      src={Item.Isvage ? vage : nonVage}
+                      alt="foodcateGory"
+                      className="absolute top-1 right-1 h-5.5"
+                    />
                   </div>
-                  <div className="ratingBage">
-                    <RatingBadge rating={Item.rating} />
+                  <div className="nameAndRating flex items-center justify-between w-full">
+                    <div className="foodName w-[75%]">
+                      <h4 className="truncate w-full text-[1.2rem] font-semibold dark:text-white ">
+                        {Item.name}
+                      </h4>
+                    </div>
+                    <div className="ratingBage">
+                      <RatingBadge rating={Item.rating} />
+                    </div>
                   </div>
-                </div>
-                <div className="category">
-                  <CategoryTag categoryData={Item.categories} />
-                </div>
+                  <div className="category">
+                    <CategoryTag categoryData={Item.categories} />
+                  </div>
+                </Link>
                 <div className="bookmark w-full flex justify-end">
                   <div className="saveRecipe flex min-h-9 min-w-9 items-center justify-center rounded-full bg-black 2xl:min-h-10 2xl:min-w-10">
                     <span

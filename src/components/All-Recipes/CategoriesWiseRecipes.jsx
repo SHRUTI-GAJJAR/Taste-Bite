@@ -91,7 +91,7 @@ const CategoriesWiseRecipes = () => {
                 const recipeDetailData = detailRecipeData.find(
                   (recipe) =>
                     recipe._id?.toString() === item.full_recipe?.toString()
-                );
+                )
                 return (
                   <RecipeCard
                     key={index}

@@ -7,6 +7,7 @@ import { FoodSortContext } from "../../context/FoodSortContext";
 import { BookmarkContext } from "../../context/BookmarkContext";
 import { useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router";
 
 const SortedFoodList = () => {
   const { sortedFoods } = useContext(FoodSortContext);
@@ -22,44 +23,48 @@ const SortedFoodList = () => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.3 } }}
             layout
-            className="flex w-full items-center justify-between rounded-md border border-theme-light bg-[#f0f3f5] p-1 dark:border-2 dark:border-[#2d2d2d] dark:bg-[#1e1e1e] md:rounded-xl lg:w-[49.5%]"
+            className="lg:w-[49%] w-full flex h-fit rounded-md border border-theme-light bg-[#f0f3f5] p-1 dark:border-2 dark:border-[#2d2d2d] dark:bg-[#1e1e1e] md:rounded-xl items-center justify-between"
           >
-            <div className="imgAndText flex w-[80%] items-center gap-2 xl:w-[70%] 2xl:w-[80%] lg:w-[80%]">
-              <img
-                src={`https://taste-bite-api.onrender.com/${Item.Thumbnail_img}`}
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = NotFound;
-                }}
-                className="h-25 2xl:h-28 rounded-md object-cover md:rounded-xl"
-                alt="Categoriesimg"
-              />
-              <div className="subData flex w-[70%] flex-col items-start justify-center gap-1.5 md:w-[80%]">
-                <div className="foodName flex w-full gap-1">
-                  <div className="vgeAndNonvge flex w-fit items-center justify-start">
-                    <span>
-                      <img
-                        src={Item.Isvage ? vage : nonVage}
-                        alt="vegIcon"
-                        className="h-5.5 w-5.5 2xl:h-7 2xl:w-7"
-                      />
-                    </span>
+            <Link
+              to={`/Recipe/${Item.categories}/${Item._id}`}
+              className="w-full"
+            >
+              <div className="imgAndText flex w-[80%] items-center gap-2 xl:w-[70%] 2xl:w-[80%] lg:w-[80%]">
+                <img
+                  src={`https://taste-bite-api.onrender.com/${Item.Thumbnail_img}`}
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = NotFound;
+                  }}
+                  className="h-25 2xl:h-28 rounded-md object-cover md:rounded-xl"
+                  alt="Categoriesimg"
+                />
+                <div className="subData flex w-[70%] flex-col items-start justify-center gap-1.5 md:w-[80%]">
+                  <div className="foodName flex w-full gap-1">
+                    <div className="vgeAndNonvge flex w-fit items-center justify-start">
+                      <span>
+                        <img
+                          src={Item.Isvage ? vage : nonVage}
+                          alt="vegIcon"
+                          className="h-5.5 w-5.5 2xl:h-7 2xl:w-7"
+                        />
+                      </span>
+                    </div>
+                    <h3 className="recipeName truncate w-[90%] text-[1.2rem] font-semibold dark:text-white md:text-xl xl:text-[1.35rem] 2xl:text-[1.5rem]">
+                      {Item.name}
+                    </h3>
                   </div>
-                  <h3 className="recipeName truncate w-[90%] text-[1.2rem] font-semibold dark:text-white md:text-xl xl:text-[1.35rem] 2xl:text-[1.5rem]">
-                    {Item.name}
-                  </h3>
-                </div>
-                <div className="foodCategory mb-1">
-                  <CategoryTag categoryData={Item.categories} />
-                </div>
-                <div className="rating">
-                  <RatingBadge rating={Item.rating} />
+                  <div className="foodCategory mb-1">
+                    <CategoryTag categoryData={Item.categories} />
+                  </div>
+                  <div className="rating">
+                    <RatingBadge rating={Item.rating} />
+                  </div>
                 </div>
               </div>
-            </div>
-
+            </Link>
             <div className="flex h-[3rem] min-w-[3.5rem] cursor-pointer items-center justify-center">
-              <div className="saveRecipe flex min-h-9 min-w-9 items-center justify-center rounded-full bg-black 2xl:min-h-10 2xl:min-w-10">
+              <div className="saveRecipe flex h-9 w-9 items-center justify-center rounded-full bg-black 2xl:min-h-10 2xl:min-w-10">
                 <span
                   onClick={() => toggleBookmark(Item._id, Item.name)}
                   className={`bookmark-icon flex items-center justify-center p-1 transition-transform duration-300 ${

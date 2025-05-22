@@ -7,8 +7,10 @@ import RatingBadge from "./RatingBadge";
 import CategoryTag from "./CategoryTag";
 import { motion } from "framer-motion";
 import formatTime from "../Utils/formatedTime";
+import { Link, useParams } from "react-router";
 
 const RecipeCard = ({ item, handelLocalStorageBookMark, isBookmarked }) => {
+  const { CategoriesName } = useParams()
   return (
     <motion.li
       initial={{ opacity: 0, scale: 0.95 }}
@@ -101,9 +103,11 @@ const RecipeCard = ({ item, handelLocalStorageBookMark, isBookmarked }) => {
             </div>
           </div>
         </div>
-        <div className="viweFullRecipeButtom shadow-md flex items-center justify-center rounded-md py-1 bg-[linear-gradient(to_right,#e53935,#e35d5b)] md:rounded-xl md:text-[1.2rem] 2xl:mt-1">
-          <button className="text-white font-semibold">View Full Recipe</button>
-        </div>
+        <Link to={`/Recipe/${item.categories}/${item._id}`} className="w-full">
+          <button className="viweFullRecipeButtom w-full transition-transform duration-300 shadow-md hover:cursor-pointer hover:scale-98 flex items-center justify-center rounded-md py-1 bg-[linear-gradient(to_right,#e53935,#e35d5b)] md:rounded-xl md:text-[1.2rem] 2xl:mt-1">
+            <p className="text-white font-semibold">View Full Recipe</p>
+          </button>
+        </Link>
       </article>
     </motion.li>
   );

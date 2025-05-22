@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 import formatTime from "../Utils/formatedTime";
 import "../../App.css";
 import { CgTimelapse } from "react-icons/cg";
+import { Link, useParams } from "react-router";
 
 const RecipeCard = ({
   recipeDetailData,
@@ -25,6 +26,8 @@ const RecipeCard = ({
   recipeCookingTime,
 }) => {
   const { bookMarked, toggleBookmark } = useContext(BookmarkContext);
+
+  const { CategoriesName } = useParams();
 
   return (
     <motion.li
@@ -52,10 +55,7 @@ const RecipeCard = ({
             <div className="foodCategory ml-1 h-5.5 w-5.5">
               <img src={Isvage ? vage : nonVage} alt="foodcateGory" />
             </div>
-            <div
-              className="bookMark cursor-pointer
-                          "
-            >
+            <div className="bookMark cursor-pointer">
               <span
                 onClick={() => {
                   toggleBookmark(recipeId, recipeName);
@@ -135,9 +135,11 @@ const RecipeCard = ({
             recipeData={recipeDetailData}
             userDetails={userData}
           />
-          <div className="redirectButton mt-1 text-white font-semibold shadow-md flex items-center justify-center rounded-md py-1 bg-[linear-gradient(to_right,#e53935,#e35d5b)] md:rounded-xl md:text-[1.2rem] 2xl:mt-1">
-            <button>Viwe Full Recipe</button>
-          </div>
+          <Link to={`/Recipe/${CategoriesName}/${recipeId}`} className="w-full">
+            <button className="redirectButton hover:cursor-pointer hover:scale-98 w-full transition-transform duration-300 mt-1 text-white font-semibold shadow-md flex items-center justify-center rounded-md py-1 bg-[linear-gradient(to_right,#e53935,#e35d5b)] md:rounded-xl md:text-[1.2rem] 2xl:mt-1">
+              <p>Viwe Full Recipe</p>
+            </button>
+          </Link>
         </div>
       </article>
     </motion.li>
