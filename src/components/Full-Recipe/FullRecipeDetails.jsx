@@ -3,8 +3,11 @@ import HeaderTitle from "../Utils/HeaderTitle";
 import { useApi } from "../../context/apiContext";
 import RecipeDetailModule from "./RecipeDetailModule";
 import { useEffect } from "react";
+import { useRef } from "react";
+import { handleDownloadPDF } from "../Utils/pdfDownloder"
 
 const FullRecipeDetails = () => {
+  const contentRef = useRef();
   const { RecipeId } = useParams();
   const {
     fetchRecipeSliderData,
@@ -33,10 +36,21 @@ const FullRecipeDetails = () => {
   return (
     <section>
       <div className="categoryWrap h-fit m-auto md:max-w-[75vw] w-[97vw]">
-        <div className="titleAndModeWrap flex gap-2 mt-3 mb-2 sm:mt-6">
+        <div className="titleAndModeWrap items-center justify-center flex gap-2 mt-3 mb-2 sm:mt-6">
           <HeaderTitle title={recipeName} />
+          <div className="Print">
+            <button onClick={() => handleDownloadPDF(contentRef,recipeName)} className="flex items-center justify-center bg-transperent-dark border-2 border-transperent-border-dark text-white font-semibold text-xl px-1 py-1 sm:px-2 sm:py-2 rounded-md sm:rounded-xl cursor-pointer">
+              <lord-icon
+                src="https://cdn.lordicon.com/jqqjtvlf.json"
+                trigger="click"
+                state="hover-file-2"
+                colors="primary:#f54900"
+                style={{ width: "22px", height: "22px" }}
+              ></lord-icon>
+            </button>
+          </div>
         </div>
-        <div className="MainContant">
+        <div className="MainContant" ref={contentRef}>
           {detailRecipeDataLoading || sliderDataLoading || userLoading ? (
             <p>Loading....</p>
           ) : recipeData ? (

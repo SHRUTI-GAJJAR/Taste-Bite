@@ -1,6 +1,4 @@
 const RecipeIngredients = ({ ingredientsArray }) => {
-
-
   return (
     <div className="ingredients sm:rounded-xl rounded-md p-3 border border-gray-300 dark:border-2 dark:border-[#2d2d2d] dark:bg-[#1e1e1e] bg-[#f3f6f9] w-full">
       <div className="title">
@@ -16,8 +14,6 @@ const RecipeIngredients = ({ ingredientsArray }) => {
           <li key={index} className="text-sm dark:text-gray-300 text-gray-800">
             {item}
           </li>
-
-
         ))}
       </ul>
     </div>

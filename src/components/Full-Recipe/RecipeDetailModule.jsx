@@ -5,6 +5,7 @@ import RecipeBage from "./RecipeBage";
 import RecipeInformation from "./RecipeInformation";
 import chillyFlex from "../../assets/svg/chillyFlex.svg";
 import RecipeIngredients from "./RecipeIngredients";
+import RecipeInstructions from "./recipeInstructions";
 
 const RecipeDetailModule = ({
   recipeId,
@@ -25,8 +26,8 @@ const RecipeDetailModule = ({
 
   return (
     <article className="recipeDetailModule w-full h-fit">
-      <div className="basicInfo w-full flex flex-col sm:flex-row sm:flex-wrap gap-2">
-        <figure className="relative sm:rounded-xl rounded-md overflow-hidden md:h-130 w-full lg:w-[49%] lg:h-[72vh] h-90">
+      <div className="basicInfo w-full grid grid-cols-1 lg:grid-cols-2 gap-2">
+        <figure className="relative sm:rounded-xl rounded-md overflow-hidden md:h-130 w-full lg:h-[72vh] h-90">
           <img
             src={`https://taste-bite-api.onrender.com/${recipeImage}`}
             onError={(e) => {
@@ -82,9 +83,12 @@ const RecipeDetailModule = ({
               </span>
             </div>
           </div>
-          <RecipeBage totalIngredients={ingredientsArray.length} rcipeCookingTime={rcipeCookingTime} />
+          <RecipeBage
+            totalIngredients={ingredientsArray.length}
+            rcipeCookingTime={rcipeCookingTime}
+          />
         </figure>
-        <div className="w-full lg:h-[72vh] overflow-scroll noScrollBar lg:w-[49%]">
+        <div className="w-full lg:h-[72vh] relative overflow-scroll noScrollBar">
           <div className="otherInfo h-fit relative w-full overflow-hidden border rounded-md sm:rounded-xl mb-2 border-orange-600 dark:border-2 dark:border-[#2d2d2d] dark:bg-[#1e1e1e]">
             <div
               className="absolute top-0 left-0 w-full h-full z-0 bg-center bg-contain opacity-30 dark:opacity-10"
@@ -106,8 +110,8 @@ const RecipeDetailModule = ({
           <div className="ingredientsAndRecipeSteps w-full">
             <RecipeIngredients ingredientsArray={ingredientsArray} />
           </div>
-          <div className="recipeIns">
-
+          <div className="recipeInstcations">
+            <RecipeInstructions recipeDetailData={recipeDetailData} />
           </div>
         </div>
       </div>
