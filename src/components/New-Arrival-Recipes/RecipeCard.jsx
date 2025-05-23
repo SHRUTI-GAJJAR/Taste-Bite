@@ -7,10 +7,9 @@ import RatingBadge from "./RatingBadge";
 import CategoryTag from "./CategoryTag";
 import { motion } from "framer-motion";
 import formatTime from "../Utils/formatedTime";
-import { Link, useParams } from "react-router";
+import { Link } from "react-router";
 
 const RecipeCard = ({ item, handelLocalStorageBookMark, isBookmarked }) => {
-  const { CategoriesName } = useParams()
   return (
     <motion.li
       initial={{ opacity: 0, scale: 0.95 }}
@@ -85,7 +84,14 @@ const RecipeCard = ({ item, handelLocalStorageBookMark, isBookmarked }) => {
           <CategoryTag categoryData={item.categories} />
           <div className="line border-gray-400 dark:border-[#2d2d2d] dark:border-b-[0.125rem] h-1 w-full border-b-1 my-1 border-dashed"></div>
           <div className="shareAndCookTime flex items-center justify-between my-1">
-            <div className="ShareIcon flex w-fit border-1 border-theme-light rounded-full px-1.5 items-center justify-center gap-1 bg-transperent-dark">
+            <div
+              onClick={() => {
+                const fullURL = `${window.location.origin}/Recipe/${item.categories}/${item._id}`;
+                navigator.clipboard.writeText(fullURL);
+                alert("Recipe link copied to clipboard!");
+              }}
+              className="ShareIcon cursor-pointer flex w-fit border-1 border-theme-light rounded-full px-1.5 items-center justify-center gap-1 bg-transperent-dark"
+            >
               <span className="icon">
                 <MdShare className="text-theme-light 2xl:text-[1.1rem]" />
               </span>
