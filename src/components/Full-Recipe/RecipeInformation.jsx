@@ -54,7 +54,7 @@ const RecipeInformation = ({
         <CategoryTag categoryData={recipeCategories} />
         <div
           onClick={() => {
-            const fullURL = `${window.location.origin}`;
+            const fullURL = window.location.href;
             navigator.clipboard.writeText(fullURL);
             alert("Recipe link copied to clipboard!");
           }}
