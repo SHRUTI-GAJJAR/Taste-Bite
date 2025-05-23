@@ -5,6 +5,7 @@ import RecipeDetailModule from "./RecipeDetailModule";
 import { useEffect } from "react";
 import { useRef } from "react";
 import { handleDownloadPDF } from "../Utils/pdfDownloder"
+import FullRecipeLoading from "./FullRecipeLoading";
 
 const FullRecipeDetails = () => {
   const contentRef = useRef();
@@ -52,7 +53,7 @@ const FullRecipeDetails = () => {
         </div>
         <div className="MainContant" ref={contentRef}>
           {detailRecipeDataLoading || sliderDataLoading || userLoading ? (
-            <p>Loading....</p>
+            <FullRecipeLoading />
           ) : recipeData ? (
             <RecipeDetailModule
               recipeId={recipeData._id}
