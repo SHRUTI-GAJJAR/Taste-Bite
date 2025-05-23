@@ -1,6 +1,7 @@
 import NavBar from "../components/Navbar/NavBar";
 import "../App.css";
 import FullRecipeDetails from "../components/Full-Recipe/FullRecipeDetails";
+import Footer from "../components/Footer/Footer";
 
 const FullRecipe = () => {
   return (
@@ -9,6 +10,9 @@ const FullRecipe = () => {
       <main>
         <FullRecipeDetails></FullRecipeDetails>
       </main>
+      <footer>
+        <Footer></Footer>
+      </footer>
     </div>
   );
 };

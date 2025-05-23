@@ -1,6 +1,7 @@
 import NavBar from "../components/Navbar/NavBar";
 import "../App.css";
 import AllCategory from "../components/Category/AllCategory";
+import Footer from "../components/Footer/Footer";
 
 const Categories = () => {
   return (
@@ -9,6 +10,9 @@ const Categories = () => {
       <main>
         <AllCategory />
       </main>
+      <footer>
+        <Footer></Footer>
+      </footer>
     </div>
   );
 };
