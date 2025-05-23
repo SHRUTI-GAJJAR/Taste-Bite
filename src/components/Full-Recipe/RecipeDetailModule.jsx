@@ -5,7 +5,7 @@ import RecipeBage from "./RecipeBage";
 import RecipeInformation from "./RecipeInformation";
 import chillyFlex from "../../assets/svg/chillyFlex.svg";
 import RecipeIngredients from "./RecipeIngredients";
-import RecipeInstructions from "./recipeInstructions";
+import RecipeInstructions from "./RecipeInstructions";
 
 const RecipeDetailModule = ({
   recipeId,
