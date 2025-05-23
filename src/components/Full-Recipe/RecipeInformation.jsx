@@ -52,7 +52,14 @@ const RecipeInformation = ({
       <UserData recipeData={recipeDetailData} userDetails={userData} />
       <div className="categoryAndShare mt-1 flex items-center justify-between">
         <CategoryTag categoryData={recipeCategories} />
-        <div className="ShareIcon flex w-fit border-1 border-theme-light rounded-full px-1.5 items-center justify-between gap-1 bg-transperent-dark">
+        <div
+          onClick={() => {
+            const fullURL = `${window.location.origin}`;
+            navigator.clipboard.writeText(fullURL);
+            alert("Recipe link copied to clipboard!");
+          }}
+          className="ShareIcon cursor-pointer flex w-fit border-1 border-theme-light rounded-full px-1.5 items-center justify-between gap-1 bg-transperent-dark"
+        >
           <span className="icon">
             <MdShare className="text-theme-light 2xl:text-[1.1rem]" />
           </span>
