@@ -1,7 +1,8 @@
+import { Link } from "react-router";
 import NotFound from "../../assets/image/NOTFOUND!.png";
 import { motion } from "framer-motion";
 
-const UserDataList = ({ userName, userEmail, userPhoto, totalRecipe }) => {
+const UserDataList = ({ userName, userEmail, userPhoto, userId, totalRecipe }) => {
   return (
     <motion.li
       initial={{ opacity: 0, scale: 0.95 }}
@@ -22,9 +23,9 @@ const UserDataList = ({ userName, userEmail, userPhoto, totalRecipe }) => {
           />
         </figure>
         <div className="userInfo">
-          <div className="userName hover:underline font-semibold text-black dark:text-white/90 dark:">
+          <Link to={`/Users/${userId}`} className="userName hover:underline font-semibold text-black dark:text-white/90 dark:">
             <p>{userName}</p>
-          </div>
+          </Link>
           <div className="userEmail dark:text-white/60 text-gray-600">
             <p>{userEmail}</p>
           </div>

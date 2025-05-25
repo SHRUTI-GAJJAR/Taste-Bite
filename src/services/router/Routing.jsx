@@ -10,6 +10,7 @@ import BookmarkedRecipes from "../../page/BookmarkedRecipes";
 import CategoriesWiseRecipes from "../../components/All-Recipes/CategoriesWiseRecipes";
 import FullRecipe from "../../page/FullRecipe";
 import Users from "../../page/Users";
+import UserDetail from "../../components/User/UserDetail";
 
 const Routing = () => {
   return (
@@ -31,6 +32,7 @@ const Routing = () => {
       <Route path="/DeleteProduct" element={<DeleteProduct />} />
       <Route path="/BookmarkedRecipes" element={<BookmarkedRecipes />} />
       <Route path="/Users" element={<Users />} />
+      <Route path="/Users/:userId" element={<UserDetail />} />
     </Routes>
   );
 };
