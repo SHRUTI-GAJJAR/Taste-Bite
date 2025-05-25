@@ -21,9 +21,12 @@ const UserDataGrid = ({ userName, userEmail, userPhoto, totalRecipe }) => {
         />
       </figure>
       <div className="info w-full flex flex-col items-center justify-center gap-0.5">
-        <div className="userName hover:underline font-semibold text-black dark:text-white/90 dark:">
+        <Link
+          to={`/Users/${userId}`}
+          className="userName hover:underline font-semibold text-black dark:text-white/90 dark:"
+        >
           <p>{userName}</p>
-        </div>
+        </Link>
         <div className="userEmail dark:text-white/60 text-gray-600">
           <p>{userEmail}</p>
         </div>
