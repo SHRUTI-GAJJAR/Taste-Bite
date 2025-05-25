@@ -1,5 +1,4 @@
-import { TiStarFullOutline } from "react-icons/ti";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import nonVage from "../../assets/svg/nonVage.svg";
 import vage from "../../assets/svg/vage.svg";
 import { BookmarkContext } from "../../context/BookmarkContext";
@@ -9,9 +8,9 @@ import UserData from "./UserData";
 import RatingBadge from "../New-Arrival-Recipes/RatingBadge";
 import { motion } from "framer-motion";
 import formatTime from "../Utils/formatedTime";
-import "../../App.css";
 import { CgTimelapse } from "react-icons/cg";
 import { Link, useParams } from "react-router";
+import "../../App.css";
 
 const RecipeCard = ({
   recipeDetailData,

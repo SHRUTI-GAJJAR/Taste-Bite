@@ -7,7 +7,7 @@ const SimmerLoading = () => {
   return (
     <>
       {viewMode === "list"
-        ? [...Array(8)].map((_, index) => { 
+        ? [...Array(8)].map((_, index) => {  
             return ( 
               <li
                 key={index}

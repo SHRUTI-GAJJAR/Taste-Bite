@@ -48,6 +48,18 @@ const Navigations = () => {
             Categories
           </NavLink>
         </li>
+        <li className="cursor-pointer dark:hover:text-white transition-colors">
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? "bg-transperent-dark transition-all border-1 md:px-2.5 md:py-0.5 px-2 py-0.5 text-[1rem] rounded dark:text-white border-transperent-border-dark"
+                : "bg-transparent border-1 md:px-2.5 md:py-0.5 px-2 py-0.5 text-[1rem] rounded border-transparent transition-all"
+            }
+            to={"/Users"}
+          >
+            Users
+          </NavLink>
+        </li>
       </ul>
       <ThemeToggle />
     </>

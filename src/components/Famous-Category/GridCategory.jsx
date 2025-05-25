@@ -9,7 +9,7 @@ import "../../App.css";
 import { Link } from "react-router";
 
 const GridCategory = () => {
-  const { category, fetchCategories, sliderDataLoading, categoryCount } =
+  const { category, fetchCategories, sliderDataLoading } =
     useApi();
   useEffect(() => {
     fetchCategories();

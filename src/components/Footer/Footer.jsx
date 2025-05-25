@@ -4,9 +4,9 @@ import testBiteLogo from "../../assets/svg/testBiteLogo.svg";
 
 const Footer = () => {
   return (
-    <section className="footer bg-[#f0f2f5]">
-      <div className="mt-4 text-gray-700 p-2 flex items-center flex-col justify-center m-auto md:max-w-[75vw] w-[97vw]">
-        <div className="logoSideAndLink flex lg:w-full items-start justify-center lg:flex-row lg:justify-between my-5 lg:items-center flex-col  lg:my-10">
+    <section className="footer dark:bg-[#1e1e1e] bg-[#f0f2f5]">
+      <div className="mt-4 text-gray-700 dark:text-gray-300 p-2 flex items-center flex-col justify-center m-auto md:max-w-[75vw] w-[97vw]">
+        <div className="logoSideAndLink flex lg:w-full items-start justify-center lg:flex-row lg:justify-between my-6 lg:items-center flex-col lg:my-10 gap-4">
           <div className="logo w-full flex flex-col my-2 items-start justify-center gap-3">
             <div className="logo h-12">
               <img src={testBiteLogo} className="h-full w-full" alt="logo" />
@@ -21,8 +21,8 @@ const Footer = () => {
             </div>
           </div>
           <div className="link grid grid-cols-2 w-full lg:gap-5 items-start lg:w-fit ">
-            <div className="tasteBiteLinks flex flex-col items-start justify-center">
-              <h2 className="text-black/80 font-semibold text-[1.2rem]">
+            <div className="tasteBiteLinks flex flex-col items-start justify-center lg:gap-2">
+              <h2 className="text-black/80 dark:text-white/90 font-semibold text-[1.2rem]">
                 Tastebite
               </h2>
               <ul>
@@ -52,8 +52,8 @@ const Footer = () => {
                 </Link>
               </ul>
             </div>
-            <div className="socialMedia flex flex-col items-start justify-center">
-              <h2 className="text-black/80 font-semibold text-[1.2rem]">
+            <div className="socialMedia flex flex-col items-start justify-center lg:gap-2">
+              <h2 className="text-black/80 dark:text-white/90 font-semibold text-[1.2rem]">
                 Follow
               </h2>
               <ul>

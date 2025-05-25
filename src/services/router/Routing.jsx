@@ -9,6 +9,7 @@ import UpdateProduct from "../../page/UpdateProduct";
 import BookmarkedRecipes from "../../page/BookmarkedRecipes";
 import CategoriesWiseRecipes from "../../components/All-Recipes/CategoriesWiseRecipes";
 import FullRecipe from "../../page/FullRecipe";
+import Users from "../../page/Users";
 
 const Routing = () => {
   return (
@@ -20,12 +21,16 @@ const Routing = () => {
           element={<CategoriesWiseRecipes />}
         />
       </Route>
-      <Route path="/Recipe/:CategoriesName/:RecipeId" element={<FullRecipe />} />
+      <Route
+        path="/Recipe/:CategoriesName/:RecipeId"
+        element={<FullRecipe />}
+      />
       <Route path="/Categories" element={<Categories />} />
       <Route path="/AddProduct" element={<AddProduct />} />
       <Route path="/UpdateProduct" element={<UpdateProduct />} />
       <Route path="/DeleteProduct" element={<DeleteProduct />} />
       <Route path="/BookmarkedRecipes" element={<BookmarkedRecipes />} />
+      <Route path="/Users" element={<Users />} />
     </Routes>
   );
 };
