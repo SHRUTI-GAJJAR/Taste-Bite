@@ -124,7 +124,7 @@ const SearchBox = () => {
                     </div>
                   </Link>
                 </motion.li>
-                <div className="line border-gray-400 dark:border-[#2d2d2d] dark:border-b-[0.125rem] h-1 w-[98%] border-b-1  border-dashed"></div>
+                <div className="line border-gray-400 dark:border-[#2d2d2d] dark:border-b-[0.125rem] h-1 w-[99%] border-b-1  border-dashed"></div>
               </React.Fragment>
             ))}
           </ul>
