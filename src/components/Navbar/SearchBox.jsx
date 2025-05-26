@@ -98,7 +98,7 @@ const SearchBox = () => {
                     transition: { duration: 0.3 },
                   }}
                   layout
-                  className="my-1.5 flex w-full items-center justify-between bg-[#f0f3f5] px-1.5"
+                  className="my-1.5 flex w-full items-center justify-between px-1.5"
                 >
                   <Link
                     to={`/Recipe/${
