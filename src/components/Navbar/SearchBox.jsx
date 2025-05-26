@@ -19,7 +19,7 @@ const SearchBox = () => {
     }
 
     return () => {
-      document.body.style.overflow = "auto"; // cleanup
+      document.body.style.overflow = "auto"; 
     };
   }, [result, loading]);
 
@@ -86,7 +86,7 @@ const SearchBox = () => {
       )}
       {!loading && result.length > 0 && (
         <AnimatePresence>
-          <ul className="absolute top-full z-50 text-black md:rounded-xl border border-theme-light w-[98%] md:w-[75.5%] max-h-[40vh] md:max-h-[60vh] noScrollBar overflow-y-auto bg-[#f0f3f5] rounded-lg flex flex-col items-center">
+          <ul className="absolute top-full z-50 text-black md:rounded-xl border border-theme-light w-[98%] md:w-[75.5%] max-h-[40vh] md:max-h-[60vh] noScrollBar overflow-y-auto dark:border-2 dark:border-[#2d2d2d] bg-[#f0f3f5] dark:bg[#1e1e1e] rounded-lg flex flex-col items-center">
             {result.map((item, index) => (
               <React.Fragment key={index}>
                 <motion.li
