@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import NotFound from "../../assets/image/NOTFOUND!.png";
+import { Link } from "react-router";
 
-const UserDataGrid = ({ userName, userEmail, userPhoto, totalRecipe }) => {
+const UserDataGrid = ({ userName, userEmail, userPhoto, userId, totalRecipe }) => {
   return (
     <motion.li
       initial={{ opacity: 0, scale: 0.95 }}
