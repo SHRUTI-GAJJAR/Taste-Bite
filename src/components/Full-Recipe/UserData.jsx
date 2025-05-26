@@ -1,5 +1,6 @@
 import { FaCalendar } from "react-icons/fa6";
 import { getPostDate } from "../Utils/PostDate";
+import { Link } from "react-router";
 
 const UserData = ({ recipeData, userDetails }) => {
   const postDate = getPostDate(recipeData.date);
@@ -16,9 +17,13 @@ const UserData = ({ recipeData, userDetails }) => {
             className="object-cover object-center"
           />
         </div>
-        <p className="text-[1.1rem] text-black dark:text-white font-semibold cursor-pointer hover:underline">
+
+        <Link
+          to={`/Users/${userDetailData?.id}`}
+          className="text-[1.1rem] text-black dark:text-white font-semibold cursor-pointer hover:underline"
+        >
           By {userDetailData?.name || "Unknown"}
-        </p>
+        </Link>
       </div>
       <div className="date text-[0.9rem] flex gap-1 dark:text-gray-400 text-black/70 items-center justify-start">
         <FaCalendar className="text-[0.9rem]" />
