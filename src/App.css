@@ -34,6 +34,7 @@ body {
   --color-bage-blur: rgba(255, 255, 255, 0);
 
   --breakpoint-xxs: 600px;
+  --breakpoint-xs: 425px;
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
@@ -97,6 +98,8 @@ body {
   background: linear-gradient(to right, #e53935, #e35d5b);
   border-radius: 4px;
 }
+
+
 
 .bookmark-icon svg {
   transition: all 0.3s ease;
