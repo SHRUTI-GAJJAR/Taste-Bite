@@ -1,5 +1,5 @@
 import React from "react";
-import menuIcon from "../../assets/svg/scrollText.svg";
+const menuIcon = '/svg/scrollText.svg';
 import { MdArrowOutward } from "react-icons/md";
 import { FaChevronDown } from "react-icons/fa6";
 import { IoAdd } from "react-icons/io5";
@@ -119,7 +119,7 @@ const MobileMenu = () => {
             <i className="line h-fit w-full border-0.1 border-b border-dashed border-white"></i>
             <li className="flex p-2 w-full cursor-pointer items-center justify-between">
               <span>
-                <NavLink to={"/Users"}>Shafe</NavLink>
+                <NavLink to={"/Users"}>Chef</NavLink>
               </span>
               <MdArrowOutward size={"1.3em"} />
             </li>

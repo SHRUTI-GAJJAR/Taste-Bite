@@ -1,5 +1,5 @@
-import vage from "../../assets/svg/vage.svg";
-import nonVage from "../../assets/svg/nonVage.svg";
+const vage = '/svg/vage.svg';
+const nonVage = '/svg/nonVage.svg';
 import { useFilter } from "../../context/FilterContext";
 
 const FoodCategoryToggle = () => {

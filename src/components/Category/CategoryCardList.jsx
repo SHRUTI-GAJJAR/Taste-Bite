@@ -1,5 +1,5 @@
 import { MdOutlineArrowForwardIos } from "react-icons/md";
-import NotFound from "../../assets/image/NOTFOUND!.png";
+const NotFound = '/image/NOTFOUND!.png';
 import { normalizedIcons, bgClasses } from "../../services/script/recipeHelper";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router";

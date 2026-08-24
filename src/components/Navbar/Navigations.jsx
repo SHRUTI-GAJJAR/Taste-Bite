@@ -57,7 +57,7 @@ const Navigations = () => {
             }
             to={"/Users"}
           >
-            Shafe
+            Chef
           </NavLink>
         </li>
       </ul>

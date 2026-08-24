@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import clearFilter from "../../assets/svg/clearFilter.svg";
+const clearFilter = '/svg/clearFilter.svg';
 import { FoodSortContext } from "../../context/FoodSortContext";
 
 const NoFoodFound = () => {

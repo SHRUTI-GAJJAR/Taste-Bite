@@ -1,7 +1,7 @@
 import { MdShare } from "react-icons/md";
 import { CgTimelapse } from "react-icons/cg";
-import vage from "../../assets/svg/vage.svg";
-import nonVage from "../../assets/svg/nonVage.svg";
+const vage = '/svg/vage.svg';
+const nonVage = '/svg/nonVage.svg';
 import ImageWithFallback from "./ImageWithFallback";
 import RatingBadge from "./RatingBadge";
 import CategoryTag from "./CategoryTag";

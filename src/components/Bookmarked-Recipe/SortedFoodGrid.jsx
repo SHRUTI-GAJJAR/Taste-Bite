@@ -1,11 +1,11 @@
 import { FoodSortContext } from "../../context/FoodSortContext";
 import { BookmarkContext } from "../../context/BookmarkContext";
 import { useContext } from "react";
-import vage from "../../assets/svg/vage.svg";
-import nonVage from "../../assets/svg/nonVage.svg";
+const vage = '/svg/vage.svg';
+const nonVage = '/svg/nonVage.svg';
 import CategoryTag from "../New-Arrival-Recipes/CategoryTag";
 import RatingBadge from "../New-Arrival-Recipes/RatingBadge";
-import NotFound from "../../assets/image/NOTFOUND!.png";
+const NotFound = '/image/NOTFOUND!.png';
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router";
 

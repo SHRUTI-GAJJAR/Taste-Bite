@@ -3,7 +3,7 @@ import { useApi } from "../../context/apiContext";
 import "../../App.css";
 import { IoIosArrowForward } from "react-icons/io";
 import { motion, AnimatePresence } from "framer-motion";
-import NotFound from "../../assets/image/NOTFOUND!.png";
+const NotFound = '/image/NOTFOUND!.png';
 import SimmerLoading from "./SimmerLoading";
 import { Link } from "react-router";
 

@@ -1,6 +1,6 @@
 import { useViewMode } from "../../context/viweModeContext";
-import list from "../../../src/assets/svg/listMode.svg";
-import grid from "../../../src/assets/svg/gridMode.svg";
+const list = '/svg/listMode.svg';
+const grid = '/svg/gridMode.svg';
 import "../../App.css"
 
 const ViweMode = () => {

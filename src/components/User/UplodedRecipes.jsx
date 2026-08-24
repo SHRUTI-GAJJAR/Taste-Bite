@@ -1,8 +1,8 @@
 import { useApi } from "../../context/apiContext";
 import { MdShare } from "react-icons/md";
 import { CgTimelapse } from "react-icons/cg";
-import vage from "../../assets/svg/vage.svg";
-import nonVage from "../../assets/svg/nonVage.svg";
+const vage = '/svg/vage.svg';
+const nonVage = '/svg/nonVage.svg';
 import ImageWithFallback from "../New-Arrival-Recipes/ImageWithFallback";
 import RatingBadge from "../New-Arrival-Recipes/RatingBadge";
 import CategoryTag from "../New-Arrival-Recipes/CategoryTag";

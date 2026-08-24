@@ -1,5 +1,5 @@
 import { useFilter } from "../../context/FilterContext";
-import clearFilter from "../../assets/svg/clearFilter.svg";
+const clearFilter = '/svg/clearFilter.svg';
 
 const NoFoodFound = () => {
   const { resetAllFilters } = useFilter();

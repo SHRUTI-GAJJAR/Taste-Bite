@@ -1,8 +1,8 @@
-import slide1 from '../../assets/image/Slider-Images/slider1.jpg';
-import slide2 from '../../assets/image/Slider-Images/slider2.jpeg';
-import slide3 from '../../assets/image/Slider-Images/slider3.jpeg';
-import slide4 from '../../assets/image/Slider-Images/slider4.jpeg';
-import slide5 from '../../assets/image/Slider-Images/slider5.jpg'
+const slide1 = '/image/Slider-Images/slider1.jpg';
+const slide2 = '/image/Slider-Images/slider2.jpeg';
+const slide3 = '/image/Slider-Images/slider3.jpeg';
+const slide4 = '/image/Slider-Images/slider4.jpeg';
+const slide5 = '/image/Slider-Images/slider5.jpg';
 
 const sliderData = [
   {

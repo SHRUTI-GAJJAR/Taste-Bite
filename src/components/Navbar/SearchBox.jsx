@@ -3,7 +3,7 @@ import { IoIosArrowForward, IoIosSearch } from "react-icons/io";
 import { IoCloseOutline } from "react-icons/io5";
 import axiosInstance from "../../services/script/axios";
 import { motion, AnimatePresence } from "framer-motion";
-import NotFound from "../../assets/image/NOTFOUND!.png";
+const NotFound = '/image/NOTFOUND!.png';
 import { Link } from "react-router";
 
 const SearchBox = () => {

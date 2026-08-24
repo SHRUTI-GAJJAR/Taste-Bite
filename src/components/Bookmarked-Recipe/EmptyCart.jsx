@@ -1,7 +1,7 @@
 import HeaderTitle from "../Utils/HeaderTitle";
-import chillyFlex from "../../assets/svg/chillyFlex.svg";
-import textPiza from "../../assets/svg/textPiza.svg";
-import eptycartAfiv from "../../assets/image/eptycart.avif";
+const chillyFlex = '/svg/chillyFlex.svg';
+const textPiza = '/svg/textPiza.svg';
+const eptycartAfiv = '/image/eptycart.avif';
 import { NavLink } from "react-router";
 
 const EmptyCart = () => {

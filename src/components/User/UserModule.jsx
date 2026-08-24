@@ -30,7 +30,7 @@ const UserModule = () => {
     <section>
       <div className="userWrap pb-10 h-fit m-auto md:max-w-[75vw] w-[97vw]">
         <div className="titleAndModeWrap flex gap-2 mt-3 mb-2 sm:mt-6">
-          <HeaderTitle title={"All Shafe"} />
+          <HeaderTitle title={"All Chef"} />
           <ViweMode />
         </div>
         <div className="userData w-full">

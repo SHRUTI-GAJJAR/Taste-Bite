@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import NotFound from "../../assets/image/NOTFOUND!.png";
+const NotFound = '/image/NOTFOUND!.png';
 import { motion } from "framer-motion";
 
 const UserDataList = ({ userName, userEmail, userPhoto, userId, totalRecipe }) => {

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useApi } from "../../context/apiContext";
-import ALL from "../../assets/svg/All.svg";
+const ALL = '/svg/All.svg';
 import HeaderTitle from "../Utils/HeaderTitle";
 import { NavLink, useNavigate } from "react-router";
 import {

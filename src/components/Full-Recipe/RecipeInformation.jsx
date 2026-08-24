@@ -1,5 +1,5 @@
-import vage from "../../assets/svg/vage.svg";
-import nonVage from "../../assets/svg/nonVage.svg";
+const vage = '/svg/vage.svg';
+const nonVage = '/svg/nonVage.svg';
 import { TiStarFullOutline } from "react-icons/ti";
 import { MdShare } from "react-icons/md";
 import UserData from "./UserData";

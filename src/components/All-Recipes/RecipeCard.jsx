@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import nonVage from "../../assets/svg/nonVage.svg";
-import vage from "../../assets/svg/vage.svg";
+const nonVage = '/svg/nonVage.svg';
+const vage = '/svg/vage.svg';
 import { BookmarkContext } from "../../context/BookmarkContext";
-import NotFound from "../../assets/image/NOTFOUND!.png";
+const NotFound = '/image/NOTFOUND!.png';
 import CategoryTag from "../New-Arrival-Recipes/CategoryTag";
 import UserData from "./UserData";
 import RatingBadge from "../New-Arrival-Recipes/RatingBadge";

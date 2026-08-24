@@ -1,8 +1,8 @@
 import { useParams } from "react-router";
 import { useApi } from "../../context/apiContext";
 import { useEffect } from "react";
-import chillyFlex from "../../assets/svg/chillyFlex.svg";
-import NotFound from "../../assets/image/NOTFOUND!.png";
+const chillyFlex = '/svg/chillyFlex.svg';
+const NotFound = '/image/NOTFOUND!.png';
 import { MdShare } from "react-icons/md";
 
 const UserProfileCard = () => {

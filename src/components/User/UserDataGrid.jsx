@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import NotFound from "../../assets/image/NOTFOUND!.png";
+const NotFound = '/image/NOTFOUND!.png';
 import { Link } from "react-router";
 
 const UserDataGrid = ({ userName, userEmail, userPhoto, userId, totalRecipe }) => {

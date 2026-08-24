@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { BookmarkContext } from "../../context/BookmarkContext";
-import NotFound from "../../assets/image/NOTFOUND!.png";
+const NotFound = '/image/NOTFOUND!.png';
 import RecipeBage from "./RecipeBage";
 import RecipeInformation from "./RecipeInformation";
-import chillyFlex from "../../assets/svg/chillyFlex.svg";
+const chillyFlex = '/svg/chillyFlex.svg';
 import RecipeIngredients from "./RecipeIngredients";
 import RecipeInstructions from "./RecipeInstructions";
 

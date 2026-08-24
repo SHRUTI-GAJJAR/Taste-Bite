@@ -1,5 +1,5 @@
 import { useState } from "react";
-import fallbackImage from "../../assets/image/NOTFOUND!.png";
+const fallbackImage = '/image/NOTFOUND!.png';
 
 const ImageWithFallback = ({ src, alt }) => {
   const [imgSrc, setImgSrc] = useState(src);

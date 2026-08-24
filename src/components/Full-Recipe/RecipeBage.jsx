@@ -1,6 +1,6 @@
 import formatTime from "../Utils/formatedTime";
 import { CgTimelapse } from "react-icons/cg";
-import ingredients from "../../assets/svg/ingredients.svg";
+const ingredients = '/svg/ingredients.svg';
 
 const RecipeBage = ({ totalIngredients, rcipeCookingTime }) => {
   return (
